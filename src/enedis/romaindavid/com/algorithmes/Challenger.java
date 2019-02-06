@@ -3,23 +3,22 @@ package enedis.romaindavid.com.algorithmes;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Combinaison {
+public class Challenger {
     Scanner sc = new Scanner( System.in );
 
     String secretNumber ;
     private static final int numberPossible = 4;
 
-    public Combinaison() {   }
+    public Challenger() { }
 
     public void runGame()  {
-         secretNumber = randomNumber( ) ;
+        secretNumber = randomNumber( ) ;
         System.out.println("(Combinaison secrète : "+  secretNumber + ")" );
         proposition();
-
     }
-    public void proposition(){
+    private void proposition(){
 
-        System.out.println("Veuillez saisir votre combinaison");
+        System.out.println("Veuillez saisir une binaison");
 
         String choice = String.format("%0" + numberPossible + "d",  sc.nextInt());
         String result = searchFull( choice, secretNumber );
@@ -33,12 +32,12 @@ public class Combinaison {
     }
 
     public String searchFull(String choice, String toResearch){
-       String[] choiceArray = choice.split("");
-       String[] toResearcheArray = toResearch.split("");
-       int lenArray = choiceArray.length - 1;
-       String result = "";
-       for(int i = 0 ; i<= lenArray;i++)
-           result += searchOne( Integer.valueOf( choiceArray[ i ] ),Integer.valueOf( toResearcheArray[ i ] ) );
+        String[] choiceArray = choice.split("");
+        String[] toResearcheArray = toResearch.split("");
+        int lenArray = choiceArray.length - 1;
+        String result = "";
+        for(int i = 0 ; i<= lenArray;i++)
+            result += searchOne( Integer.valueOf( choiceArray[ i ] ),Integer.valueOf( toResearcheArray[ i ] ) );
 
         return result;
     }
@@ -71,6 +70,4 @@ public class Combinaison {
     public int puissancede10( ){
         return (int) Math.pow( 10, numberPossible) ;
     }
-
-
 }
