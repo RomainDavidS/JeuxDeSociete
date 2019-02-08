@@ -1,6 +1,7 @@
 package enedis.romaindavid.com.rechercheplusmoins;
 
-import static enedis.romaindavid.com.rechercheplusmoins.Game.result;
+import static enedis.romaindavid.com.rechercheplusmoins.Game.combinaisonResult;
+
 
 public class GameCombinaison implements Combinaison {
     String combinaisonNumber;
@@ -27,6 +28,6 @@ public class GameCombinaison implements Combinaison {
     @Override
     public String resultCombinaison() {
 
-        return result( getCombinaisonNumber(), getCombinaisonSecret() ) ;
+        return combinaisonResult( getCombinaisonNumber(), getCombinaisonSecret() ) ;
     }
 }

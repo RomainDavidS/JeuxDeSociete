@@ -1,5 +1,10 @@
 package enedis.romaindavid.com.rechercheplusmoins;
 
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Map;
+import java.util.Scanner;
+
 import static enedis.romaindavid.com.algorithme.Plugins.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
@@ -7,55 +12,20 @@ public class Game {
 
     public Game() {}
 
-    private String secretNumberPC;
-    private String secretNumberPlayer;
+    protected String secretNumberPC;
+    protected String secretNumberPlayer;
 
-    private String combinaisonNumberPC;
-    private String combinaisonNumberPlayer;
+    protected String combinaisonNumberPC;
+    protected String combinaisonNumberPlayer;
 
-    private String player;
+    protected Scanner sc = new Scanner( System.in );
+    protected GameCombinaison gameCombinaison = new GameCombinaison();
+    protected int trial = 0 ;
 
-    public String getSecretNumberPC() {
-        return secretNumberPC;
-    }
+    protected Map<Integer,String> mapPossible = new HashMap<Integer,String>();
+    protected String result ;
 
-    public void setSecretNumberPC(String secretNumberPC) {
-        this.secretNumberPC = secretNumberPC;
-    }
-
-    public String getSecretNumberPlayer() {
-        return secretNumberPlayer;
-    }
-
-    public void setSecretNumberPlayer(String secretNumberPlayer) {
-        this.secretNumberPlayer = secretNumberPlayer;
-    }
-
-    public String getCombinaisonNumberPC() {
-        return combinaisonNumberPC;
-    }
-
-    public void setCombinaisonNumberPC(String combinaisonNumberPC) {
-        this.combinaisonNumberPC = combinaisonNumberPC;
-    }
-
-    public String getCombinaisonNumberPlayer() {
-        return combinaisonNumberPlayer;
-    }
-
-    public void setCombinaisonNumberPlayer(String combinaisonNumberPlayer) {
-        this.combinaisonNumberPlayer = combinaisonNumberPlayer;
-    }
-
-    public String getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(String player) {
-        this.player = player;
-    }
-
-    static String result(String combinaisonSeizure, String combinaisonSecret){
+    static String combinaisonResult(String combinaisonSeizure, String combinaisonSecret){
 
         String[] combinaisonSeizureArray = combinaisonSeizure.split("");
         String[] combinaisonSecretArray = combinaisonSecret.split("");
@@ -70,7 +40,7 @@ public class Game {
         return resultCombinaison;
     }
 
-    static String resultOne( int combinaisonSeizure, int combinaisonSecret ){
+    private static String resultOne( int combinaisonSeizure, int combinaisonSecret ){
         if( combinaisonSeizure >combinaisonSecret )
             return "+";
         else if ( combinaisonSeizure < combinaisonSecret )
@@ -89,7 +59,165 @@ public class Game {
 
     }
 
-    static boolean isSeizureGoodLength( int seizure ){
+    protected boolean isSeizureGoodLength(int seizure){
         return ( toStr( seizure ).length() <= getNumberCasePossible() );
+    }
+
+    protected void generateCombinaisonPC(){
+        String newCombinaisonPC = "";
+        String[] combinaisonNumberPcArray = combinaisonNumberPC.split("");
+        String[] resultArray = result.split("");
+
+        for(int i = 0; i < getNumberCasePossible();i++)
+            newCombinaisonPC += newPcCombinaison( i, combinaisonNumberPcArray[ i ], resultArray[ i ]  );
+
+        combinaisonNumberPC = newCombinaisonPC ;
+    }
+
+    private String newPcCombinaison(int index,String combinaisonNumber , String result  ){
+
+        String possible = mapPossible.get( index );
+        String[] possibleArray = possible.split("");
+        if (possible.length() == 1)
+            return mapPossible.get( index );
+
+        int intCombinaisonNumber = toInt( combinaisonNumber );
+
+        String newCombinaison = "";
+        for (String str: possibleArray ) {
+            int intStr = Integer.valueOf( str );
+
+            if( result.equals("+") )
+                if( intStr < intCombinaisonNumber )
+                    newCombinaison += str;
+
+            if ( result.equals("-") )
+                if( intStr > intCombinaisonNumber )
+                    newCombinaison += str;
+
+            if ( result.equals("=") )
+                if( intStr == intCombinaisonNumber ){
+                    newCombinaison = str;
+                    break;
+                }
+
+        }
+
+        String[] newCombinaisonArray = newCombinaison.split("");
+        mapPossible.replace(index, newCombinaison );
+
+        int len = newCombinaisonArray.length ;
+
+        if( len == 1)
+            return newCombinaison;
+        else{
+            int newR = generateRandomInRange(toInt( newCombinaisonArray[0] ),toInt( newCombinaisonArray[ len -1 ] ));
+            return toStr( newR );
+        }
+
+    }
+
+    protected void initSecretNumberPlayer(){
+        try{
+            System.out.println("Joueur : Veuillez saisir votre combinaison secrète");
+            int seizure = sc.nextInt();
+
+            if( !isSeizureGoodLength( seizure ) ){
+                System.out.println("La combinaison secrète doit avoir une longueur de "+ getNumberCasePossible() + " chiffres maximum.");
+                initSecretNumberPlayer();
+            }
+
+            secretNumberPlayer = formatNumber( seizure) ;
+
+
+
+        }catch (InputMismatchException e){
+            System.out.println( "Erreur de format. Veuillez saisir une valeur numérique" );
+            sc.nextLine();
+            initSecretNumberPlayer();
+        }
+    }
+
+    protected void initMapPossible(){
+        for ( int i=0; i < getNumberCasePossible() ; i++ )
+            mapPossible.put( i, "0123456789");
+    }
+
+    protected void modePlayerGame( String mode,String player ){
+        switch ( mode ){
+            case "challenger":
+                playerProposition( mode, player );
+                break;
+            case "defender":
+                pcProposition( mode, player );
+                break;
+            case "dual":
+                if( player.equals( "player") )
+                    playerProposition( mode, "pc" );
+                else
+                    pcProposition( mode, "player" );
+
+                break;
+            default:
+                break;
+        }
+    }
+
+    protected void playerProposition(String mode, String player ){
+
+        trial++;
+
+        try {
+
+            System.out.println("Essai n°" +trial +" : Joueur veuillez saisir une combinaison");
+            int seizure = sc.nextInt() ;
+
+            if( isSeizureGoodLength( seizure ) )
+                combinaisonNumberPlayer = formatNumber( seizure ) ;
+            else{
+                trial --;
+                System.out.println("La longueur de la combinaison doit avoir une longueur max de "+ getNumberCasePossible() + " chiffres maximum.");
+                modePlayerGame( mode, player );
+            }
+
+        }catch (InputMismatchException e){
+            trial --;
+            // On contrôle que le format est correct
+            System.out.println( "Erreur de format. Veuillez saisir une valeur numérique" );
+            sc.nextLine();
+            modePlayerGame( mode,player );
+        }
+        gameCombinaison.setCombinaisonSecret( secretNumberPC );
+        gameCombinaison.setCombinaisonNumber( combinaisonNumberPlayer );
+
+        result = gameCombinaison.resultCombinaison() ;
+        System.out.println("Proposition joueur n° " + trial + " : " + combinaisonNumberPlayer + " -> Réponse : " + result );
+
+        if (!isCombinaisonTrouve(result))
+            if(!(trial == getNumberTrialPossible()) )
+                modePlayerGame( mode, player );
+            else
+                System.out.println( "Désolé la combinaison secrète n'a pas été trouvée." );
+        else
+            System.out.println( "Félicitation joueur la combinaison secrète a été trouvée en "+ trial +" essais." );
+    }
+
+
+    protected void pcProposition(String mode,String player){
+        trial++;
+        gameCombinaison.setCombinaisonSecret( secretNumberPlayer );
+        gameCombinaison.setCombinaisonNumber( combinaisonNumberPC );
+        System.out.println("M l'ordinateur choisi la combinaison " + combinaisonNumberPC );
+
+        result = gameCombinaison.resultCombinaison() ;
+        System.out.println("Proposition ordinateur n° " + trial + " : " + combinaisonNumberPC + " -> Réponse : " + result );
+
+        if(!isCombinaisonTrouve( result ) ) {
+            generateCombinaisonPC();
+            //pcProposition(mode,player);
+            modePlayerGame(mode, player);
+        }
+        else
+            System.out.println( "L'ordinateur a trouvé le combinaison en "+ trial +" essais.");
     }
 }
