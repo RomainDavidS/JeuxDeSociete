@@ -1,9 +1,8 @@
-package enedis.romaindavid.com.algorithmes;
-
+package enedis.romaindavid.com.rechercheplusmoins;
 
 import java.util.Scanner;
 
-public class Duel {
+public class Dual extends Game {
     Scanner sc = new Scanner( System.in );
 
     String secretNumber1 ;
