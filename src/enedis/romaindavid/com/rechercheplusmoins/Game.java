@@ -1,6 +1,7 @@
 package enedis.romaindavid.com.rechercheplusmoins;
 
 import static enedis.romaindavid.com.algorithme.Plugins.*;
+import static enedis.romaindavid.com.param.Parameter.*;
 
 public class Game {
 
@@ -54,7 +55,7 @@ public class Game {
         this.player = player;
     }
 
-   static String result(String combinaisonSeizure, String combinaisonSecret){
+    static String result(String combinaisonSeizure, String combinaisonSecret){
 
         String[] combinaisonSeizureArray = combinaisonSeizure.split("");
         String[] combinaisonSecretArray = combinaisonSecret.split("");
@@ -88,4 +89,7 @@ public class Game {
 
     }
 
+    static boolean isSeizureGoodLength( int seizure ){
+        return ( toStr( seizure ).length() <= getNumberCasePossible() );
+    }
 }

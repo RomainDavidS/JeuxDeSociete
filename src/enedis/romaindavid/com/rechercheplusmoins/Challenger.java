@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static enedis.romaindavid.com.algorithme.Plugins.*;
-import static enedis.romaindavid.com.param.Parameters.*;
+import static enedis.romaindavid.com.param.Parameter.*;
 
 
 public class Challenger extends Game {
@@ -30,11 +30,11 @@ public class Challenger extends Game {
             System.out.println("Essai n°" +trial +" : Veuillez saisir une combinaison");
             int seizure = sc.nextInt() ;
 
-            if( toStr( seizure ).length() <= Parameters.getNumberCasePossible() )
+            if( isSeizureGoodLength( seizure ) )
                 setCombinaisonNumberPlayer(formatNumber( seizure ) );
             else{
                 trial --;
-                System.out.println("La longueur de la combinaison doit avoir une longueur mas de "+Parameters.getNumberCasePossible() + " maximum.");
+                System.out.println("La longueur de la combinaison doit avoir une longueur max de "+ getNumberCasePossible() + " chiffres maximum.");
                 proposition();
             }
 
@@ -52,7 +52,7 @@ public class Challenger extends Game {
         System.out.println("Proposition n° " + trial + " : " + getCombinaisonNumberPlayer() + " -> Réponse : " + result );
 
             if (!isCombinaisonTrouve(result))
-                if(!(trial == Parameters.getNumberTrialPossible()) )
+                if(!(trial == getNumberTrialPossible()) )
                     proposition();
                 else
                     System.out.println( "Désolé la combinaison secrète n'a pas été trouvée." );
