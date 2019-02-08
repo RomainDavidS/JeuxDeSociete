@@ -1,6 +1,6 @@
 package enedis.romaindavid.com.rechercheplusmoins;
 
-import static enedis.romaindavid.com.algorithmes.Plugins.*;
+import static enedis.romaindavid.com.algorithme.Plugins.*;
 
 public class Game {
 

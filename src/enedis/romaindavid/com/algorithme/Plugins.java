@@ -1,8 +1,8 @@
-package enedis.romaindavid.com.algorithmes;
+package enedis.romaindavid.com.algorithme;
 
 import java.util.Random;
 
-import static enedis.romaindavid.com.params.Parameters.*;
+import static enedis.romaindavid.com.param.Parameter.*;
 
 public class Plugins {
 

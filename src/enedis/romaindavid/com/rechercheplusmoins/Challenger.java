@@ -1,13 +1,11 @@
 package enedis.romaindavid.com.rechercheplusmoins;
 
-import enedis.romaindavid.com.params.Parameters;
-
 import java.util.InputMismatchException;
 
 import java.util.Scanner;
 
-import static enedis.romaindavid.com.algorithmes.Plugins.*;
-import static enedis.romaindavid.com.params.Parameters.*;
+import static enedis.romaindavid.com.algorithme.Plugins.*;
+import static enedis.romaindavid.com.param.Parameters.*;
 
 
 public class Challenger extends Game {
