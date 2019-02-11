@@ -1,23 +1,15 @@
 package enedis.romaindavid.com.game;
 
-import enedis.romaindavid.com.game.mastermind.*;
-import enedis.romaindavid.com.game.rechercheplusmoins.*;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-    Scanner sc = new Scanner( System.in );
+    private Scanner sc = new Scanner( System.in );
     private int choiceGame;
     private int choiceMode;
+    private Game game;
 
-    public int getChoiceGame() {
-        return choiceGame;
-    }
-
-    public int getChoiceMode() {
-        return choiceMode;
-    }
+    ModeGame modeGame = new ModeGame();
 
     public void menuGame(){
         try {
@@ -27,7 +19,8 @@ public class Menu {
             if( !(choiceGame == 1 || choiceGame == 2) ){
                 System.out.println("Votre choix doit égal à 1 ou 2.");
                 menuGame();
-            }
+            }else
+                menuMode();
 
 
         }catch ( InputMismatchException e ){
@@ -36,6 +29,7 @@ public class Menu {
             menuGame();
         }
     }
+
     public void menuMode(){
         try {
             System.out.println("Choisir votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel");
@@ -44,8 +38,8 @@ public class Menu {
             if ( choiceMode < 1 || choiceMode > 3 ){
                 System.out.println("Votre choix doit être égal à 1, 2 ou 3.");
                 menuMode();
-            }
-
+            }else
+                runGame();
 
         }catch ( InputMismatchException e){
             System.out.println( "Erreur de format. Veuillez saisir une valeur numérique" );
@@ -54,26 +48,21 @@ public class Menu {
         }
     }
 
-    public  Game choiceGame(int game, int mode){
-
-        switch (mode){
-            case 1:
-                if (game == 1)
-                    return new PlusMoinsChallenger();
-                else
-                    return new MasterChallenger();
-            case 2:
-                if (game == 1)
-                    return new PlusMoinsDefender();
-                else
-                    return new MasterDefender();
-            case 3:
-                if (game == 1)
-                    return new PlusMoinsDual();
-                else
-                    return new MasterDual();
-            default:
-                return null;
-        }
+    private void runGame() {
+        game = gameChozen();
+        if( choiceMode == 1)
+            modeGame.challenger( game );
+        else if ( choiceMode == 2)
+            modeGame.defender( game );
+        else
+            modeGame.dual( game );
     }
+
+    private Game gameChozen(){
+        if( choiceGame == 1 )
+            return  new RecherchePlusMoins();
+        else
+            return new Mastermind();
+    }
+
 }

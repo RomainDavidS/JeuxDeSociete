@@ -3,7 +3,7 @@ package enedis.romaindavid.com.param;
 public class Parameter {
     public static String modeDebug ="dev";
     private static int numberCasePossible = 4;
-    private static int numberTrialPossible = 20;
+    private static int numberTrialPossible = 12;
 
     public static String getModeDebug() {
         return modeDebug;

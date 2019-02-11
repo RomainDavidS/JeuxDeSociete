@@ -1,7 +1,7 @@
 package enedis.romaindavid.com.game;
 
 
-import static enedis.romaindavid.com.game.rechercheplusmoins.RecherchePlusMoins.combinaisonResult;
+import static enedis.romaindavid.com.game.RecherchePlusMoins.combinaisonResult;
 
 public class CombinaisonResult implements Combinaison {
     String combinaisonNumber;

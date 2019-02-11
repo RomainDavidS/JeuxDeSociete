@@ -2,5 +2,8 @@ package enedis.romaindavid.com.game;
 
 public interface Mode {
 
-    void rumGame(Game game);
+
+    void challenger(Game game);
+    void defender(Game game);
+    void dual(Game game);
 }
