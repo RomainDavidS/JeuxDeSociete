@@ -11,13 +11,14 @@ public class Defender extends Game {
 
         initMapPossible();
         initSecretNumberPlayer();
-
+        combinaisonNumberPC = generateRandomString();
+        modeGame = "defender";
         if ( getModeGame().equals( "dev" ) )
             System.out.println("(Combinaison secrète : "+  secretNumberPlayer + ")" );
 
-        combinaisonNumberPC = generateRandomString();
 
-        modePlayerGame( "defender","pc");
+
+        modePlayerGame( "pc");
     }
 
 

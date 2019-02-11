@@ -8,7 +8,7 @@ import java.util.Scanner;
 import static enedis.romaindavid.com.algorithme.Plugins.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
-public class Game {
+abstract class Game {
 
     public Game() {}
 
@@ -20,7 +20,11 @@ public class Game {
 
     protected Scanner sc = new Scanner( System.in );
     protected GameCombinaison gameCombinaison = new GameCombinaison();
-    protected int trial = 0 ;
+    protected int trialPlayer = 0 ;
+    protected int trialPC = 0 ;
+
+    protected String modeGame ;
+
 
     protected Map<Integer,String> mapPossible = new HashMap<Integer,String>();
     protected String result ;
@@ -143,19 +147,19 @@ public class Game {
             mapPossible.put( i, "0123456789");
     }
 
-    protected void modePlayerGame( String mode,String player ){
-        switch ( mode ){
+    protected void modePlayerGame( String player ){
+        switch ( modeGame ){
             case "challenger":
-                playerProposition( mode, player );
+                playerProposition( player );
                 break;
             case "defender":
-                pcProposition( mode, player );
+                pcProposition( player );
                 break;
             case "dual":
                 if( player.equals( "player") )
-                    playerProposition( mode, "pc" );
+                    playerProposition(  "pc" );
                 else
-                    pcProposition( mode, "player" );
+                    pcProposition(  "player" );
 
                 break;
             default:
@@ -163,61 +167,61 @@ public class Game {
         }
     }
 
-    protected void playerProposition(String mode, String player ){
+    protected void playerProposition( String player ){
 
-        trial++;
+        trialPlayer++;
 
         try {
 
-            System.out.println("Essai n°" +trial +" : Joueur veuillez saisir une combinaison");
+            System.out.println("Essai n°" + trialPlayer +" : Joueur veuillez saisir une combinaison");
             int seizure = sc.nextInt() ;
 
             if( isSeizureGoodLength( seizure ) )
                 combinaisonNumberPlayer = formatNumber( seizure ) ;
             else{
-                trial --;
+                trialPlayer --;
                 System.out.println("La longueur de la combinaison doit avoir une longueur max de "+ getNumberCasePossible() + " chiffres maximum.");
-                modePlayerGame( mode, player );
+                playerProposition(  player );
             }
 
         }catch (InputMismatchException e){
-            trial --;
+            trialPlayer --;
             // On contrôle que le format est correct
             System.out.println( "Erreur de format. Veuillez saisir une valeur numérique" );
             sc.nextLine();
-            modePlayerGame( mode,player );
+            playerProposition( player );
         }
         gameCombinaison.setCombinaisonSecret( secretNumberPC );
         gameCombinaison.setCombinaisonNumber( combinaisonNumberPlayer );
 
         result = gameCombinaison.resultCombinaison() ;
-        System.out.println("Proposition joueur n° " + trial + " : " + combinaisonNumberPlayer + " -> Réponse : " + result );
+        System.out.println("Proposition joueur n° " + trialPlayer + " : " + combinaisonNumberPlayer + " -> Réponse : " + result );
 
         if (!isCombinaisonTrouve(result))
-            if(!(trial == getNumberTrialPossible()) )
-                modePlayerGame( mode, player );
+            if(!(trialPlayer == getNumberTrialPossible()) )
+                modePlayerGame( player );
             else
                 System.out.println( "Désolé la combinaison secrète n'a pas été trouvée." );
         else
-            System.out.println( "Félicitation joueur la combinaison secrète a été trouvée en "+ trial +" essais." );
+            System.out.println( "Félicitation joueur la combinaison secrète a été trouvée en "+ trialPlayer +" essais." );
     }
 
 
-    protected void pcProposition(String mode,String player){
-        trial++;
+    protected void pcProposition( String player){
+        trialPC++;
         gameCombinaison.setCombinaisonSecret( secretNumberPlayer );
         gameCombinaison.setCombinaisonNumber( combinaisonNumberPC );
         System.out.println("M l'ordinateur choisi la combinaison " + combinaisonNumberPC );
 
         result = gameCombinaison.resultCombinaison() ;
-        System.out.println("Proposition ordinateur n° " + trial + " : " + combinaisonNumberPC + " -> Réponse : " + result );
+        System.out.println("Proposition ordinateur n° " + trialPC + " : " + combinaisonNumberPC + " -> Réponse : " + result );
 
         if(!isCombinaisonTrouve( result ) ) {
             generateCombinaisonPC();
             //pcProposition(mode,player);
-            modePlayerGame(mode, player);
+            modePlayerGame( player);
         }
         else
-            System.out.println( "L'ordinateur a trouvé le combinaison en "+ trial +" essais.");
+            System.out.println( "L'ordinateur a trouvé le combinaison en "+ trialPC +" essais.");
     }
 }

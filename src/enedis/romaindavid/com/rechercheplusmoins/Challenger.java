@@ -12,12 +12,13 @@ public class Challenger extends Game {
     public void runGame()  {
 
         secretNumberPC = generateRandomString() ;
+        modeGame = "challenger";
 
         if ( getModeGame().equals( "dev" ) )
             System.out.println("(Combinaison secrète : "+  secretNumberPC + ")" );
 
 
-        modePlayerGame( "challenger","player" );
+        modePlayerGame( "player" );
     }
 
 

@@ -9,10 +9,7 @@ public class Dual extends Game {
 
 
     public void runGame()  {
-        secretNumberPC = generateRandomString() ;
-        gameCombinaison.setCombinaisonSecret( secretNumberPC );
-        initMapPossible();
-        initSecretNumberPlayer();
+        initGame();
 
         if ( getModeGame().equals( "dev" ) ){
             System.out.println("(Combinaison secrète PC : "+  secretNumberPC + ")" );
@@ -21,18 +18,19 @@ public class Dual extends Game {
 
         if( generateRandomInRange(0, 1) == 0 ) {
             System.out.println("C'est l'ordinateur qui joue en premier");
-            combinaisonNumberPC = generateRandomString();
-            modePlayerGame( "dual","pc");
-        }
-        else {
+            modePlayerGame( "pc");
+        }else {
             System.out.println("C'est le joueur qui joue en premier");
-            combinaisonNumberPC = generateRandomString();
-            modePlayerGame( "dual","player" );
+            modePlayerGame( "player" );
         }
-
     }
-    private void proposition(){
-
+    private void initGame(){
+        secretNumberPC = generateRandomString() ;
+        gameCombinaison.setCombinaisonSecret( secretNumberPC );
+        initMapPossible();
+        initSecretNumberPlayer();
+        combinaisonNumberPC = generateRandomString();
+        modeGame = "dual";
     }
 
 }
