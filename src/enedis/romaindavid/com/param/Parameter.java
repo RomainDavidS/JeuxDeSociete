@@ -1,16 +1,16 @@
 package enedis.romaindavid.com.param;
 
 public class Parameter {
-    private static String modeGame ="dev";
+    public static String modeDebug ="dev";
     private static int numberCasePossible = 4;
     private static int numberTrialPossible = 20;
 
-    public static String getModeGame() {
-        return modeGame;
+    public static String getModeDebug() {
+        return modeDebug;
     }
 
-    public static void setModeGame(String modeGame) {
-        Parameter.modeGame = modeGame;
+    public static void setModeDebug(String modeDebug) {
+        Parameter.modeDebug = modeDebug;
     }
 
     public static int getNumberCasePossible() {

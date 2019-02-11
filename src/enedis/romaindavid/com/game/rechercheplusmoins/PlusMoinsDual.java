@@ -1,17 +1,17 @@
-package enedis.romaindavid.com.rechercheplusmoins;
+package enedis.romaindavid.com.game.rechercheplusmoins;
+
+import static enedis.romaindavid.com.algorithme.Plugins.generateRandomInRange;
+import static enedis.romaindavid.com.algorithme.Plugins.generateRandomString;
+import static enedis.romaindavid.com.param.Parameter.getModeDebug;
 
 
+public class PlusMoinsDual extends RecherchePlusMoins {
 
-import static enedis.romaindavid.com.algorithme.Plugins.*;
-import static enedis.romaindavid.com.param.Parameter.getModeGame;
-
-public class Dual extends Game {
-
-
+    @Override
     public void runGame()  {
         initGame();
 
-        if ( getModeGame().equals( "dev" ) ){
+        if ( getModeDebug().equals( "dev" ) ){
             System.out.println("(Combinaison secrète PC : "+  secretNumberPC + ")" );
             System.out.println("(Combinaison secrète Joueur : "+  secretNumberPlayer + ")" );
         }
@@ -24,13 +24,17 @@ public class Dual extends Game {
             modePlayerGame( "player" );
         }
     }
-    private void initGame(){
+
+    @Override
+    protected void initGame(){
+        System.out.println("*** Jeu du Recherche +/- en mode Duel. ***");
+
         secretNumberPC = generateRandomString() ;
         gameCombinaison.setCombinaisonSecret( secretNumberPC );
         initMapPossible();
         initSecretNumberPlayer();
         combinaisonNumberPC = generateRandomString();
         modeGame = "dual";
-    }
 
+    }
 }

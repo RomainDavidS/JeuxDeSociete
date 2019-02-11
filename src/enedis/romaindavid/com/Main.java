@@ -1,24 +1,33 @@
 package enedis.romaindavid.com;
 
-import enedis.romaindavid.com.rechercheplusmoins.Challenger;
-import enedis.romaindavid.com.rechercheplusmoins.Defender;
-import enedis.romaindavid.com.rechercheplusmoins.Dual;
 
+import enedis.romaindavid.com.game.*;
+import java.util.Scanner;
+
+import static enedis.romaindavid.com.param.Parameter.*;
 
 public class Main {
 
+    private static Game game;
+
+
     public static void main(String[] args) {
+        Menu menu = new Menu();
 
-        Challenger challengerGame = new Challenger();
-        //challengerGame.runGame();
+        ModeGame modeGame = new ModeGame();
 
+        setModeDebug( args[0] );
 
-        Defender defender = new Defender();
-      // defender.runGame();
+        System.out.println("Bonjour et bienvenue dans vos jeux de société.");
 
+        menu.menuGame();
+        menu.menuMode();
+        game = menu.choiceGame( menu.getChoiceGame(), menu.getChoiceMode() );
 
-        Dual dual = new Dual();
-        dual.runGame();
+        modeGame.rumGame( game );
+            
     }
+
+
 
 }

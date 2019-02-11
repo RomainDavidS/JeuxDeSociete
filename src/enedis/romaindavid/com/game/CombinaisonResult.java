@@ -1,9 +1,9 @@
-package enedis.romaindavid.com.rechercheplusmoins;
-
-import static enedis.romaindavid.com.rechercheplusmoins.Game.combinaisonResult;
+package enedis.romaindavid.com.game;
 
 
-public class GameCombinaison implements Combinaison {
+import static enedis.romaindavid.com.game.rechercheplusmoins.RecherchePlusMoins.combinaisonResult;
+
+public class CombinaisonResult implements Combinaison {
     String combinaisonNumber;
     String combinaisonSecret;
 
@@ -28,6 +28,6 @@ public class GameCombinaison implements Combinaison {
     @Override
     public String resultCombinaison() {
 
-        return combinaisonResult( getCombinaisonNumber(), getCombinaisonSecret() ) ;
+        return combinaisonResult( getCombinaisonNumber(), getCombinaisonSecret() );
     }
 }

@@ -1,4 +1,7 @@
-package enedis.romaindavid.com.rechercheplusmoins;
+package enedis.romaindavid.com.game.rechercheplusmoins;
+import enedis.romaindavid.com.game.CombinaisonResult;
+import enedis.romaindavid.com.game.Game;
+
 
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -8,9 +11,8 @@ import java.util.Scanner;
 import static enedis.romaindavid.com.algorithme.Plugins.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
-abstract class Game {
+public abstract class RecherchePlusMoins  extends Game {
 
-    public Game() {}
 
     protected String secretNumberPC;
     protected String secretNumberPlayer;
@@ -19,7 +21,7 @@ abstract class Game {
     protected String combinaisonNumberPlayer;
 
     protected Scanner sc = new Scanner( System.in );
-    protected GameCombinaison gameCombinaison = new GameCombinaison();
+    protected CombinaisonResult gameCombinaison = new CombinaisonResult();
     protected int trialPlayer = 0 ;
     protected int trialPC = 0 ;
 
@@ -29,7 +31,9 @@ abstract class Game {
     protected Map<Integer,String> mapPossible = new HashMap<Integer,String>();
     protected String result ;
 
-    static String combinaisonResult(String combinaisonSeizure, String combinaisonSecret){
+
+
+    public static String combinaisonResult(String combinaisonSeizure, String combinaisonSecret){
 
         String[] combinaisonSeizureArray = combinaisonSeizure.split("");
         String[] combinaisonSecretArray = combinaisonSecret.split("");
@@ -224,4 +228,5 @@ abstract class Game {
         else
             System.out.println( "L'ordinateur a trouvé le combinaison en "+ trialPC +" essais.");
     }
+
 }
