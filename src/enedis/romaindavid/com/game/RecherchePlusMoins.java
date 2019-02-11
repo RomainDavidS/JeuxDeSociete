@@ -1,9 +1,9 @@
 package enedis.romaindavid.com.game;
 
-import enedis.romaindavid.com.game.Game;
+
 import java.util.InputMismatchException;
 
-import static enedis.romaindavid.com.algorithme.Plugins.*;
+import static enedis.romaindavid.com.algorithme.Plugin.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
 public class RecherchePlusMoins  extends Game {
@@ -63,27 +63,7 @@ public class RecherchePlusMoins  extends Game {
         if (possible.length() == 1)
             return mapPossible.get( index );
 
-        int intCombinaisonNumber = toInt( combinaisonNumber );
-
-        String newCombinaison = "";
-        for (String str: possibleArray ) {
-            int intStr = Integer.valueOf( str );
-
-            if( result.equals("+") )
-                if( intStr < intCombinaisonNumber )
-                    newCombinaison += str;
-
-            if ( result.equals("-") )
-                if( intStr > intCombinaisonNumber )
-                    newCombinaison += str;
-
-            if ( result.equals("=") )
-                if( intStr == intCombinaisonNumber ){
-                    newCombinaison = str;
-                    break;
-                }
-
-        }
+        String newCombinaison  = generateCombinaison( result,  possibleArray,toInt( combinaisonNumber ) );
 
         String[] newCombinaisonArray = newCombinaison.split("");
         mapPossible.replace(index, newCombinaison );
@@ -97,6 +77,26 @@ public class RecherchePlusMoins  extends Game {
             return toStr( newR );
         }
 
+    }
+    private String generateCombinaison(  String result, String[] possibleArray,int intCombinaisonNumber ){
+        String combinaison = "";
+        for (String str: possibleArray ) {
+            int intStr = Integer.valueOf( str );
+            if( result.equals("+") )
+                if( intStr < intCombinaisonNumber )
+                    combinaison += str;
+
+            if ( result.equals("-") )
+                if( intStr > intCombinaisonNumber )
+                    combinaison += str;
+
+            if ( result.equals("=") )
+                if( intStr == intCombinaisonNumber ){
+                    combinaison = str;
+                    break;
+                }
+        }
+        return combinaison;
     }
 
     protected void initSecretNumberPlayer(){
@@ -125,11 +125,8 @@ public class RecherchePlusMoins  extends Game {
 
     @Override
     protected void playerProposition( String player ){
-
         trialPlayer++;
-
         try {
-
             System.out.println("Essai n°" + trialPlayer +" : Joueur veuillez saisir une combinaison");
             int seizure = sc.nextInt() ;
 
@@ -148,6 +145,10 @@ public class RecherchePlusMoins  extends Game {
             sc.nextLine();
             playerProposition( player );
         }
+        resultPlayerProposition( player);
+    }
+
+    private void resultPlayerProposition( String player ){
         gameCombinaison.setCombinaisonSecret( secretNumberPC );
         gameCombinaison.setCombinaisonNumber( combinaisonNumberPlayer );
 
