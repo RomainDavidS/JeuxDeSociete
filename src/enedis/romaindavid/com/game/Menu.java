@@ -4,10 +4,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
+
     private Scanner sc = new Scanner( System.in );
     private int choiceGame;
     private int choiceMode;
-    private Game game;
 
     ModeGame modeGame = new ModeGame();
 
@@ -49,7 +49,7 @@ public class Menu {
     }
 
     private void runGame() {
-        game = gameChozen();
+        Game game = gameChozen();
         if( choiceMode == 1)
             modeGame.challenger( game );
         else if ( choiceMode == 2)
@@ -60,9 +60,9 @@ public class Menu {
 
     private Game gameChozen(){
         if( choiceGame == 1 )
-            return  new RecherchePlusMoins();
+            return new RecherchePlusMoins( "Recherche +/-" );
         else
-            return new Mastermind();
+            return new Mastermind( "Mastermind" );
     }
 
 }

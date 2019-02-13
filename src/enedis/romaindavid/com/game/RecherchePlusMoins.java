@@ -7,6 +7,9 @@ import static enedis.romaindavid.com.algorithme.Plugin.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
 public class RecherchePlusMoins  extends Game {
+    public RecherchePlusMoins(String gameName) {
+        setGameName ( gameName );
+    }
 
     public static String combinaisonResult(String combinaisonSeizure, String combinaisonSecret){
 
@@ -41,9 +44,7 @@ public class RecherchePlusMoins  extends Game {
         return trouve ;
     }
 
-    protected boolean isSeizureGoodLength(int seizure){
-        return ( toStr( seizure ).length() <= getNumberCasePossible() );
-    }
+
 
     protected void generateCombinaisonPC(){
         String newCombinaisonPC = "";
@@ -78,6 +79,7 @@ public class RecherchePlusMoins  extends Game {
         }
 
     }
+
     private String generateCombinaison(  String result, String[] possibleArray,int intCombinaisonNumber ){
         String combinaison = "";
         for (String str: possibleArray ) {
@@ -99,29 +101,7 @@ public class RecherchePlusMoins  extends Game {
         return combinaison;
     }
 
-    protected void initSecretNumberPlayer(){
-        try{
-            System.out.println("Joueur : Veuillez saisir votre combinaison secrète");
-            int seizure = sc.nextInt();
 
-            if( !isSeizureGoodLength( seizure ) ){
-                System.out.println("La combinaison secrète doit avoir une longueur de "+ getNumberCasePossible() + " chiffres maximum.");
-                initSecretNumberPlayer();
-            }
-
-            secretNumberPlayer = formatNumber( seizure) ;
-
-        }catch (InputMismatchException e){
-            System.out.println( "Erreur de format. Veuillez saisir une valeur numérique" );
-            sc.nextLine();
-            initSecretNumberPlayer();
-        }
-    }
-
-    protected void initMapPossible(){
-        for ( int i=0; i < getNumberCasePossible() ; i++ )
-            mapPossible.put( i, "0123456789");
-    }
 
     @Override
     protected void playerProposition( String player ){
@@ -148,7 +128,8 @@ public class RecherchePlusMoins  extends Game {
         resultPlayerProposition( player);
     }
 
-    private void resultPlayerProposition( String player ){
+    @Override
+    protected void resultPlayerProposition( String player ){
         gameCombinaison.setCombinaisonSecret( secretNumberPC );
         gameCombinaison.setCombinaisonNumber( combinaisonNumberPlayer );
 
@@ -184,67 +165,5 @@ public class RecherchePlusMoins  extends Game {
             System.out.println( "L'ordinateur a trouvé le combinaison en "+ trialPC +" essais.");
     }
 
-    @Override
-    protected void challenger() {
-        initChallenger();
-        if ( getModeDebug().equals( "dev" ) )
-            System.out.println("(Combinaison secrète : "+  secretNumberPC + ")" );
-        modePlayerGame( "player" );
-    }
 
-    @Override
-    protected void initChallenger() {
-        System.out.println("*** Jeu du Recherche +/- en mode Challenger. ***");
-        secretNumberPC = generateRandomString() ;
-        modeGame = "challenger";
-    }
-
-    @Override
-    protected void defender() {
-        initDefender();
-        if ( getModeDebug().equals( "dev" ) )
-            System.out.println("(Combinaison secrète : "+  secretNumberPlayer + ")" );
-
-        modePlayerGame( "pc");
-    }
-
-    @Override
-    protected void initDefender() {
-        System.out.println("*** Jeu du Recherche +/- en mode Défenseur. ***");
-        initMapPossible();
-        initSecretNumberPlayer();
-        combinaisonNumberPC = generateRandomString();
-        modeGame = "defender";
-    }
-
-    @Override
-    protected void dual() {
-        initDual();
-
-        if ( getModeDebug().equals( "dev" ) ){
-            System.out.println("(Combinaison secrète PC : "+  secretNumberPC + ")" );
-            System.out.println("(Combinaison secrète Joueur : "+  secretNumberPlayer + ")" );
-        }
-
-        if( generateRandomInRange(0, 1) == 0 ) {
-            System.out.println("C'est l'ordinateur qui joue en premier");
-            modePlayerGame( "pc");
-        }else {
-            System.out.println("C'est le joueur qui joue en premier");
-            modePlayerGame( "player" );
-        }
-    }
-
-    @Override
-    protected void initDual() {
-        System.out.println("*** Jeu du Recherche +/- en mode Duel. ***");
-
-        secretNumberPC = generateRandomString() ;
-        gameCombinaison.setCombinaisonSecret( secretNumberPC );
-        initMapPossible();
-        initSecretNumberPlayer();
-        combinaisonNumberPC = generateRandomString();
-        modeGame = "dual";
-
-    }
 }
