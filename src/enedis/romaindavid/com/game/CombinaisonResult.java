@@ -1,33 +1,32 @@
 package enedis.romaindavid.com.game;
 
 
-import static enedis.romaindavid.com.game.RecherchePlusMoins.combinaisonResult;
+
 
 public class CombinaisonResult implements Combinaison {
-    String combinaisonNumber;
-    String combinaisonSecret;
+    private String combinaisonNumber;
+    private String combinaisonSecret;
+
+
+
+    public CombinaisonResult( String combinaisonSecret, String combinaisonNumber) {
+        this.combinaisonNumber = combinaisonNumber;
+        this.combinaisonSecret = combinaisonSecret;
+    }
 
     @Override
     public String getCombinaisonNumber() {
         return combinaisonNumber;
     }
 
-    public void setCombinaisonNumber(String combinaisonNumber) {
-        this.combinaisonNumber = combinaisonNumber;
-    }
+
 
     @Override
     public String getCombinaisonSecret() {
         return combinaisonSecret;
     }
 
-    public void setCombinaisonSecret(String combinaisonSecret) {
-        this.combinaisonSecret = combinaisonSecret;
-    }
 
-    @Override
-    public String resultCombinaison() {
 
-        return combinaisonResult( getCombinaisonNumber(), getCombinaisonSecret() );
-    }
+
 }

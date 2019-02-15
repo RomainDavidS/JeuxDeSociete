@@ -1,26 +1,57 @@
 package enedis.romaindavid.com.game;
 
 
+import static enedis.romaindavid.com.algorithme.Plugin.*;
+import static enedis.romaindavid.com.param.Parameter.getBaseNumberPossible;
+import static enedis.romaindavid.com.param.Parameter.getNumberCasePossible;
 
 public class Mastermind extends Game {
 
-    public Mastermind(String gameName) {
-        setGameName ( gameName );
+
+    @Override
+    String generateRandomString() {
+        String generate = "";
+        int randNumber = 0;
+        for (int i = 0; i< getNumberCasePossible(); i++){
+            randNumber = generateRandom( getBaseNumberPossible() );
+            generate += formatNumber( randNumber );
+        }
+
+        return generate;
     }
 
     @Override
-    protected void playerProposition(String player) {
-
-    }
-    @Override
-    protected void resultPlayerProposition( String player ){
+    void generateCombinaisonPC() {
 
     }
 
     @Override
-    protected void pcProposition(String player) {
-
+    String combinaisonResult(CombinaisonResult combinaison) {
+        return null;
     }
+
+    @Override
+    boolean isCombinaisonTrouve(String postResult) {
+        return false;
+    }
+
+    public Mastermind() {
+        gameName = "Mastermind";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

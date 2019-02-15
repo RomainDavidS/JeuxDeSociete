@@ -60,9 +60,9 @@ public class Menu {
 
     private Game gameChozen(){
         if( choiceGame == 1 )
-            return new RecherchePlusMoins( "Recherche +/-" );
+            return new RecherchePlusMoins(  );
         else
-            return new Mastermind( "Mastermind" );
+            return new Mastermind( );
     }
 
 }

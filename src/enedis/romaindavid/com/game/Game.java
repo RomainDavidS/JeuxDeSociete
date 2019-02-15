@@ -7,152 +7,281 @@ import java.util.Map;
 import java.util.Scanner;
 
 import static enedis.romaindavid.com.algorithme.Plugin.*;
-import static enedis.romaindavid.com.param.Parameter.getModeDebug;
-import static enedis.romaindavid.com.param.Parameter.getNumberCasePossible;
-
+import static enedis.romaindavid.com.param.Parameter.*;
+import static enedis.romaindavid.com.param.Title.*;
 
 
 abstract class Game {
 
-    protected String gameName;
-    protected String modeName;
+    private static String secretNumberPC;
+    private static String secretNumberPlayer;
+    protected static String gameName;
+    private static int trial;
+    private static String combinaisonNumberPlayer;
+    protected static String combinaisonNumberPC;
+    protected static String result;
+    private static CombinaisonResult gameCombinaison;
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
+    public static String getSecretNumberPC() {
+        return secretNumberPC;
     }
 
-    public void setModeName(String modeName) {
-        this.modeName = modeName;
+    public static String getSecretNumberPlayer() {
+        return secretNumberPlayer;
     }
 
-    protected String secretNumberPC;
-    protected String secretNumberPlayer;
+    public static String getGameName() {
+        return gameName;
+    }
 
-    protected String combinaisonNumberPC;
-    protected String combinaisonNumberPlayer;
+    public static int getTrial() {
+        return trial;
+    }
 
-    protected String modeGame ;
+    public static String getCombinaisonNumberPlayer() {
+        return combinaisonNumberPlayer;
+    }
+
+    public static String getCombinaisonNumberPC() {
+        return combinaisonNumberPC;
+    }
+
+    public static String getResult() {
+        return result;
+    }
+
+    public static CombinaisonResult getGameCombinaison() {
+        return gameCombinaison;
+    }
+
+
+    protected String gameMode ; // Challenger || Défenseur || Duel
 
     protected Scanner sc = new Scanner( System.in );
-    protected CombinaisonResult gameCombinaison = new CombinaisonResult();
-    protected int trialPlayer = 0 ;
-    protected int trialPC = 0 ;
+
+    protected int trialPlayer = 1 ;
+
+    protected int trialPC = 1 ;
 
     protected Map<Integer,String> mapPossible = new HashMap<Integer,String>();
-    protected String result ;
 
-    protected void modePlayerGame( String player ){
-        switch ( modeGame ){
-            case "challenger":
-                playerProposition( player );
-                break;
-            case "defender":
-                pcProposition( player );
-                break;
-            case "dual":
-                if( player.equals( "player") )
-                    playerProposition(  "pc" );
-                else
-                    pcProposition(  "player" );
+    public void challenger(){
 
-                break;
-            default:
-                break;
-        }
+        gameMode = "Challenger";
+
+        postTitleGameChallenger ();
+
+       secretNumberPC = generateRandomString()  ; // à revoir
+
+        isPostSecretNumberPc() ;
+
+        choiceProposal();
+
     }
 
-    protected abstract void playerProposition( String player );
+    public void defender(){
+        gameMode = "Défenseur";
 
-    protected abstract void resultPlayerProposition( String player );
+        postTitleGameDefender();
 
-    protected abstract void pcProposition( String player);
-
-
-    protected void challenger() {
-        initChallenger();
-        if ( getModeDebug().equals( "dev" ) )
-            System.out.println("(Combinaison secrète : "+  secretNumberPC + ")" );
-        modePlayerGame( "player" );
-    }
-
-    protected void initChallenger() {
-        System.out.println("*** Jeu du "+ gameName + " en mode Challenger. ***");
-        secretNumberPC = generateRandomString() ;
-        modeGame = "challenger";
-    }
-
-    protected void defender() {
-        initDefender();
-        if ( getModeDebug().equals( "dev" ) )
-            System.out.println("(Combinaison secrète : "+  secretNumberPlayer + ")" );
-
-        modePlayerGame( "pc");
-    }
-
-    protected void initDefender() {
-        System.out.println("*** Jeu du " + gameName + " en mode Défenseur. ***");
-        initMapPossible();
         initSecretNumberPlayer();
-        combinaisonNumberPC = generateRandomString();
-        modeGame = "defender";
+
+        isPostSecretNumberPlayer();
+        combinaisonNumberPC = generateRandomString() ; // à revoir
+        choiceProposal();
     }
 
-    protected void dual() {
-        initDual();
+    public void dual(){
+        gameMode = "Duel";
 
-        if ( getModeDebug().equals( "dev" ) ){
-            System.out.println("(Combinaison secrète PC : "+  secretNumberPC + ")" );
-            System.out.println("(Combinaison secrète Joueur : "+  secretNumberPlayer + ")" );
-        }
+        postTitleGameDual();
+        initSecretNumberPlayer();
+        secretNumberPC = generateRandomString()  ; //
+
+        isPostSecretNumberPc() ;
+        isPostSecretNumberPlayer();
+
+        combinaisonNumberPC = generateRandomString() ; // à revoir
 
         if( generateRandomInRange(0, 1) == 0 ) {
             System.out.println("C'est l'ordinateur qui joue en premier");
-            modePlayerGame( "pc");
+            choiceProposal("pc");
         }else {
             System.out.println("C'est le joueur qui joue en premier");
-            modePlayerGame( "player" );
+            choiceProposal( "player" );
         }
-    }
 
-    protected void initDual() {
-        System.out.println("*** Jeu du "+ gameName + " en mode Duel. ***");
-
-        secretNumberPC = generateRandomString() ;
-        gameCombinaison.setCombinaisonSecret( secretNumberPC );
-        initMapPossible();
-        initSecretNumberPlayer();
-        combinaisonNumberPC = generateRandomString();
-        modeGame = "dual";
 
     }
+    abstract String generateRandomString();
 
-    protected void initSecretNumberPlayer(){
-        try{
-            System.out.println("Joueur : Veuillez saisir votre combinaison secrète");
-            int seizure = sc.nextInt();
+    abstract void generateCombinaisonPC();
 
-            if( !isSeizureGoodLength( seizure ) ){
-                System.out.println("La combinaison secrète doit avoir une longueur de "+ getNumberCasePossible() + " chiffres maximum.");
-                initSecretNumberPlayer();
-            }
+    abstract String combinaisonResult( CombinaisonResult combinaison);
 
-            secretNumberPlayer = formatNumber( seizure) ;
+    abstract boolean isCombinaisonTrouve(String postResult );
 
-        }catch (InputMismatchException e){
-            System.out.println( "Erreur de format. Veuillez saisir une valeur numérique" );
+    private boolean isModeGameDev(){
+        return  ( getModeDebug().equals( "dev" ) ) ;
+
+    }
+
+    private boolean isChallengerMode(){
+        return  isGameMode( "Challenger" );
+    }
+
+    private boolean isDefenderMode(){
+        return isGameMode( "Défenseur" );
+    }
+
+    private boolean isDualMode(){
+        return isGameMode("Duel" );
+    }
+
+    private boolean isGameMode(String mode ){
+        return ( gameMode.equals( mode ) );
+    }
+
+    private void isPostSecretNumberPc(){
+        if( isModeGameDev() )
+            postSecretNumberPc();
+    }
+
+    private void isPostSecretNumberPlayer(){
+        if( isModeGameDev() )
+            postSecretNumberPlayer();
+    }
+
+    protected void choiceProposal(){
+        choiceProposal( "" );
+    }
+
+    protected void choiceProposal( String playerType ){
+        if( isChallengerMode())
+            playerProposal();
+        else if (isDefenderMode() )
+            pcProposal();
+        else if ( isDualMode() )
+            if( playerType.equals( "player") )
+                playerProposalToPc();
+            else
+                pcProposalToPlayer();
+    }
+
+    private void playerProposal(){
+        playerProposal("player" );
+    }
+
+    private void playerProposalToPc(){
+        playerProposal("pc" );
+    }
+
+    private void pcProposal(){
+        pcProposal("pc");
+    }
+
+    private void pcProposalToPlayer(){
+        pcProposal("player" );
+    }
+
+    //Méthodes Player
+    private void playerProposal(String playerType){
+       trial = trialPlayer ;
+        if( !tryGoodSeizure() )
+            playerProposal(  playerType );
+
+        gameCombinaison = new CombinaisonResult( secretNumberPC, combinaisonNumberPlayer);
+       result = combinaisonResult( gameCombinaison ) ;
+        resultPlayer( playerType );
+    }
+
+    private boolean tryGoodSeizure(){
+        try {
+            return isGoodSeizure();
+        } catch (InputMismatchException e){
+            postTitleControllerFormat();
             sc.nextLine();
-            initSecretNumberPlayer();
+            return false;
         }
+    }
+
+    private boolean isGoodSeizure(){
+            postTitleTrial();
+            int seizure = sc.nextInt() ;
+            return isSeizureGoodLength( seizure ) ;
     }
 
     protected boolean isSeizureGoodLength(int seizure){
-        return ( toStr( seizure ).length() <= getNumberCasePossible() );
+       if ( toStr( seizure ).length() <= getNumberCasePossible() ){
+          combinaisonNumberPlayer = formatNumber( seizure ) ;
+           return true;
+       }else {
+           postTitleControllerSeizureLength();
+           return false;
+       }
     }
 
-    protected void initMapPossible(){
-        for ( int i=0; i < getNumberCasePossible() ; i++ )
-            mapPossible.put( i, "0123456789");
+    protected void resultPlayer( String playerType ){
+        postResultPlayer();
+        if (!isCombinaisonTrouve( result ))
+            if(!(trialPlayer == getNumberTrialPossible()) ) {
+                trialPlayer++;
+                choiceProposal( playerType );
+
+            } else
+                postLostResultPlayer();
+        else
+            postWinResultPlayer(  trialPlayer  );
     }
+
+    // Méthodes PC
+    private void pcProposal(String choice){
+       trial = trialPC ;
+       gameCombinaison = new CombinaisonResult( secretNumberPlayer, combinaisonNumberPC) ;
+       result = combinaisonResult( gameCombinaison ) ;
+        postResultPC();
+
+
+        if(!isCombinaisonTrouve( result ) )
+            if(!(trialPC == getNumberTrialPossible()) ) {
+                trialPC++;
+                generateCombinaisonPC();
+                choiceProposal( choice );
+            }else
+               postLostResultPC();
+        else
+            postWinResultPC( trialPC );
+    }
+
+    private void initSecretNumberPlayer(){
+        if(!trySecretNumber() )
+            initSecretNumberPlayer();
+    }
+
+    private boolean trySecretNumber(){
+        try{
+            return isGoodSecretNumber();
+        }catch (InputMismatchException e){
+            postTitleControllerFormat();
+            sc.nextLine();
+            return false;
+        }
+    }
+
+    private boolean isGoodSecretNumber(){
+        postQuestionNumberSecret();
+        int seizure = sc.nextInt();
+        if( !isSeizureGoodLength( seizure ) ) {
+            postTitleControllerSeizureLength();
+            return false;
+        }else {
+           secretNumberPlayer = formatNumber(seizure);
+            return true;
+        }
+    }
+
+
+
 
 
 

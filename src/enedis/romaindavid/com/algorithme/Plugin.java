@@ -5,10 +5,7 @@ import java.util.*;
 import static enedis.romaindavid.com.param.Parameter.getNumberCasePossible;
 
 public class Plugin {
-    public static String generateRandomString(){
-        int randNumber = generateRandom( puissanceDe10( getNumberCasePossible() )) ;
-        return formatNumber( randNumber );
-    }
+
 
     public static int generateRandom(int bound){
         Random rand = new Random();
@@ -36,10 +33,13 @@ public class Plugin {
         return String.format("%0" + getNumberCasePossible() + "d",  number );
     }
 
-    private static int puissanceDe10(int puissance ){
+    public static int puissanceDe10(int puissance ){
         return (int) Math.pow( 10, puissance ) ;
     }
 
+    public static String firstUpperCase(String str ){
+        return str.substring(0,1).toUpperCase() + str.substring( 1 );
+    }
     /**
      * Dans cet exemple, on va trier des éléments de type Double.
      * Les éléments sont copiés dans une LinkedList qui implémente l'interface List,
@@ -63,5 +63,10 @@ public class Plugin {
         for(Map.Entry<String, Integer> entry : list)
             map_apres.put( entry.getKey(), entry.getValue() );
         return map_apres;
+    }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }
