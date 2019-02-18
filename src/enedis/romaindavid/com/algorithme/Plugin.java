@@ -1,5 +1,6 @@
 package enedis.romaindavid.com.algorithme;
 
+import java.io.IOException;
 import java.util.*;
 
 import static enedis.romaindavid.com.param.Parameter.getNumberCasePossible;
@@ -66,7 +67,13 @@ public class Plugin {
     }
 
     public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+
+        //Clears Screen in java
+        try {
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                Runtime.getRuntime().exec("clear");
+        } catch (IOException | InterruptedException ex) {}
     }
 }
