@@ -13,9 +13,14 @@ public class RecherchePlusMoins  extends Game {
     }
 
     @Override
-    public String generateRandomString(){
+    public String generateSecretRandomString(){
         int randNumber = generateRandom( puissanceDe10( getNumberCasePossible() )) ;
         return formatNumber( randNumber );
+    }
+
+    @Override
+    String generateCombinaisonRandomString() {
+        return generateSecretRandomString();
     }
 
     @Override
@@ -24,13 +29,14 @@ public class RecherchePlusMoins  extends Game {
 
         String[] combinaisonNumberPcArray = combinaisonNumberPC.split("");
 
-        String[] resultArray = result.split("");
+        System.out.println("before " + combinaisonNumberPC + " bofore result " + pcResult );
+
+        String[] resultArray = pcResult.split("");
 
         for(int i = 0; i < getNumberCasePossible(); i++)
             newCombinaisonPC += newPcCombinaison( i, combinaisonNumberPcArray[ i ], resultArray[ i ]  );
 
         combinaisonNumberPC = newCombinaisonPC ;
-
     }
 
     private String newPcCombinaison(int index,String combinaisonNumber , String result  ){
@@ -81,10 +87,21 @@ public class RecherchePlusMoins  extends Game {
     }
 
     @Override
-    String combinaisonResult( CombinaisonResult combinaison){
+    String combinaisonResult(String secretNumber){
+        if(trialPC == 1 )
+            combinaisonNumberPC = generateCombinaisonRandomString() ;
+        else
+            generateCombinaisonPC();
 
-        String[] combinaisonSeizureArray = combinaison.getCombinaisonNumber().split("");
-        String[] combinaisonSecretArray = combinaison.getCombinaisonSecret().split("");
+       return combinaisonResult( secretNumber,combinaisonNumberPC);
+    }
+
+    @Override
+    String combinaisonResult( String secretNumber,String combinaisonNumber ){
+
+        String[] combinaisonSecretArray = secretNumber.split("");
+        String[] combinaisonSeizureArray = combinaisonNumber.split("");
+
 
         int lenArray = combinaisonSeizureArray.length - 1;
 
@@ -97,9 +114,9 @@ public class RecherchePlusMoins  extends Game {
     }
 
     @Override
-    protected boolean isCombinaisonTrouve(String postResult ){
+    protected boolean isCombinaisonTrouve(String result ){
         boolean trouve = true;
-        String[] resultCombinaisonArray = postResult.split("");
+        String[] resultCombinaisonArray = result.split("");
         for (String value : resultCombinaisonArray )
             if( !value.equals( "=" ) )
                 return false;

@@ -19,7 +19,11 @@ abstract class Game {
     private static int trial;
     private static String combinaisonNumberPlayer;
     protected static String combinaisonNumberPC;
-    protected static String result;
+
+    protected static String playerResult;
+    protected static String pcResult;
+
+
     private static CombinaisonResult gameCombinaison;
 
     public static String getSecretNumberPC() {
@@ -46,8 +50,12 @@ abstract class Game {
         return combinaisonNumberPC;
     }
 
-    public static String getResult() {
-        return result;
+    public static String getPlayerResult() {
+        return playerResult;
+    }
+
+    public static String getPcResult() {
+        return pcResult;
     }
 
     public static CombinaisonResult getGameCombinaison() {
@@ -71,7 +79,7 @@ abstract class Game {
 
         postTitleGameChallenger ();
 
-       secretNumberPC = generateRandomString()  ; // à revoir
+       secretNumberPC = generateSecretRandomString()  ; // à revoir
 
         isPostSecretNumberPc() ;
 
@@ -87,7 +95,9 @@ abstract class Game {
         initSecretNumberPlayer();
 
         isPostSecretNumberPlayer();
-        combinaisonNumberPC = generateRandomString() ; // à revoir
+
+
+
         choiceProposal();
     }
 
@@ -96,30 +106,37 @@ abstract class Game {
 
         postTitleGameDual();
         initSecretNumberPlayer();
-        secretNumberPC = generateRandomString()  ; //
+        secretNumberPC = generateSecretRandomString()  ;
 
         isPostSecretNumberPc() ;
         isPostSecretNumberPlayer();
 
-        combinaisonNumberPC = generateRandomString() ; // à revoir
-
-        if( generateRandomInRange(0, 1) == 0 ) {
-            System.out.println("C'est l'ordinateur qui joue en premier");
-            choiceProposal("pc");
-        }else {
-            System.out.println("C'est le joueur qui joue en premier");
-            choiceProposal( "player" );
-        }
-
-
+        choiceFirstPlayer();
     }
-    abstract String generateRandomString();
+
+    abstract String generateSecretRandomString();
+
+    abstract String generateCombinaisonRandomString();
 
     abstract void generateCombinaisonPC();
 
-    abstract String combinaisonResult( CombinaisonResult combinaison);
+    abstract String combinaisonResult( String secretNumber );
 
-    abstract boolean isCombinaisonTrouve(String postResult );
+    abstract String combinaisonResult( String secretNumber,String combinaisonNumber);
+
+
+
+    abstract boolean isCombinaisonTrouve(String result);
+
+    private void choiceFirstPlayer(){
+        if( generateRandomInRange(0, 1) == 0 ) {
+            postTitlePlayerFirst();
+            choiceProposal("pc");
+        }else {
+            postTitlePcFirst();
+            choiceProposal( "player" );
+        }
+    }
 
     private boolean isModeGameDev(){
         return  ( getModeDebug().equals( "dev" ) ) ;
@@ -190,9 +207,8 @@ abstract class Game {
         if( !tryGoodSeizure() )
             playerProposal(  playerType );
 
-        gameCombinaison = new CombinaisonResult( secretNumberPC, combinaisonNumberPlayer);
-       result = combinaisonResult( gameCombinaison ) ;
-        resultPlayer( playerType );
+       playerResult = combinaisonResult( secretNumberPC, combinaisonNumberPlayer ) ;
+       resultPlayer( playerType );
     }
 
     private boolean tryGoodSeizure(){
@@ -223,7 +239,7 @@ abstract class Game {
 
     protected void resultPlayer( String playerType ){
         postResultPlayer();
-        if (!isCombinaisonTrouve( result ))
+        if (!isCombinaisonTrouve( playerResult ))
             if(!(trialPlayer == getNumberTrialPossible()) ) {
                 trialPlayer++;
                 choiceProposal( playerType );
@@ -236,16 +252,15 @@ abstract class Game {
 
     // Méthodes PC
     private void pcProposal(String choice){
-       trial = trialPC ;
-       gameCombinaison = new CombinaisonResult( secretNumberPlayer, combinaisonNumberPC) ;
-       result = combinaisonResult( gameCombinaison ) ;
-        postResultPC();
+        trial = trialPC ;
 
+       pcResult = combinaisonResult( secretNumberPlayer ) ;
 
-        if(!isCombinaisonTrouve( result ) )
+       postResultPC();
+
+        if( !isCombinaisonTrouve( pcResult ) )
             if(!(trialPC == getNumberTrialPossible()) ) {
                 trialPC++;
-                generateCombinaisonPC();
                 choiceProposal( choice );
             }else
                postLostResultPC();

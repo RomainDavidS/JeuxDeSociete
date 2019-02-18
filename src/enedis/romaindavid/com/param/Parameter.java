@@ -5,6 +5,7 @@ public class Parameter {
     private static int numberCasePossible = 4;
     private static int baseNumberPossible = 8;
     private static int numberTrialPossible = 12;
+    private static String valueNoPresent = "9";
 
     public static String getModeDebug() {
         return modeDebug;
@@ -36,5 +37,13 @@ public class Parameter {
 
     public static void setBaseNumberPossible(int baseNumberPossible) {
         Parameter.baseNumberPossible = baseNumberPossible;
+    }
+
+    public static String getValueNoPresent() {
+        return valueNoPresent;
+    }
+
+    public static void setValueNoPresent(String valueNoPresent) {
+        Parameter.valueNoPresent = valueNoPresent;
     }
 }

@@ -41,7 +41,10 @@ public class SomeFunction {
         generateCombi();
 
     }
-
+    public static String generateRandomString(){
+        int randNumber = generateRandom( puissanceDe10( getNumberCasePossible() )) ;
+        return formatNumber( randNumber );
+    }
     private static void generateCombi(){
         int totalPresent = 0;
         secretNumberPC = generateRandomString() ;
