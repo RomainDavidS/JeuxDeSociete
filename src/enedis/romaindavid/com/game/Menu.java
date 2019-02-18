@@ -10,8 +10,6 @@ public class Menu {
 
     private Scanner sc = new Scanner( System.in );
 
-
-
     private int choiceGame;
     private int choiceMode;
 
