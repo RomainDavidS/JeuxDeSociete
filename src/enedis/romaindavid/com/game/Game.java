@@ -13,11 +13,11 @@ import static enedis.romaindavid.com.param.Title.*;
 
 abstract class Game {
 
-    private static String secretNumberPC;
-    private static String secretNumberPlayer;
+    protected static String secretNumberPC;
+    protected static String secretNumberPlayer;
     protected static String gameName;
-    private static int trial;
-    private static String combinaisonNumberPlayer;
+    protected static int trial;
+    protected static String combinaisonNumberPlayer;
     protected static String combinaisonNumberPC;
 
     protected static String playerResult;
@@ -37,6 +37,7 @@ abstract class Game {
     public static String getGameName() {
         return gameName;
     }
+
 
     public static int getTrial() {
         return trial;

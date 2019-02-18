@@ -1,13 +1,10 @@
 package enedis.romaindavid.com.game;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
 import static enedis.romaindavid.com.algorithme.Plugin.*;
 import static enedis.romaindavid.com.param.Parameter.*;
-
-
 
 public class Mastermind extends Game {
 
@@ -15,27 +12,31 @@ public class Mastermind extends Game {
     private int wellPut = 0 ;
     private int misPlaced = 0 ;
 
-    private int resultWellPut = 0;
+    boolean isTrieOk = false;
 
-   private Map< Integer,Integer > occurenceC = new HashMap< Integer, Integer>();
-   private Map< Integer,Integer > occurenceS = new HashMap< Integer, Integer>();
-   private Map< Integer,Integer > occurenceB = new HashMap< Integer, Integer>();
-   private Map< Integer,Integer > occurenceP = new HashMap< Integer, Integer>();
+    private Map< Integer,Integer > occurenceC = new HashMap< Integer, Integer>();
+    private Map< Integer,Integer > occurenceS = new HashMap< Integer, Integer>();
+    private Map< Integer,Integer > occurenceB = new HashMap< Integer, Integer>();
+    private Map< Integer,Integer > occurenceP = new HashMap< Integer, Integer>();
 
-   private HashMap<String,Integer> mapPresent = new HashMap();
-   private Map < Integer, String > mapValuePresent = new HashMap<Integer,String>();
+    private HashMap<String,Integer> mapPresent = new HashMap();
+    private Map < Integer, String > mapValuePresent = new HashMap<Integer,String>();
 
-   private  String[] orderArray;
-   private int totalPresent = 0;
+    private Map <String, String> mapValueMP = new HashMap<String,String>();
+
+    private  String[] orderArray;
+    private int totalPresent = 0;
 
     public Mastermind() {
         gameName = "Mastermind";
         initMapPresent();
         generateOrderArray();
     }
+
     @Override
     String combinaisonResult(String secretNumber){
-        return "";
+        generateCombinaisonPC();
+        return pcResult;
     }
 
     @Override
@@ -43,27 +44,22 @@ public class Mastermind extends Game {
         return searchResult( secretNumber,combinaisonNumber );
     }
 
-    private String searchResult(String secretNumber,String combinaisonNumber){
-        initAttributResult();
+    @Override
+    void generateCombinaisonPC() {
 
-        trialPC++;
-
-        String[] cArray = combinaisonNumber.split("");
-        String[] sArray = secretNumber.split("");
-
-        initMapOccurence();
-
-        accountOccurenceC( cArray );
-        accountOccurenceB( cArray,sArray );
-        accountOccurenceS( sArray );
-        accountOccurenceP();
-
-        accountWellPut();
-
-        misPlaced = present - wellPut ;
-
-        return resultTotal();
+        if( totalPresent != getNumberCasePossible() )
+            generateCombinaisonFullEqual( orderArray[ trialPC - 1 ]  );
+        else {
+            if (!isTrieOk) {// on fait le trie une seule fois
+                mapPresent = triAvecValeur(mapPresent);
+                isTrieOk = true;
+                for ( Map.Entry<String,Integer > entry : mapPresent.entrySet() )
+                    mapValueMP.put( entry.getKey(), "" );
+            }
+            generateCombinaisonPresent();
+        }
     }
+
     @Override
     String generateSecretRandomString() {
         String generate = "";
@@ -76,12 +72,76 @@ public class Mastermind extends Game {
         return generate;
     }
 
-
-
-
     @Override
     String generateCombinaisonRandomString() {
         return generateCombinaisonEqual( orderArray[ 0 ]  );
+    }
+
+    @Override
+    boolean isCombinaisonTrouve(String result) {
+        return ( wellPut == getNumberCasePossible() );
+    }
+
+
+    /** Méthodes spécifiques à Mastermind **/
+
+    void generateCombinaisonPresent(){
+
+        String key = "";
+        Integer value = 0 ;
+
+        for ( Map.Entry<String,Integer > entry : mapPresent.entrySet() ) {
+            key = entry.getKey();
+            value = entry.getValue();
+
+            String order = generateOrder( getNumberCasePossible() );
+            String[] orderP = order.split("");
+
+            for (String o :orderP ) {
+                if (!mapValueMP.get( key ).contains( o ) ) {
+                    if (mapValuePresent.get(toInt(o)).equals(getValueNoPresent())) {
+
+                        mapValuePresent.replace(toInt(o), key);
+                        combinaisonNumberPC = concatMap(mapValuePresent);
+                        pcResult = searchResult(secretNumberPlayer, combinaisonNumberPC);
+
+                        if (misPlaced == 1) {
+                            mapValueMP.replace(key, mapValueMP.get(key) + o);
+                            mapValuePresent.replace(toInt(o), getValueNoPresent());
+                        } else {
+                            value--;
+                            mapPresent.replace( key, value );
+                        }
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+        if (value == 0 )
+            mapPresent.remove( key );
+    }
+
+    private void generateCombinaisonFullEqual(String number ) {
+        combinaisonNumberPC = generateCombinaisonEqual( number );
+        pcResult = searchResult( secretNumberPlayer, combinaisonNumberPC);
+        if(present != 0 )
+            mapPresent.put( number, present );
+        totalPresent += present;
+    }
+
+    private String searchResult(String secretNumber,String combinaisonNumber){
+        initAttributResult();
+        String[] cArray = combinaisonNumber.split("");
+        String[] sArray = secretNumber.split("");
+        initMapOccurence();
+        accountOccurenceC( cArray );
+        accountOccurenceB( cArray,sArray );
+        accountOccurenceS( sArray );
+        accountOccurenceP();
+        accountWellPut();
+        misPlaced = present - wellPut ;
+        return resultTotal();
     }
 
     private void initMapPresent(){
@@ -94,84 +154,6 @@ public class Mastermind extends Game {
         String order = generateOrder( getBaseNumberPossible() );
         orderArray = order.split("");
     }
-
-    private void generateCombinaisonFullEqual(String number ) {
-        combinaisonNumberPC = generateCombinaisonEqual( number );
-        mapPresent.put( number, present );
-        totalPresent += present;
-    }
-
-    void generateCombinaisonPresent(){
-        /*
-            exemple en pratique
-            "0" => 2
-            "3" => 1
-            "6" => 1
-        */
-        for ( Map.Entry<String,Integer > entry : mapPresent.entrySet() ) {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-            if( value != 0 ) {
-               String order = generateOrder( getNumberCasePossible() );
-               String[] orderP = order.split("");
-
-                int beforeBp = 0;
-                int t = 0;
-
-                for (String o : orderP ) {
-                    if ( mapValuePresent.get( toInt( o ) ).equals( getValueNoPresent()) ) {
-                        mapValuePresent.replace( toInt(o), key);
-                        String combinaisonTest = concatMap( mapValuePresent );
-                    }
-                }
-            }
-
-
-        /*
-                        if ( wellPut == 1 )
-                            mapValuePresent.replace(toInt(o), getValueNoPresent() );
-                        else{
-                            beforeBp++;
-                            resultWellPut++;
-
-
-                            if( beforeBp == value )
-                                break;
-                        }
-
-         */
-
-        }
-    }
-
-    @Override
-    void generateCombinaisonPC() {
-        boolean isTrieOk = false;
-
-        if( totalPresent != getNumberCasePossible() )
-            generateCombinaisonFullEqual( orderArray[ trialPC ]  );
-        else
-            if (!isTrieOk ) {// on fait le trie une seule fois
-                mapPresent =  triAvecValeur( mapPresent );
-                isTrieOk = true;
-            }
-
-            generateCombinaisonPresent();
-    }
-
-
-
-
-
-
-    @Override
-    boolean isCombinaisonTrouve(String result) {
-        return ( wellPut == getNumberCasePossible() );
-    }
-
-
-
-/** Méthodes spécifiques à Mastermind **/
 
     private void initAttributResult(){
         present = 0;
@@ -189,8 +171,10 @@ public class Mastermind extends Game {
     }
 
     private void accountOccurenceC( String[] strArray ){
-        for (String  c  : strArray )
-            occurenceC.replace( toInt( c ), occurenceC.get( toInt( c ) ) + 1);
+        for (String  c  : strArray ) {
+            if( occurenceC.containsKey( toInt(c) ) )
+                occurenceC.replace(toInt(c), occurenceC.get(toInt(c)) + 1);
+        }
     }
 
     private void accountOccurenceB(String[] strArray1, String[] strArray2 ){
@@ -260,7 +244,6 @@ public class Mastermind extends Game {
         else
             return postResult ;
     }
-
 
     private static String concatMap(  Map <Integer,String>  mapEntry ){
         String map = "";

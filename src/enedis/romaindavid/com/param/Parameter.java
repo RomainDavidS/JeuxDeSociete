@@ -4,7 +4,7 @@ public class Parameter {
     public static String modeDebug ="dev";
     private static int numberCasePossible = 4;
     private static int baseNumberPossible = 8;
-    private static int numberTrialPossible = 12;
+    private static int numberTrialPossible = 50;
     private static String valueNoPresent = "9";
 
     public static String getModeDebug() {
