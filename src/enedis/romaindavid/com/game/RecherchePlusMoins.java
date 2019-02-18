@@ -8,6 +8,7 @@ public class RecherchePlusMoins  extends Game {
 
     public RecherchePlusMoins() {
         gameName = "Recherche +/-" ;
+        choiceGame = 1;
         initMapPossible();
 
     }
@@ -28,8 +29,6 @@ public class RecherchePlusMoins  extends Game {
         String newCombinaisonPC = "";
 
         String[] combinaisonNumberPcArray = combinaisonNumberPC.split("");
-
-        System.out.println("before " + combinaisonNumberPC + " bofore result " + pcResult );
 
         String[] resultArray = pcResult.split("");
 

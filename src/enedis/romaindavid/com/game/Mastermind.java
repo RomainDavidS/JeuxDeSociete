@@ -29,6 +29,7 @@ public class Mastermind extends Game {
 
     public Mastermind() {
         gameName = "Mastermind";
+        choiceGame = 2;
         initMapPresent();
         generateOrderArray();
     }

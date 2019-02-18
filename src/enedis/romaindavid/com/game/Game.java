@@ -23,6 +23,8 @@ abstract class Game {
     protected static String playerResult;
     protected static String pcResult;
 
+    protected int choiceGame ;
+
 
     private static CombinaisonResult gameCombinaison;
 
@@ -245,28 +247,36 @@ abstract class Game {
                 trialPlayer++;
                 choiceProposal( playerType );
 
-            } else
+            } else {
                 postLostResultPlayer();
-        else
-            postWinResultPlayer(  trialPlayer  );
+                endOfPartyMenu();
+            }
+        else {
+            postWinResultPlayer(trialPlayer);
+            endOfPartyMenu();
+        }
+
     }
 
     // Méthodes PC
     private void pcProposal(String choice){
         trial = trialPC ;
+        pcResult = combinaisonResult( secretNumberPlayer ) ;
 
-       pcResult = combinaisonResult( secretNumberPlayer ) ;
-
-       postResultPC();
+        postResultPC();
 
         if( !isCombinaisonTrouve( pcResult ) )
             if(!(trialPC == getNumberTrialPossible()) ) {
                 trialPC++;
                 choiceProposal( choice );
-            }else
-               postLostResultPC();
-        else
-            postWinResultPC( trialPC );
+            }else {
+                postLostResultPC();
+                endOfPartyMenu();
+            }
+        else {
+            postWinResultPC(trialPC);
+            endOfPartyMenu();
+        }
     }
 
     private void initSecretNumberPlayer(){
@@ -296,6 +306,11 @@ abstract class Game {
         }
     }
 
+    private void endOfPartyMenu(){
+        Menu menu = new Menu();
+        menu.setChoiceGame( choiceGame );
+        menu.endOfPartyMenu();
+    }
 
 
 
