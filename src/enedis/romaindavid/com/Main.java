@@ -9,7 +9,13 @@ public class Main {
 
     public static void main(String[] args) {
         Menu menu = new Menu();
-        setModeDebug( args[0] );
+        try {
+            if( !args[0].isEmpty() )
+                setModeDebug( args[0] );
+        }catch ( ArrayIndexOutOfBoundsException e){
+        }
+
+
         System.out.println("Bonjour et bienvenue dans vos jeux de société.");
 
         menu.menuGame();

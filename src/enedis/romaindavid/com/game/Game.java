@@ -1,6 +1,5 @@
 package enedis.romaindavid.com.game;
 
-
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
@@ -14,19 +13,33 @@ import static enedis.romaindavid.com.param.Title.*;
 abstract class Game {
 
     protected static String secretNumberPC;
-    protected static String secretNumberPlayer;
-    protected static String gameName;
-    protected static int trial;
-    protected static String combinaisonNumberPlayer;
+
     protected static String combinaisonNumberPC;
 
+    protected static String secretNumberPlayer;
+
+    protected static String combinaisonNumberPlayer;
+
     protected static String playerResult;
+
     protected static String pcResult;
+
+    protected static String gameName;
 
     protected int choiceGame ;
 
+    protected String gameMode ; // Challenger || Défenseur || Duel
 
-    private static CombinaisonResult gameCombinaison;
+    protected Scanner sc = new Scanner( System.in );
+
+    protected static int trial;
+
+    protected int trialPlayer = 1 ;
+
+    protected int trialPC = 1 ;
+
+    protected Map<Integer,String> mapPossible = new HashMap<Integer,String>();
+
 
     public static String getSecretNumberPC() {
         return secretNumberPC;
@@ -39,7 +52,6 @@ abstract class Game {
     public static String getGameName() {
         return gameName;
     }
-
 
     public static int getTrial() {
         return trial;
@@ -61,59 +73,37 @@ abstract class Game {
         return pcResult;
     }
 
-    public static CombinaisonResult getGameCombinaison() {
-        return gameCombinaison;
-    }
-
-
-    protected String gameMode ; // Challenger || Défenseur || Duel
-
-    protected Scanner sc = new Scanner( System.in );
-
-    protected int trialPlayer = 1 ;
-
-    protected int trialPC = 1 ;
-
-    protected Map<Integer,String> mapPossible = new HashMap<Integer,String>();
-
+    /**
+     * Method to launch Challenger mode
+     */
     public void challenger(){
-
         gameMode = "Challenger";
-
         postTitleGameChallenger ();
-
-       secretNumberPC = generateSecretRandomString()  ; // à revoir
-
+        secretNumberPC = generateSecretRandomString() ;
         isPostSecretNumberPc() ;
-
         choiceProposal();
-
     }
 
+    /**
+     * Method to launch Defender mode
+     */
     public void defender(){
         gameMode = "Défenseur";
-
         postTitleGameDefender();
-
         initSecretNumberPlayer();
-
-        isPostSecretNumberPlayer();
-
-
-
         choiceProposal();
     }
 
+    /**
+     * Method to launch Dual mode
+     */
     public void dual(){
         gameMode = "Duel";
-
         postTitleGameDual();
         initSecretNumberPlayer();
-        secretNumberPC = generateSecretRandomString()  ;
-
+        secretNumberPC = generateSecretRandomString();
         isPostSecretNumberPc() ;
         isPostSecretNumberPlayer();
-
         choiceFirstPlayer();
     }
 
@@ -127,10 +117,11 @@ abstract class Game {
 
     abstract String combinaisonResult( String secretNumber,String combinaisonNumber);
 
-
-
     abstract boolean isCombinaisonTrouve(String result);
 
+    /**
+     * For dual mode this method of raffling which of the players will play first
+     */
     private void choiceFirstPlayer(){
         if( generateRandomInRange(0, 1) == 0 ) {
             postTitlePlayerFirst();
@@ -141,32 +132,59 @@ abstract class Game {
         }
     }
 
+    /**
+     * On vérifie si le mode débug est activé
+     * @return if we are in debug mode returns true otherwise false
+     */
     private boolean isModeGameDev(){
         return  ( getModeDebug().equals( "dev" ) ) ;
 
     }
 
+    /**
+     * Check if the challenger mode was chosen
+     * @return If the challenger mode was chosen returns true otherwise false
+     */
     private boolean isChallengerMode(){
         return  isGameMode( "Challenger" );
     }
 
+    /**
+     * Check if the defender mode was chosen
+     * @return If the defender mode was chosen returns true otherwise false
+     */
     private boolean isDefenderMode(){
         return isGameMode( "Défenseur" );
     }
 
+    /**
+     * Check if the dual mode was chosen
+     * @return If the dual mode was chosen returns true otherwise false
+     */
     private boolean isDualMode(){
         return isGameMode("Duel" );
     }
 
+    /**
+     * Allows you to check a mode if a typical mode has been chosen
+     * @param mode the game mode to check  "Challenger", "Défenseur" ou "Duel"
+     * @return if the mode passed in parameter was chosen one returns true otherwise false
+     */
     private boolean isGameMode(String mode ){
         return ( gameMode.equals( mode ) );
     }
 
+    /**
+     * the secret number of the computer is displayed if the debug mode has been activated
+     */
     private void isPostSecretNumberPc(){
         if( isModeGameDev() )
             postSecretNumberPc();
     }
 
+    /**
+     * the secret number of the player is displayed if the debug mode has been activated
+     */
     private void isPostSecretNumberPlayer(){
         if( isModeGameDev() )
             postSecretNumberPlayer();

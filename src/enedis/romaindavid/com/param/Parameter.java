@@ -1,7 +1,7 @@
 package enedis.romaindavid.com.param;
 
 public class Parameter {
-    public static String modeDebug ="dev";
+    public static String modeDebug ="";
     private static int numberCasePossible = 4;
     private static int baseNumberPossible = 8;
     private static int numberTrialPossible = 50;
