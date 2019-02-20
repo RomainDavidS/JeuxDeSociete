@@ -1,8 +1,7 @@
 package enedis.romaindavid.com;
 
-
 import enedis.romaindavid.com.game.*;
-
+import static enedis.romaindavid.com.param.Title.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
 public class Main {
@@ -16,8 +15,7 @@ public class Main {
         }catch ( ArrayIndexOutOfBoundsException e){
         }
 
-
-        System.out.println("Bonjour et bienvenue dans vos jeux de société.");
+        mainTitle();
 
         menu.menuGame();
     }

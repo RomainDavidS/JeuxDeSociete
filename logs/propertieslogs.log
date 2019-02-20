@@ -1,1 +1,10 @@
 
+[INFO ] 2019-02-20 16:56:44.418 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-20 16:56:44.456 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-20 16:57:01.590 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-02-20 16:57:16.587 [main] Title - *** Jeu du Recherche +/- en mode Défenseur. Combinaison de 4 chiffres maximun et 3 essais possibles ***
+[INFO ] 2019-02-20 16:57:16.588 [main] Title - Joueur : Veuillez saisir votre combinaison secrète
+[INFO ] 2019-02-20 16:57:44.979 [main] Title - PC : Proposition n° 1 sur 3 : 7420 -> Réponse : ++--
+[INFO ] 2019-02-20 16:57:44.979 [main] Title - PC : Proposition n° 2 sur 3 : 3281 -> Réponse : +=+-
+[INFO ] 2019-02-20 16:57:44.981 [main] Title - PC : Proposition n° 3 sur 3 : 0258 -> Réponse : -=++
+[INFO ] 2019-02-20 16:57:44.981 [main] Title - PC : Désolé la combinaison secrète 1234 n'a pas été trouvée.
