@@ -79,7 +79,7 @@ public class Menu {
     }
 
     public void endOfPartyMenu(){
-        System.out.println("Voulez-vous recommencer une partie O/N ?");
+        System.out.println("Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?");
         String choice = sc.nextLine().toUpperCase();
 
         if ( choice.equals("O") || choice.equals("N" ))
@@ -87,6 +87,9 @@ public class Menu {
                 menuMode();
             else
                 menuGame();
+         else if (choice.equals( "Q" ) ){
+             System.exit(1);
+        }
          else {
             System.out.println("Je n'ai pas compris votre choix.");
             endOfPartyMenu();

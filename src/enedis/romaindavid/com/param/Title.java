@@ -4,6 +4,7 @@ import static enedis.romaindavid.com.game.RecherchePlusMoins.*;
 import static enedis.romaindavid.com.game.Mastermind.*;
 
 import static enedis.romaindavid.com.param.Parameter.getNumberCasePossible;
+import static enedis.romaindavid.com.param.Parameter.getNumberTrialPossible;
 
 public abstract class Title {
 
@@ -50,11 +51,11 @@ public abstract class Title {
     }
 
     private static void postTitleGame(String name, String mode ){
-        System.out.println("*** Jeu du "+ getGameName() + " en mode "+  mode + ". ***");
+        System.out.println("*** Jeu du "+ getGameName() + " en mode "+  mode + ". Combinaison de "+ getNumberCasePossible() +" chiffres maximun et " + getNumberTrialPossible() + " essais possibles ***");
     }
 
     public static void postTitleTrial(){
-        System.out.println("Joueur : Essai n°" + getTrial() + ". Veuillez saisir une combinaison.");
+        System.out.println("Joueur : Essai n°" + getTrial() + " sur "+ getNumberTrialPossible() +". Veuillez saisir une combinaison.");
     }
 
     public static void postResultPlayer(){
@@ -66,7 +67,7 @@ public abstract class Title {
     }
 
     private static void postResult(String player,int numberTrial, String combinaison,String postResult ){
-        System.out.println(player + " : Proposition n° " + numberTrial + " : " + combinaison + " -> Réponse : " + postResult );
+        System.out.println(player + " : Proposition n° " + numberTrial + " sur "+ getNumberTrialPossible() + " : " + combinaison + " -> Réponse : " + postResult );
     }
 
     public static void postTitleControllerSeizureLength(){
@@ -90,11 +91,11 @@ public abstract class Title {
     }
 
     public static void postLostResultPlayer(){
-        postLostResult("Joueur", getSecretNumberPC());
+        postLostResult("Joueur", getSecretNumberPC() );
     }
 
     public static void postLostResult(String player, String secretNumber){
-        System.out.println( player + " : Désolé la combinaison secrète " + secretNumber + "n'a pas été trouvée." );
+        System.out.println( player + " : Désolé la combinaison secrète " + secretNumber + " n'a pas été trouvée." );
     }
 
     public static void postWinResultPC(int postTrial){

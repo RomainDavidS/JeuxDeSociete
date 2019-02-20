@@ -274,10 +274,9 @@ abstract class Game {
        if ( toStr( seizure ).length() <= getNumberCasePossible() ){
           combinaisonNumberPlayer = formatNumber( seizure ) ;
            return true;
-       }else {
-           postTitleControllerSeizureLength();
+       }else
            return false;
-       }
+
     }
 
     protected void resultPlayer( String playerType ){
@@ -330,6 +329,7 @@ abstract class Game {
         }catch (InputMismatchException e){
             postTitleControllerFormat();
             sc.nextLine();
+
             return false;
         }
     }
