@@ -86,15 +86,15 @@ public abstract class Title {
     }
 
     public static void postLostResultPC(){
-        postLostResult("PC");
+        postLostResult("PC", getSecretNumberPlayer());
     }
 
     public static void postLostResultPlayer(){
-        postLostResult("Joueur");
+        postLostResult("Joueur", getSecretNumberPC());
     }
 
-    public static void postLostResult(String player){
-        System.out.println( player + " : Désolé la combinaison secrète n'a pas été trouvée." );
+    public static void postLostResult(String player, String secretNumber){
+        System.out.println( player + " : Désolé la combinaison secrète " + secretNumber + "n'a pas été trouvée." );
     }
 
     public static void postWinResultPC(int postTrial){
@@ -110,7 +110,7 @@ public abstract class Title {
     }
 
     public static void postTitleMainMenu(){
-        System.out.println("A quel jeu souhaitez-vous jouer ? 1 -> Recherche + 1- : 2 -> Mastermind.");
+        System.out.println("A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.");
     }
     public static void postTitleControllerGameMenu(){
         System.out.println("Votre choix doit égal à 1 ou 2.");

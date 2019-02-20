@@ -133,8 +133,8 @@ abstract class Game {
     }
 
     /**
-     * On vérifie si le mode débug est activé
-     * @return if we are in debug mode returns true otherwise false
+     * We check if the developer mode is enabled
+     * @return if we are in developer mode returns true otherwise false
      */
     private boolean isModeGameDev(){
         return  ( getModeDebug().equals( "dev" ) ) ;
@@ -175,7 +175,7 @@ abstract class Game {
     }
 
     /**
-     * the secret number of the computer is displayed if the debug mode has been activated
+     * the secret number of the computer is displayed if the developer mode has been activated
      */
     private void isPostSecretNumberPc(){
         if( isModeGameDev() )
@@ -183,17 +183,24 @@ abstract class Game {
     }
 
     /**
-     * the secret number of the player is displayed if the debug mode has been activated
+     * the secret number of the player is displayed if the developer mode has been activated
      */
     private void isPostSecretNumberPlayer(){
         if( isModeGameDev() )
             postSecretNumberPlayer();
     }
 
+    /**
+     * Next if we are in Challenger or Defender mode we will guide a typical proposal on the combination choice. Either computer or player
+     */
     protected void choiceProposal(){
         choiceProposal( "" );
     }
 
+    /**
+     * Next if we are in Challenger,  Defender or Dual mode we will guide a typical proposal on the combination choice. Either computer or player
+     * @param playerType typical proposition is "pc" or "player"
+     */
     protected void choiceProposal( String playerType ){
         if( isChallengerMode())
             playerProposal();
@@ -206,23 +213,38 @@ abstract class Game {
                 pcProposalToPlayer();
     }
 
+    /**
+     * typical proposal "player"
+     */
     private void playerProposal(){
         playerProposal("player" );
     }
 
+    /**
+     * when we are in dual mode will allow to switch on a proposal type "pc" while we are currently on a proposal type "player"
+     */
     private void playerProposalToPc(){
         playerProposal("pc" );
     }
 
+    /**
+     * typical proposal "player"
+     */
     private void pcProposal(){
         pcProposal("pc");
     }
 
+    /**
+     * when we are in dual mode will allow to switch on a proposal type "player" while we are currently on a proposal type "pc"
+     */
     private void pcProposalToPlayer(){
         pcProposal("player" );
     }
 
-    //Méthodes Player
+    /**
+     * Next if we are in Challenger or Dual mode we will guide a typical proposal on the combination choice. Either computer or player
+     * @param playerType typical proposition is "pc" or "player"
+     */
     private void playerProposal(String playerType){
        trial = trialPlayer ;
         if( !tryGoodSeizure() )
@@ -288,7 +310,7 @@ abstract class Game {
                 trialPC++;
                 choiceProposal( choice );
             }else {
-                postLostResultPC();
+                postLostResultPC( );
                 endOfPartyMenu();
             }
         else {
