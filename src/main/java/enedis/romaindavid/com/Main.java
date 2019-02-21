@@ -4,6 +4,9 @@ import enedis.romaindavid.com.game.*;
 import static enedis.romaindavid.com.param.Title.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
+/**
+ * Main class
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -12,8 +15,7 @@ public class Main {
         try {
             if( !args[0].isEmpty() )
                 setModeDebug( args[0] );
-        }catch ( ArrayIndexOutOfBoundsException e){
-        }
+        }catch ( ArrayIndexOutOfBoundsException e){}
 
         mainTitle();
 

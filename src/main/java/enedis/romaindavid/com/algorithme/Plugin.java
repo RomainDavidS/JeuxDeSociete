@@ -64,7 +64,7 @@ public class Plugin {
      * @param number nteger to format
      * @return Integer @param number formatted according to the defined length @param len
      */
-    private static String formatNumber(int len, int number ){
+    public static String formatNumber(int len, int number ){
         return String.format("%0" + len + "d",  number );
     }
 

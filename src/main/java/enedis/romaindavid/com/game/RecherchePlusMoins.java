@@ -125,7 +125,7 @@ public class RecherchePlusMoins  extends Game {
      * @param combinaisonSecret secret character
      * @return "=" if combinationSeizure equals combinationSecret, "+" if combinationSeizure is superior combinationSecret or "-" if combinationSeizure is lower combinationSecret
      */
-    private static String resultOne( int combinaisonSeizure, int combinaisonSecret ){
+    private String resultOne( int combinaisonSeizure, int combinaisonSecret ){
         if( combinaisonSeizure > combinaisonSecret )
             return "+";
         else if ( combinaisonSeizure < combinaisonSecret )
