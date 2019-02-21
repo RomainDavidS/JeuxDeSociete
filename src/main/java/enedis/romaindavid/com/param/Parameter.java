@@ -7,20 +7,26 @@ import java.util.Properties;
 
 import static enedis.romaindavid.com.algorithme.Plugin.toInt;
 
+/**
+ * Set of different settings of games
+ */
 public class Parameter {
-    public static String modeDebug ="";
+
+    public static String modeDebug = "";
     private static int numberCasePossible;
     private static int baseNumberPossible;
     private static int numberTrialPossible ;
     private static String valueNoPresent;
 
-
+    /**
+     * recovery of the parameters passed in config.properties
+     */
     public static void readingProperties(){
         Properties prop = new Properties();
         InputStream input = null;
         try {
             input = new FileInputStream("resources/config.properties");
-            prop.load(input);
+            prop.load( input );
             numberCasePossible = toInt( prop.getProperty( "numberCasePossible" ) );
             baseNumberPossible = toInt( prop.getProperty("baseNumberPossible") );
             numberTrialPossible = toInt( prop.getProperty("numberTrialPossible") );
@@ -38,7 +44,6 @@ public class Parameter {
         }
     }
 
-
     public static String getModeDebug() {
         return modeDebug;
     }
@@ -51,31 +56,15 @@ public class Parameter {
         return numberCasePossible;
     }
 
-    public static void setNumberCasePossible(int numberCasePossible) {
-        Parameter.numberCasePossible = numberCasePossible;
-    }
-
     public static int getNumberTrialPossible() {
         return numberTrialPossible;
-    }
-
-    public static void setNumberTrialPossible(int numberTrialPossible) {
-        Parameter.numberTrialPossible = numberTrialPossible;
     }
 
     public static int getBaseNumberPossible() {
         return baseNumberPossible;
     }
 
-    public static void setBaseNumberPossible(int baseNumberPossible) {
-        Parameter.baseNumberPossible = baseNumberPossible;
-    }
-
     public static String getValueNoPresent() {
         return valueNoPresent;
-    }
-
-    public static void setValueNoPresent(String valueNoPresent) {
-        Parameter.valueNoPresent = valueNoPresent;
     }
 }

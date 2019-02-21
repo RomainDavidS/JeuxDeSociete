@@ -10,12 +10,7 @@ import static enedis.romaindavid.com.param.Parameter.getNumberCasePossible;
 import static enedis.romaindavid.com.param.Parameter.getNumberTrialPossible;
 
 /**
- * LOGS
- *         logger.debug("This is a debug message");
- *         logger.info("This is an info message");
- *         logger.warn("This is a warn message");
- *         logger.error("This is an error message");
- *         logger.fatal("This is a fatal message");
+ * Ensemble des messages du jeux
  */
 public abstract class Title {
     private static Logger logger = LogManager.getLogger();
