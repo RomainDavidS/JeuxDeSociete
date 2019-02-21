@@ -6,6 +6,9 @@ import java.util.Scanner;
 import static enedis.romaindavid.com.algorithme.Plugin.clearScreen;
 import static enedis.romaindavid.com.param.Title.*;
 
+/**
+ * management of the different menus
+ */
 public class Menu {
 
     private Scanner sc = new Scanner( System.in );
@@ -15,6 +18,9 @@ public class Menu {
 
     ModeGame modeGame = new ModeGame();
 
+    /**
+     * choice of the game
+     */
     public void menuGame(){
         clearScreen();
         try {
@@ -34,6 +40,9 @@ public class Menu {
         }
     }
 
+    /**
+     * choice of the mode game
+     */
     public void menuMode(){
         clearScreen();
         try {
@@ -57,10 +66,15 @@ public class Menu {
         }
     }
 
+
+
     public void setChoiceGame(int choiceGame) {
         this.choiceGame = choiceGame;
     }
 
+    /**
+     * launching the "Mastermind" or "Recherche +/-" game in the selected mode
+     */
     private void runGame() {
         Game game = gameChozen();
         if( choiceMode == 1)
@@ -71,13 +85,20 @@ public class Menu {
             modeGame.dual( game );
     }
 
+    /**
+     * instantiates a class according to the selected game
+     * @return new RecherchePlusMoins() if game "Recherche +/-" chozen or  new Mastermind() if game "Mastermind" chozen
+     */
     private Game gameChozen(){
         if( choiceGame == 1 )
-            return new RecherchePlusMoins( );
+            return new RecherchePlusMoins();
         else
-            return new Mastermind( );
+            return new Mastermind();
     }
 
+    /**
+     * end-of-the-game menu to find out if we are starting a game or another game or we are leaving the application
+     */
     public void endOfPartyMenu(){
         postEndOfPartyMenu();
         String choice = sc.nextLine().toUpperCase();
