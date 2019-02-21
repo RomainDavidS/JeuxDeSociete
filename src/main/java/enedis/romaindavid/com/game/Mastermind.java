@@ -43,8 +43,12 @@ public class Mastermind extends Game {
         generateOrderArray();
     }
 
+    /**
+     * The secret combination of the computer is generated for the "Challenger" and "Duel" modes     *
+     * @return The secret combination of the computer
+     */
     @Override
-    String generateSecretRandomString() {
+    protected String generateSecretRandomString() {
         String generate = "";
         int randNumber = 0;
 
@@ -55,13 +59,20 @@ public class Mastermind extends Game {
         return generate;
     }
 
+    /**
+     * The first combination of the computer is generated for the "Defeuser" and "Duel" modes
+     * @return The combination of the computer
+     */
     @Override
-    String generateCombinaisonRandomString() {
+    protected String generateCombinaisonRandomString() {
         return generateCombinaisonEqual( orderArray[ 0 ]  );
     }
 
+    /**
+     * The combination of the computer is generated based on the result of the previous combination for the "Defender" and "Duel" modes
+     */
     @Override
-    void generateCombinaisonPC() {
+    protected void generateCombinaisonPC() {
 
         if( totalPresent != getNumberCasePossible() )
             generateCombinaisonFullEqual( orderArray[ trialPC - 1 ]  );
@@ -76,26 +87,40 @@ public class Mastermind extends Game {
         }
     }
 
+    /**
+     * We check and display the result after entering the combination made by the computer
+     * @param secretNumber player's secret number
+     * @returnresult after entering the combination
+     */
     @Override
-    String combinaisonResult(String secretNumber){
+    protected String combinaisonResult(String secretNumber){
         generateCombinaisonPC();
         return pcResult;
     }
 
+    /**
+     * We check and display the result after entering the combination made by the player
+     * @param secretNumber computer's secret number
+     * @param combinaisonNumber player combination
+     * @return result after entering the combination
+     */
     @Override
     String combinaisonResult(String secretNumber,String combinaisonNumber) {
         return searchResult( secretNumber,combinaisonNumber );
     }
 
+    /**
+     * we check if the combination was found either by the computer or by the player
+     * @param result always = "" for the game of Mastermind
+     * @return true if the combination was found otherwise false
+     */
     @Override
     boolean isCombinaisonTrouve(String result) {
         return ( wellPut == getNumberCasePossible() );
     }
 
-    /**
-     *
-     * methods specific to class Mastermind
-     */
+
+
 
     void generateCombinaisonPresent(){
 
