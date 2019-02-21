@@ -5,51 +5,96 @@ import java.util.*;
 
 import static enedis.romaindavid.com.param.Parameter.getNumberCasePossible;
 
+/**
+ * set of plugin
+ */
 public class Plugin {
 
-
+    /**
+     * generates a random number
+     * @param bound random number limit value
+     * @return random number less @param bound
+     */
     public static int generateRandom(int bound){
         Random rand = new Random();
         return rand.nextInt ( bound );
     }
 
+    /**
+     * generates a random number between 2 values
+     * @param min value minimum
+     * @param max value maximum
+     * @return random number @param min between @param max
+     */
     public static int generateRandomInRange(int min, int max) {
         Random random = new Random();
         return random.nextInt((max - min) + 1) + min;
     }
 
+    /**
+     * converting an Integer to a String
+     * @param strInt Integer to convert
+     * @return (Integer) @param strInt
+     */
     public static int toInt( String strInt) {
         return  Integer.valueOf( strInt );
     }
 
+    /**
+     * converting an String to a Integer
+     * @param intStr String to convert
+     * @return (String) @param intStr
+     */
     public static String toStr( int intStr){
         return  String.valueOf( intStr );
     }
 
+    /**
+     * Stringing an Integer
+     * @param number Integer to format
+     * @return Integer @param number formatted
+     */
     public static String formatNumber(int number ){
         return formatNumber( getNumberCasePossible(), number );
     }
 
-    private static String formatNumber(int lenString, int number ){
-        return String.format("%0" + getNumberCasePossible() + "d",  number );
+    /**
+     * Stringing an Integer
+     * @param len ength of the format
+     * @param number nteger to format
+     * @return Integer @param number formatted according to the defined length @param len
+     */
+    private static String formatNumber(int len, int number ){
+        return String.format("%0" + len + "d",  number );
     }
 
+    /**
+     * generates a random number of a base of 10
+     * @param puissance length of the number to generate
+     * @return random number generated
+     */
     public static int puissanceDe10(int puissance ){
         return (int) Math.pow( 10, puissance ) ;
     }
 
+    /**
+     * formats the first character of a string in uppercase
+     * @param str String to format
+     * @return String @param str with the first character of a string in uppercase
+     */
     public static String firstUpperCase(String str ){
         return str.substring(0,1).toUpperCase() + str.substring( 1 );
     }
+
     /**
-     * Dans cet exemple, on va trier des éléments de type Double.
-     * Les éléments sont copiés dans une LinkedList qui implémente l'interface List,
-     * puis ils sont triés avec la méthode Collections.sort que nous avons utilisé
-     * dans les articles précédents pour trier d'autres collections d'objets. Après le tri,
-     * on recopie les élément triés de LinkedList vers une nouvelle table de hachage qui va être retournée en sortie.
+     * we will sort Integer elements.
+     * Items are copied to a LinkedList that implements the List interface,
+     * then they are sorted with the Collections.sort method that we used
+     * in previous articles to sort other collections of objects. After sorting,
+     * we copy the sorted elements of LinkedList to a new hash table that will be returned as output.
      *
-     * @param map
-     * @return
+     * @param map hashmap to sort
+     * @return sorted hashmap @param map
      */
     public static HashMap<String, Integer> triAvecValeur(HashMap<String, Integer> map ){
         List<Map.Entry<String, Integer>> list =
@@ -66,9 +111,10 @@ public class Plugin {
         return map_apres;
     }
 
+    /**
+     * empty the console screen
+     */
     public static void clearScreen() {
-
-        //Clears Screen in java
         try {
             if (System.getProperty("os.name").contains("Windows"))
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
