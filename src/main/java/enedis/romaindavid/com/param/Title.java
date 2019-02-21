@@ -153,4 +153,11 @@ public abstract class Title {
         logger.info("Bonjour et bienvenue dans vos jeux de société.");
     }
 
+    public static void postEndOfPartyMenu(){
+        logger.info("Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?");
+    }
+
+    public static void postErrorChoice(){
+        logger.error("Je n'ai pas compris votre choix.");
+    }
 }
