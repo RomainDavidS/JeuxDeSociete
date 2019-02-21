@@ -6,6 +6,15 @@ import java.util.Map;
 import static enedis.romaindavid.com.algorithme.Plugin.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
+/**
+ *  Classes of the "Mastermind" game :
+ *     - method generateSecretRandomString : generate the secret combination of the computer *
+ *     - method generateCombinaisonRandomString : generate an automatic combination of the computer
+ *     - method generateCombinaisonPC : generate a combination for the computer based on the result of the previous combination
+ *     - method combinaisonResult : result of entering a combination made by the computer
+ *     - method combinaisonResult : result of entering a combination made by the player
+ *     - method isCombinaisonTrouve : we check if the combination was found either by the computer or by the player
+ */
 public class Mastermind extends Game {
 
     private int present = 0 ;
@@ -35,14 +44,20 @@ public class Mastermind extends Game {
     }
 
     @Override
-    String combinaisonResult(String secretNumber){
-        generateCombinaisonPC();
-        return pcResult;
+    String generateSecretRandomString() {
+        String generate = "";
+        int randNumber = 0;
+
+        for (int i = 0; i < getNumberCasePossible(); i++ ){
+            randNumber = generateRandom( getBaseNumberPossible() );
+            generate += toStr( randNumber );
+        }
+        return generate;
     }
 
     @Override
-    String combinaisonResult(String secretNumber,String combinaisonNumber) {
-        return searchResult( secretNumber,combinaisonNumber );
+    String generateCombinaisonRandomString() {
+        return generateCombinaisonEqual( orderArray[ 0 ]  );
     }
 
     @Override
@@ -62,20 +77,14 @@ public class Mastermind extends Game {
     }
 
     @Override
-    String generateSecretRandomString() {
-        String generate = "";
-        int randNumber = 0;
-
-        for (int i = 0; i < getNumberCasePossible(); i++ ){
-            randNumber = generateRandom( getBaseNumberPossible() );
-            generate += toStr( randNumber );
-        }
-        return generate;
+    String combinaisonResult(String secretNumber){
+        generateCombinaisonPC();
+        return pcResult;
     }
 
     @Override
-    String generateCombinaisonRandomString() {
-        return generateCombinaisonEqual( orderArray[ 0 ]  );
+    String combinaisonResult(String secretNumber,String combinaisonNumber) {
+        return searchResult( secretNumber,combinaisonNumber );
     }
 
     @Override
@@ -83,8 +92,10 @@ public class Mastermind extends Game {
         return ( wellPut == getNumberCasePossible() );
     }
 
-
-    /** Méthodes spécifiques à Mastermind **/
+    /**
+     *
+     * methods specific to class Mastermind
+     */
 
     void generateCombinaisonPresent(){
 

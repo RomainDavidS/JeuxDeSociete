@@ -4,6 +4,15 @@ package enedis.romaindavid.com.game;
 import static enedis.romaindavid.com.algorithme.Plugin.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
+/**
+ *  Classes of the "Recherche +/-" game :
+ *     - method generateSecretRandomString : generate the secret combination of the computer
+ *     - method generateCombinaisonRandomString : generate an automatic combination of the computer
+ *     - method generateCombinaisonPC : generate a combination for the computer based on the result of the previous combination
+ *     - method combinaisonResult : result of entering a combination made by the computer
+ *     - method combinaisonResult : result of entering a combination made by the player
+ *     - method isCombinaisonTrouve : we check if the combination was found either by the computer or by the player
+ */
 public class RecherchePlusMoins  extends Game {
 
     public RecherchePlusMoins() {
@@ -13,14 +22,19 @@ public class RecherchePlusMoins  extends Game {
 
     }
 
+    /**
+     * generate the secret combination of the computer
+     * 
+     * @return
+     */
     @Override
-    public String generateSecretRandomString(){
+    protected String generateSecretRandomString(){
         int randNumber = generateRandom( puissanceDe10( getNumberCasePossible() )) ;
         return formatNumber( randNumber );
     }
 
     @Override
-    String generateCombinaisonRandomString() {
+    protected String generateCombinaisonRandomString() {
         return generateSecretRandomString();
     }
 
@@ -38,6 +52,56 @@ public class RecherchePlusMoins  extends Game {
         combinaisonNumberPC = newCombinaisonPC ;
     }
 
+    @Override
+    protected String combinaisonResult(String secretNumber){
+        if(trialPC == 1 )
+            combinaisonNumberPC = generateCombinaisonRandomString() ;
+        else
+            generateCombinaisonPC();
+
+        return combinaisonResult( secretNumber,combinaisonNumberPC);
+    }
+
+    @Override
+    protected String combinaisonResult( String secretNumber,String combinaisonNumber ){
+
+        String[] combinaisonSecretArray = secretNumber.split("");
+        String[] combinaisonSeizureArray = combinaisonNumber.split("");
+
+
+        int lenArray = combinaisonSeizureArray.length - 1;
+
+        String resultCombinaison = "" ;
+
+        for(int i = 0 ; i<= lenArray;i++)
+            resultCombinaison += resultOne( toInt( combinaisonSeizureArray[ i ] ),toInt( combinaisonSecretArray[ i ] ) );
+
+        return resultCombinaison;
+    }
+
+    @Override
+    protected boolean isCombinaisonTrouve(String result ){
+        boolean trouve = true;
+        String[] resultCombinaisonArray = result.split("");
+        for (String value : resultCombinaisonArray )
+            if( !value.equals( "=" ) )
+                return false;
+
+        return trouve ;
+    }
+
+    /**
+     *
+     * methods specific to class RecherchePlusMoins
+     */
+
+    /**
+     *
+     * @param index
+     * @param combinaisonNumber
+     * @param result
+     * @return
+     */
     private String newPcCombinaison(int index,String combinaisonNumber , String result  ){
 
         String possible = mapPossible.get( index );
@@ -85,43 +149,7 @@ public class RecherchePlusMoins  extends Game {
         return combinaison;
     }
 
-    @Override
-    String combinaisonResult(String secretNumber){
-        if(trialPC == 1 )
-            combinaisonNumberPC = generateCombinaisonRandomString() ;
-        else
-            generateCombinaisonPC();
 
-       return combinaisonResult( secretNumber,combinaisonNumberPC);
-    }
-
-    @Override
-    String combinaisonResult( String secretNumber,String combinaisonNumber ){
-
-        String[] combinaisonSecretArray = secretNumber.split("");
-        String[] combinaisonSeizureArray = combinaisonNumber.split("");
-
-
-        int lenArray = combinaisonSeizureArray.length - 1;
-
-        String resultCombinaison = "" ;
-
-        for(int i = 0 ; i<= lenArray;i++)
-            resultCombinaison += resultOne( toInt( combinaisonSeizureArray[ i ] ),toInt( combinaisonSecretArray[ i ] ) );
-
-        return resultCombinaison;
-    }
-
-    @Override
-    protected boolean isCombinaisonTrouve(String result ){
-        boolean trouve = true;
-        String[] resultCombinaisonArray = result.split("");
-        for (String value : resultCombinaisonArray )
-            if( !value.equals( "=" ) )
-                return false;
-
-        return trouve ;
-    }
 
     /*
     Méthodes spécifique au jeux Recherche +/-

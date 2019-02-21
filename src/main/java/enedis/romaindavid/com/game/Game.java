@@ -9,7 +9,16 @@ import static enedis.romaindavid.com.algorithme.Plugin.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 import static enedis.romaindavid.com.param.Title.*;
 
-
+/**
+ * main class of the application:
+ * - 1 main method for each mode:
+ *      - challenger for the "Challenger" mode
+ *      - Defender for the "Defender" mode
+ *      - dual for the "Duel" mode
+ * - 1 specific main method by type of player on entering the combination:
+ *      - playerProposal when it is the player who must seize a proposal
+ *      - pcProposal when it is the computer that must enter a proposal.
+ */
 abstract class Game {
 
     protected static String secretNumberPC;
@@ -28,7 +37,7 @@ abstract class Game {
 
     protected int choiceGame ;
 
-    protected String gameMode ; // Challenger || Défenseur || Duel
+    protected String gameMode ;
 
     protected Scanner sc = new Scanner( System.in );
 
@@ -228,7 +237,7 @@ abstract class Game {
     }
 
     /**
-     * typical proposal "player"
+     * typical proposal "pc"
      */
     private void pcProposal(){
         pcProposal("pc");
@@ -254,6 +263,10 @@ abstract class Game {
        resultPlayer( playerType );
     }
 
+    /**
+     * we test if the format is numeric
+     * @return true if the format is numeric otherwise false
+     */
     private boolean tryGoodSeizure(){
         try {
             return isGoodSeizure();
@@ -264,21 +277,33 @@ abstract class Game {
         }
     }
 
+    /**
+     * displays the combination request and we check if is compliant
+     * @return true if the length matches otherwise false
+     */
     private boolean isGoodSeizure(){
             postTitleTrial();
             int seizure = sc.nextInt() ;
             return isSeizureGoodLength( seizure ) ;
     }
 
+    /**
+     * displays the combination request and we check if the length is compliant
+     * @param seizure combination to be tested
+     * @return true if the length matches otherwise false
+     */
     protected boolean isSeizureGoodLength(int seizure){
        if ( toStr( seizure ).length() <= getNumberCasePossible() ){
           combinaisonNumberPlayer = formatNumber( seizure ) ;
            return true;
        }else
            return false;
-
     }
 
+    /**
+     * displays the result after entering the player's combination
+     * @param playerType typical proposition is "pc" or "player"
+     */
     protected void resultPlayer( String playerType ){
         postResultPlayer();
         if (!isCombinaisonTrouve( playerResult ))
@@ -297,7 +322,10 @@ abstract class Game {
 
     }
 
-    // Méthodes PC
+    /**
+     * Next if we are in Defender or Dual mode we will guide a typical proposal on the combination choice. Either computer or player
+     * @param choice typical proposition is "pc" or "player"
+     */
     private void pcProposal(String choice){
         trial = trialPC ;
         pcResult = combinaisonResult( secretNumberPlayer ) ;
@@ -318,11 +346,18 @@ abstract class Game {
         }
     }
 
+    /**
+     * in the Defender mode we display the menu for entering the secret combination of the player
+     */
     private void initSecretNumberPlayer(){
         if(!trySecretNumber() )
             initSecretNumberPlayer();
     }
 
+    /**
+     * we control that the format of the combination is consistent
+     * @return true if the format is compliant otherwise false
+     */
     private boolean trySecretNumber(){
         try{
             return isGoodSecretNumber();
@@ -334,6 +369,10 @@ abstract class Game {
         }
     }
 
+    /**
+     * we display the entry notification of the secret combination of the player and we control that it is consistent
+     * @return true if compliant otherwise false
+     */
     private boolean isGoodSecretNumber(){
         postQuestionNumberSecret();
         int seizure = sc.nextInt();
@@ -346,6 +385,9 @@ abstract class Game {
         }
     }
 
+    /**
+     * displays the end-of-party menu
+     */
     private void endOfPartyMenu(){
         Menu menu = new Menu();
         menu.setChoiceGame( choiceGame );
