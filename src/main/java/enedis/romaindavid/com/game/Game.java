@@ -202,7 +202,7 @@ abstract class Game {
     /**
      * Next if we are in Challenger or Defender mode we will guide a typical proposal on the combination choice. Either computer or player
      */
-    protected void choiceProposal(){
+    private void choiceProposal(){
         choiceProposal( "" );
     }
 
@@ -210,7 +210,7 @@ abstract class Game {
      * Next if we are in Challenger,  Defender or Dual mode we will guide a typical proposal on the combination choice. Either computer or player
      * @param playerType typical proposition is "pc" or "player"
      */
-    protected void choiceProposal( String playerType ){
+    private void choiceProposal( String playerType ){
         if( isChallengerMode())
             playerProposal();
         else if (isDefenderMode() )
@@ -292,7 +292,7 @@ abstract class Game {
      * @param seizure combination to be tested
      * @return true if the length matches otherwise false
      */
-    protected boolean isSeizureGoodLength(int seizure){
+    private boolean isSeizureGoodLength(int seizure){
        if ( toStr( seizure ).length() <= getNumberCasePossible() ){
           combinaisonNumberPlayer = formatNumber( seizure ) ;
            return true;
@@ -304,7 +304,7 @@ abstract class Game {
      * displays the result after entering the player's combination
      * @param playerType typical proposition is "pc" or "player"
      */
-    protected void resultPlayer( String playerType ){
+    private void resultPlayer( String playerType ){
         postResultPlayer();
         if (!isCombinaisonTrouve( playerResult ))
             if(!(trialPlayer == getNumberTrialPossible()) ) {
@@ -364,7 +364,6 @@ abstract class Game {
         }catch (InputMismatchException e){
             postTitleControllerFormat();
             sc.nextLine();
-
             return false;
         }
     }

@@ -15,6 +15,7 @@ public class Main {
         try {
             if( !args[0].isEmpty() )
                 setModeDebug( args[0] );
+
         }catch ( ArrayIndexOutOfBoundsException e){}
 
         mainTitle();

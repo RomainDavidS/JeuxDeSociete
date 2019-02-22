@@ -106,7 +106,7 @@ public class Mastermind extends Game {
     /**
      * We check and display the result after entering the combination made by the computer
      * @param secretNumber player's secret number
-     * @returnresult after entering the combination
+     * @return result after entering the combination
      */
     @Override
     protected String combinaisonResult(String secretNumber){
