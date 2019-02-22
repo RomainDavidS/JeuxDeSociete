@@ -23,7 +23,7 @@ public class ModeGame implements Mode {
 
     /**
      * Starts games in Challenger mode
-     * @param game
+     * @param game 2 class names possible Mastermind or RecherchePlusMoins
      */
     @Override
     public void dual(Game game) {
