@@ -17,7 +17,7 @@ public class Main {
         Menu menu = new Menu();
 
         try{
-            if( args[0] == "dev ")
+            if( args[0].equals("dev") )
                 setModeDebug( true );
         }
         catch (ArrayIndexOutOfBoundsException e ){
