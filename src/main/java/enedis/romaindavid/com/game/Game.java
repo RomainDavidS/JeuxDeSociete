@@ -146,8 +146,7 @@ abstract class Game {
      * @return if we are in developer mode returns true otherwise false
      */
     private boolean isModeGameDev(){
-        return  ( getModeDebug().equals( "dev" ) ) ;
-
+        return  getModeDebug();
     }
 
     /**

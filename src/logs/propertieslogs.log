@@ -8,3 +8,13 @@
 [INFO ] 2019-02-20 16:57:44.979 [main] Title - PC : Proposition n° 2 sur 3 : 3281 -> Réponse : +=+-
 [INFO ] 2019-02-20 16:57:44.981 [main] Title - PC : Proposition n° 3 sur 3 : 0258 -> Réponse : -=++
 [INFO ] 2019-02-20 16:57:44.981 [main] Title - PC : Désolé la combinaison secrète 1234 n'a pas été trouvée.
+[INFO ] 2019-02-22 12:49:03.785 [main] Title - *******************************
+**  Mode Développeur activé  **
+*******************************
+[INFO ] 2019-02-22 12:49:03.785 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:49:03.785 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 13:08:16.050 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-02-22 13:08:16.051 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 13:08:16.051 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.

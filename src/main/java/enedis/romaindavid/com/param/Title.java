@@ -144,6 +144,7 @@ public abstract class Title {
 
     }
 
+
     public static void mainTitle(){
         logger.info("Bonjour et bienvenue dans vos jeux de société.");
     }
@@ -154,5 +155,21 @@ public abstract class Title {
 
     public static void postErrorChoice(){
         logger.error("Je n'ai pas compris votre choix.");
+    }
+
+    public static void postTitleDebug(){
+        String title = "*******************************\n";
+        title +="**  Mode Développeur activé  **\n";
+        title +="*******************************";
+        logger.info( title );
+
+    }
+
+    public static void postTitlePlayer(){
+        String title = "*******************************\n";
+        title +="**     Mode Joueur activé    **\n";
+        title +="*******************************";
+        logger.info( title );
+
     }
 }

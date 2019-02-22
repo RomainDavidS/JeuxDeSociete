@@ -22,7 +22,6 @@ public class Menu {
      * choice of the game
      */
     public void menuGame(){
-        clearScreen();
         try {
             postTitleMainMenu();
             choiceGame = sc.nextInt();
@@ -44,7 +43,7 @@ public class Menu {
      * choice of the mode game
      */
     public void menuMode(){
-        clearScreen();
+
         try {
             if( choiceGame == 1)
                 postTitleModeMenuRechercherPlusMoins();
@@ -102,7 +101,7 @@ public class Menu {
     public void endOfPartyMenu(){
         postEndOfPartyMenu();
         String choice = sc.nextLine().toUpperCase();
-
+        clearScreen();
         if ( choice.equals("O") || choice.equals("N" ))
             if (choice.equals("O") )
                 menuMode();

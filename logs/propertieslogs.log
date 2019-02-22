@@ -1,0 +1,124 @@
+[INFO ] 2019-02-22 12:08:06.682 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:08:06.725 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:08:42.155 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:08:42.199 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:28:37.609 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:28:37.652 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:31:16.566 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:31:16.600 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:41:38.918 [main] Title - *******************************
+**  Mode Développeur activé  **
+*******************************
+[INFO ] 2019-02-22 12:41:38.918 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:41:38.949 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:43:23.841 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-02-22 12:43:23.841 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:43:23.888 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:45:23.891 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-02-22 12:45:23.891 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:45:23.891 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:45:27.247 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-02-22 12:45:30.339 [main] Title - *** Jeu du Recherche +/- en mode Challenger. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+[INFO ] 2019-02-22 12:45:30.339 [main] Title - Joueur : Essai n°1 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:36.051 [main] Title - Joueur : Proposition n° 1 sur 20 : 1324 -> Réponse : -+-+
+[INFO ] 2019-02-22 12:45:36.051 [main] Title - Joueur : Essai n°2 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:39.124 [main] Title - Joueur : Proposition n° 2 sur 20 : 0134 -> Réponse : -+-+
+[INFO ] 2019-02-22 12:45:39.124 [main] Title - Joueur : Essai n°3 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:41.436 [main] Title - Joueur : Proposition n° 3 sur 20 : 1234 -> Réponse : -+-+
+[INFO ] 2019-02-22 12:45:41.436 [main] Title - Joueur : Essai n°4 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:42.769 [main] Title - Joueur : Proposition n° 4 sur 20 : 0012 -> Réponse : -=-+
+[INFO ] 2019-02-22 12:45:42.769 [main] Title - Joueur : Essai n°5 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:43.800 [main] Title - Joueur : Proposition n° 5 sur 20 : 0012 -> Réponse : -=-+
+[INFO ] 2019-02-22 12:45:43.815 [main] Title - Joueur : Essai n°6 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:44.878 [main] Title - Joueur : Proposition n° 6 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:44.878 [main] Title - Joueur : Essai n°7 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:45.996 [main] Title - Joueur : Proposition n° 7 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:45.996 [main] Title - Joueur : Essai n°8 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:46.996 [main] Title - Joueur : Proposition n° 8 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:46.996 [main] Title - Joueur : Essai n°9 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:48.313 [main] Title - Joueur : Proposition n° 9 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:48.313 [main] Title - Joueur : Essai n°10 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:50.483 [main] Title - Joueur : Proposition n° 10 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:50.483 [main] Title - Joueur : Essai n°11 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:51.889 [main] Title - Joueur : Proposition n° 11 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:51.889 [main] Title - Joueur : Essai n°12 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:53.347 [main] Title - Joueur : Proposition n° 12 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:53.347 [main] Title - Joueur : Essai n°13 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:54.736 [main] Title - Joueur : Proposition n° 13 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:54.736 [main] Title - Joueur : Essai n°14 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:55.727 [main] Title - Joueur : Proposition n° 14 sur 20 : 0011 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:55.727 [main] Title - Joueur : Essai n°15 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:45:58.642 [main] Title - Joueur : Proposition n° 15 sur 20 : 0001 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:45:58.642 [main] Title - Joueur : Essai n°16 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:46:01.170 [main] Title - Joueur : Proposition n° 16 sur 20 : 0001 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:46:01.170 [main] Title - Joueur : Essai n°17 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:46:02.487 [main] Title - Joueur : Proposition n° 17 sur 20 : 0001 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:46:02.487 [main] Title - Joueur : Essai n°18 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:46:03.414 [main] Title - Joueur : Proposition n° 18 sur 20 : 0001 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:46:03.414 [main] Title - Joueur : Essai n°19 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:46:04.576 [main] Title - Joueur : Proposition n° 19 sur 20 : 0001 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:46:04.576 [main] Title - Joueur : Essai n°20 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:46:05.713 [main] Title - Joueur : Proposition n° 20 sur 20 : 0001 -> Réponse : -=-=
+[INFO ] 2019-02-22 12:46:05.713 [main] Title - Joueur : Désolé la combinaison secrète 2061 n'a pas été trouvée.
+[INFO ] 2019-02-22 12:46:05.713 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+[INFO ] 2019-02-22 12:46:10.737 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-02-22 12:47:21.017 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-02-22 12:47:21.017 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:47:21.017 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:47:40.205 [main] Title - *******************************
+**  Mode Développeur activé  **
+*******************************
+[INFO ] 2019-02-22 12:47:40.205 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-02-22 12:47:40.205 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-02-22 12:47:47.149 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-02-22 12:47:50.621 [main] Title - *** Jeu du Recherche +/- en mode Challenger. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+[DEBUG] 2019-02-22 12:47:50.621 [main] Title - (Combinaison secrète PC : 6110)
+[INFO ] 2019-02-22 12:47:50.621 [main] Title - Joueur : Essai n°1 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:47:57.410 [main] Title - Joueur : Proposition n° 1 sur 20 : 1234 -> Réponse : -+++
+[INFO ] 2019-02-22 12:47:57.410 [main] Title - Joueur : Essai n°2 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:47:58.650 [main] Title - Joueur : Proposition n° 2 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:47:58.650 [main] Title - Joueur : Essai n°3 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:47:59.310 [main] Title - Joueur : Proposition n° 3 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:47:59.310 [main] Title - Joueur : Essai n°4 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:47:59.856 [main] Title - Joueur : Proposition n° 4 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:47:59.871 [main] Title - Joueur : Essai n°5 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:00.397 [main] Title - Joueur : Proposition n° 5 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:00.397 [main] Title - Joueur : Essai n°6 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:00.959 [main] Title - Joueur : Proposition n° 6 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:00.959 [main] Title - Joueur : Essai n°7 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:01.348 [main] Title - Joueur : Proposition n° 7 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:01.348 [main] Title - Joueur : Essai n°8 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:01.832 [main] Title - Joueur : Proposition n° 8 sur 20 : 0011 -> Réponse : --=+
+[INFO ] 2019-02-22 12:48:01.832 [main] Title - Joueur : Essai n°9 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:02.922 [main] Title - Joueur : Proposition n° 9 sur 20 : 0011 -> Réponse : --=+
+[INFO ] 2019-02-22 12:48:02.922 [main] Title - Joueur : Essai n°10 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:03.968 [main] Title - Joueur : Proposition n° 10 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:03.968 [main] Title - Joueur : Essai n°11 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:04.561 [main] Title - Joueur : Proposition n° 11 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:04.561 [main] Title - Joueur : Essai n°12 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:05.170 [main] Title - Joueur : Proposition n° 12 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:05.170 [main] Title - Joueur : Essai n°13 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:05.786 [main] Title - Joueur : Proposition n° 13 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:05.786 [main] Title - Joueur : Essai n°14 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:06.454 [main] Title - Joueur : Proposition n° 14 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:06.454 [main] Title - Joueur : Essai n°15 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:07.345 [main] Title - Joueur : Proposition n° 15 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:07.345 [main] Title - Joueur : Essai n°16 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:08.157 [main] Title - Joueur : Proposition n° 16 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:08.157 [main] Title - Joueur : Essai n°17 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:09.031 [main] Title - Joueur : Proposition n° 17 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:09.031 [main] Title - Joueur : Essai n°18 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:09.940 [main] Title - Joueur : Proposition n° 18 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:09.940 [main] Title - Joueur : Essai n°19 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:10.924 [main] Title - Joueur : Proposition n° 19 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:10.924 [main] Title - Joueur : Essai n°20 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-02-22 12:48:12.524 [main] Title - Joueur : Proposition n° 20 sur 20 : 0001 -> Réponse : ---+
+[INFO ] 2019-02-22 12:48:12.524 [main] Title - Joueur : Désolé la combinaison secrète 6110 n'a pas été trouvée.
+[INFO ] 2019-02-22 12:48:12.524 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+[INFO ] 2019-02-22 12:48:15.712 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
