@@ -33,7 +33,8 @@ public class Parameter {
     private void readingConfigFile(){
 
         try {
-            input = new FileInputStream("src/resources/config.properties");
+            input =getClass().getClassLoader().getResourceAsStream("config.properties");
+
             prop.load( input );
             readingGeneralProperty();
         } catch (IOException ex) {
