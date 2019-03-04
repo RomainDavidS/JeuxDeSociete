@@ -96,7 +96,7 @@ public class Plugin {
      * @param map hashmap to sort
      * @return sorted hashmap @param map
      */
-    public static HashMap<String, Integer> triAvecValeur(HashMap<String, Integer> map ){
+    public static HashMap<String, Integer> sortWithValue(HashMap<String, Integer> map ){
         List<Map.Entry<String, Integer>> list =
                 new LinkedList<Map.Entry<String, Integer>>( map.entrySet() );
         Collections.sort( list, new Comparator<Map.Entry<String, Integer>>(){

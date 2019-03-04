@@ -127,7 +127,9 @@ public abstract class Title {
     }
 
     public static void postWinResult(String player, int postTrial){
-        System.out.println( player + " : Félicitation la combinaison secrète a été trouvée en "+ postTrial +" essais." );
+        String value = player + " : Félicitation la combinaison secrète a été trouvée en "+ postTrial +" essais.";
+        logger.info( value );
+        System.out.println( value );
     }
 
     public static void postTitleMainMenu(){

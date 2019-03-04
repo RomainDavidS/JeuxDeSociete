@@ -94,7 +94,7 @@ public class Mastermind extends Game {
             generateCombinaisonFullEqual( orderArray[ trialPC - 1 ]  );
         else {
             if (!isTrieOk) {
-                mapPresent = triAvecValeur(mapPresent);
+                mapPresent = sortWithValue(mapPresent);
                 isTrieOk = true;
                 for ( Map.Entry<String,Integer > entry : mapPresent.entrySet() )
                     mapValueMP.put( entry.getKey(), "" );
