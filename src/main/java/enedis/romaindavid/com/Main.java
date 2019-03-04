@@ -3,6 +3,8 @@ package enedis.romaindavid.com;
 import enedis.romaindavid.com.game.*;
 import enedis.romaindavid.com.param.*;
 
+import java.io.UnsupportedEncodingException;
+
 import static enedis.romaindavid.com.param.Title.*;
 import static enedis.romaindavid.com.param.Parameter.*;
 
@@ -11,7 +13,7 @@ import static enedis.romaindavid.com.param.Parameter.*;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
         Parameter parameter = new Parameter();
 
         Menu menu = new Menu();
