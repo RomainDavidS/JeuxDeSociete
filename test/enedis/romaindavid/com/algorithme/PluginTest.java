@@ -74,7 +74,7 @@ class PluginTest {
         HashMap <String, Integer> map2 = new HashMap<>();
         map1.put("10",10);
         map1.put("11",11);
-        map2 = triAvecValeur( map1 );
+        map2 = sortWithValue( map1 );
         assertNotSame( map1, map2 );
     }
 }
