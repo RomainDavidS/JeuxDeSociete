@@ -8,3 +8,38 @@
 *******************************
 [INFO ] 2019-03-04 10:23:52.052 [main] Title - Bonjour et bienvenue dans vos jeux de société.
 [INFO ] 2019-03-04 10:23:52.052 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-06 08:57:28.309 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-06 08:57:28.348 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-06 08:57:28.348 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-06 08:58:14.358 [main] Title - *******************************
+**  Mode Développeur activé  **
+*******************************
+[INFO ] 2019-03-06 08:58:14.360 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-06 08:58:14.361 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-06 08:58:52.532 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-06 08:58:53.308 [main] Title - *** Jeu du Recherche +/- en mode Défenseur. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+[INFO ] 2019-03-06 08:58:53.309 [main] Title - Joueur : Veuillez saisir votre combinaison secrète
+[INFO ] 2019-03-06 08:58:58.989 [main] Title - PC : Proposition n° 1 sur 20 : 3898 -> Réponse : ++++
+[INFO ] 2019-03-06 08:58:58.990 [main] Title - PC : Proposition n° 2 sur 20 : 2354 -> Réponse : +++=
+[INFO ] 2019-03-06 08:58:58.991 [main] Title - PC : Proposition n° 3 sur 20 : 0044 -> Réponse : --+=
+[INFO ] 2019-03-06 08:58:58.991 [main] Title - PC : Proposition n° 4 sur 20 : 1104 -> Réponse : =--=
+[INFO ] 2019-03-06 08:58:58.992 [main] Title - PC : Proposition n° 5 sur 20 : 1234 -> Réponse : ====
+[INFO ] 2019-03-06 08:58:58.993 [main] Title - PC : Félicitation la combinaison secrète a été trouvée en 5 essais.
+[INFO ] 2019-03-06 08:58:58.993 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+[INFO ] 2019-03-06 09:00:35.256 [main] Title - *******************************
+**  Mode Développeur activé  **
+*******************************
+[INFO ] 2019-03-06 09:00:35.259 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-06 09:00:35.260 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-06 09:28:43.396 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-06 09:28:45.229 [main] Title - *** Jeu du Recherche +/- en mode Défenseur. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+[INFO ] 2019-03-06 09:28:45.229 [main] Title - Joueur : Veuillez saisir votre combinaison secrète
+[INFO ] 2019-03-06 09:28:46.627 [main] Title - PC : Proposition n° 1 sur 20 : 0265 -> Réponse : -=++
+[INFO ] 2019-03-06 09:28:46.628 [main] Title - PC : Proposition n° 2 sur 20 : 1250 -> Réponse : ==+-
+[INFO ] 2019-03-06 09:28:46.629 [main] Title - PC : Proposition n° 3 sur 20 : 1203 -> Réponse : ==--
+[INFO ] 2019-03-06 09:28:46.630 [main] Title - PC : Proposition n° 4 sur 20 : 1224 -> Réponse : ==-=
+[INFO ] 2019-03-06 09:28:46.631 [main] Title - PC : Proposition n° 5 sur 20 : 1234 -> Réponse : ====
+[INFO ] 2019-03-06 09:28:46.631 [main] Title - PC : Félicitation la combinaison secrète a été trouvée en 5 essais.
+[INFO ] 2019-03-06 09:28:46.632 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
