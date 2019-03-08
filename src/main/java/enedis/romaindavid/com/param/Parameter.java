@@ -1,11 +1,11 @@
 package enedis.romaindavid.com.param;
 
+import enedis.romaindavid.com.algorithme.Plugin;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import static enedis.romaindavid.com.algorithme.Plugin.toInt;
 
 /**
  * Set of different settings of games
@@ -72,9 +72,9 @@ public final class Parameter {
      */
     private void readingGeneralProperty(){
         modeDebug = Boolean.valueOf( prop.getProperty( "modeDebug" ) );
-        numberCasePossible = toInt( prop.getProperty( "numberCasePossible" ) );
-        baseNumberPossible = toInt( prop.getProperty("baseNumberPossible") );
-        numberTrialPossible = toInt( prop.getProperty("numberTrialPossible") );
+        numberCasePossible = Plugin.toInt( prop.getProperty( "numberCasePossible" ) );
+        baseNumberPossible = Plugin.toInt( prop.getProperty("baseNumberPossible") );
+        numberTrialPossible = Plugin.toInt( prop.getProperty("numberTrialPossible") );
         valueNoPresent = prop.getProperty("valueNoPresent");
     }
 

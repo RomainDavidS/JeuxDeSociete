@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 
-
 /**
  * main class of the application:
  * - 1 main method for each mode:
