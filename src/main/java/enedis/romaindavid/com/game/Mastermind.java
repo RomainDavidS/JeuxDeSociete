@@ -6,8 +6,6 @@ import enedis.romaindavid.com.param.Parameter;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
 /**
  *  Classes of the "Mastermind" game :
  *     - method generateSecretRandomString : generate the secret combination of the computer *
@@ -147,6 +145,7 @@ public class Mastermind extends Game {
 
     /**
      * Step 1 : we generate a combination to verify that it is present
+     * @param number number we chose to generate the combination
      */
     private void generateCombinaisonFullEqual(String number ) {
         combinaisonNumberPC = generateCombinaisonEqual( number );
