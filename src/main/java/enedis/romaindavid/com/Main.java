@@ -4,10 +4,6 @@ import enedis.romaindavid.com.algorithme.Plugin;
 import enedis.romaindavid.com.game.*;
 import enedis.romaindavid.com.param.*;
 
-
-import static enedis.romaindavid.com.param.Title.*;
-import static enedis.romaindavid.com.param.Parameter.*;
-
 /**
  * Main class
  */
@@ -15,24 +11,22 @@ public class Main {
 
     public static void main(String[] args)  {
         Plugin.clearScreen();
-        Parameter parameter = new Parameter();
+        Parameter.getCounter();
+        Title.getCounter();
 
         Menu menu = new Menu();
-
         try{
             if( args[0].equals("dev") )
-                setModeDebug( true );
+                Parameter.setModeDebug( true );
         }
-        catch (ArrayIndexOutOfBoundsException e ){
-            parameter.readingDebugProperty();
-        }
+        catch (ArrayIndexOutOfBoundsException e ){}
 
-        if ( getModeDebug() )
-            postTitleDebug();
+        if ( Parameter.isModeDebug() )
+            Title.postTitleDebug();
         else
-            postTitlePlayer();
+            Title.postTitlePlayer();
 
-        mainTitle();
+        Title.mainTitle();
 
         menu.menuGame();
     }

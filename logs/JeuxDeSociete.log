@@ -43,3 +43,25 @@
 [INFO ] 2019-03-06 09:28:46.631 [main] Title - PC : Proposition n° 5 sur 20 : 1234 -> Réponse : ====
 [INFO ] 2019-03-06 09:28:46.631 [main] Title - PC : Félicitation la combinaison secrète a été trouvée en 5 essais.
 [INFO ] 2019-03-06 09:28:46.632 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+[INFO ] 2019-03-08 08:02:44.191 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-08 08:02:44.237 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-08 08:02:44.237 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-08 08:04:34.282 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-08 08:04:34.285 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-08 08:04:34.286 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-08 08:57:55.155 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-08 08:57:55.158 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-08 08:57:55.158 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-08 08:58:54.835 [main] Title - *******************************
+**  Mode Développeur activé  **
+*******************************
+[INFO ] 2019-03-08 08:58:54.839 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-08 08:58:54.839 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-08 08:59:10.792 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-08 08:59:16.855 [main] Title - *** Jeu du Recherche +/- en mode Challenger. Combinaison de 0 chiffres maximun et 0 essais possibles ***

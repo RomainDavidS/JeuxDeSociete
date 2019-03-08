@@ -1,5 +1,7 @@
 package enedis.romaindavid.com.game;
 
+import enedis.romaindavid.com.param.Parameter;
+
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
@@ -141,13 +143,6 @@ abstract class Game {
         }
     }
 
-    /**
-     * We check if the developer mode is enabled
-     * @return if we are in developer mode returns true otherwise false
-     */
-    private boolean isModeGameDev(){
-        return  getModeDebug();
-    }
 
     /**
      * Check if the challenger mode was chosen
@@ -186,7 +181,7 @@ abstract class Game {
      * the secret number of the computer is displayed if the developer mode has been activated
      */
     private void isPostSecretNumberPc(){
-        if( isModeGameDev() )
+        if( Parameter.isModeDebug() )
             postSecretNumberPc();
     }
 
@@ -194,7 +189,7 @@ abstract class Game {
      * the secret number of the player is displayed if the developer mode has been activated
      */
     private void isPostSecretNumberPlayer(){
-        if( isModeGameDev() )
+        if( Parameter.isModeDebug() )
             postSecretNumberPlayer();
     }
 

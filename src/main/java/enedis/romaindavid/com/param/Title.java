@@ -1,16 +1,10 @@
 package enedis.romaindavid.com.param;
 
-
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
-
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-
+import java.util.Properties;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static enedis.romaindavid.com.game.RecherchePlusMoins.*;
 import static enedis.romaindavid.com.game.Mastermind.*;
@@ -21,7 +15,19 @@ import static enedis.romaindavid.com.param.Parameter.getNumberTrialPossible;
 /**
  * Set of the messages of the game
  */
-public abstract class Title {
+public final class Title {
+    private static AtomicInteger parameter = new AtomicInteger();
+
+    private Title() {}
+
+    public static int getCounter(){
+        return parameter.get();
+    }
+
+    public static int increment(){
+        return parameter.incrementAndGet();
+    }
+
     private static Logger logger = LogManager.getLogger();
 
 

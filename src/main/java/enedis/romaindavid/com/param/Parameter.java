@@ -1,40 +1,49 @@
 package enedis.romaindavid.com.param;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static enedis.romaindavid.com.algorithme.Plugin.toInt;
 
 /**
  * Set of different settings of games
  */
-public class Parameter {
+public final class Parameter {
 
-    public static boolean modeDebug = false;
+    private static boolean modeDebug;
     private static int numberCasePossible;
     private static int baseNumberPossible;
     private static int numberTrialPossible ;
     private static String valueNoPresent;
 
     private Properties prop;
-    InputStream input;
+    private InputStream input;
 
-    public Parameter() {
+
+    private static AtomicInteger parameter = new AtomicInteger();
+
+    private Parameter() {
         prop = new Properties();
         input = null;
         readingConfigFile();
+    }
+
+    public static int getCounter(){
+        return parameter.get();
+    }
+
+    public static int increment(){
+        return parameter.incrementAndGet();
     }
 
     /**
      * recovery of the parameters passed in config.properties
      */
     private void readingConfigFile(){
-
         try {
             input =getClass().getClassLoader().getResourceAsStream("config.properties");
-
             prop.load( input );
             readingGeneralProperty();
         } catch (IOException ex) {
@@ -54,37 +63,31 @@ public class Parameter {
      * recovery of the general parameters passed in config.properties
      */
     private void readingGeneralProperty(){
+        modeDebug = Boolean.valueOf( prop.getProperty( "modeDebug" ) );
         numberCasePossible = toInt( prop.getProperty( "numberCasePossible" ) );
         baseNumberPossible = toInt( prop.getProperty("baseNumberPossible") );
         numberTrialPossible = toInt( prop.getProperty("numberTrialPossible") );
         valueNoPresent = prop.getProperty("valueNoPresent");
     }
 
-    /**
-     * recovery of the debug parameter passed in config.properties
-     */
-    public void readingDebugProperty(){
-        modeDebug = Boolean.valueOf( prop.getProperty( "modeDebug" ) );
-    }
-
-    public static boolean getModeDebug() {
-        return modeDebug;
-    }
-
     public static void setModeDebug(boolean modeDebug) {
         Parameter.modeDebug = modeDebug;
+    }
+
+    public static boolean isModeDebug() {
+        return modeDebug;
     }
 
     public static int getNumberCasePossible() {
         return numberCasePossible;
     }
 
-    public static int getNumberTrialPossible() {
-        return numberTrialPossible;
-    }
-
     public static int getBaseNumberPossible() {
         return baseNumberPossible;
+    }
+
+    public static int getNumberTrialPossible() {
+        return numberTrialPossible;
     }
 
     public static String getValueNoPresent() {
