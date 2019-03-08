@@ -290,8 +290,10 @@ public abstract class Game {
        if ( Plugin.toStr( seizure ).length() <= Parameter.getNumberCasePossible() ){
           combinaisonNumberPlayer = Plugin.formatNumber( seizure ) ;
            return true;
-       }else
+       }else {
+           Title.postTitleControllerSeizureLength();
            return false;
+       }
     }
 
     /**
