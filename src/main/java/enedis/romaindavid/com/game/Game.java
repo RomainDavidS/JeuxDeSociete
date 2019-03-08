@@ -1,15 +1,15 @@
 package enedis.romaindavid.com.game;
 
+import enedis.romaindavid.com.algorithme.Plugin;
 import enedis.romaindavid.com.param.Parameter;
+import enedis.romaindavid.com.param.Title;
 
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
-import static enedis.romaindavid.com.algorithme.Plugin.*;
-import static enedis.romaindavid.com.param.Parameter.*;
-import static enedis.romaindavid.com.param.Title.*;
+
 
 /**
  * main class of the application:
@@ -21,7 +21,7 @@ import static enedis.romaindavid.com.param.Title.*;
  *      - playerProposal when it is the player who must seize a proposal
  *      - pcProposal when it is the computer that must enter a proposal.
  */
-abstract class Game {
+public abstract class Game {
 
     protected static String secretNumberPC;
 
@@ -89,7 +89,7 @@ abstract class Game {
      */
     public void challenger(){
         gameMode = "Challenger";
-        postTitleGameChallenger ();
+        Title.postTitleGameChallenger ();
         secretNumberPC = generateSecretRandomString() ;
         isPostSecretNumberPc() ;
         choiceProposal();
@@ -100,7 +100,7 @@ abstract class Game {
      */
     public void defender(){
         gameMode = "Défenseur";
-        postTitleGameDefender();
+        Title.postTitleGameDefender();
         initSecretNumberPlayer();
         choiceProposal();
     }
@@ -110,7 +110,7 @@ abstract class Game {
      */
     public void dual(){
         gameMode = "Duel";
-        postTitleGameDual();
+        Title.postTitleGameDual();
         initSecretNumberPlayer();
         secretNumberPC = generateSecretRandomString();
         isPostSecretNumberPc() ;
@@ -134,11 +134,11 @@ abstract class Game {
      * For dual mode this method of raffling which of the players will play first
      */
     private void choiceFirstPlayer(){
-        if( generateRandomInRange(0, 1) == 0 ) {
-            postTitlePlayerFirst();
+        if(Plugin.generateRandomInRange(0, 1) == 0 ) {
+            Title.postTitlePlayerFirst();
             choiceProposal("pc");
         }else {
-            postTitlePcFirst();
+            Title.postTitlePcFirst();
             choiceProposal( "player" );
         }
     }
@@ -182,7 +182,7 @@ abstract class Game {
      */
     private void isPostSecretNumberPc(){
         if( Parameter.isModeDebug() )
-            postSecretNumberPc();
+            Title.postSecretNumberPc();
     }
 
     /**
@@ -190,7 +190,7 @@ abstract class Game {
      */
     private void isPostSecretNumberPlayer(){
         if( Parameter.isModeDebug() )
-            postSecretNumberPlayer();
+            Title.postSecretNumberPlayer();
     }
 
     /**
@@ -265,7 +265,7 @@ abstract class Game {
         try {
             return isGoodSeizure();
         } catch (InputMismatchException e){
-            postTitleControllerFormat();
+            Title.postTitleControllerFormat();
             sc.nextLine();
             return false;
         }
@@ -276,7 +276,7 @@ abstract class Game {
      * @return true if the length matches otherwise false
      */
     private boolean isGoodSeizure(){
-            postTitleTrial();
+            Title.postTitleTrial();
             int seizure = sc.nextInt() ;
             return isSeizureGoodLength( seizure ) ;
     }
@@ -287,8 +287,8 @@ abstract class Game {
      * @return true if the length matches otherwise false
      */
     private boolean isSeizureGoodLength(int seizure){
-       if ( toStr( seizure ).length() <= getNumberCasePossible() ){
-          combinaisonNumberPlayer = formatNumber( seizure ) ;
+       if ( Plugin.toStr( seizure ).length() <= Parameter.getNumberCasePossible() ){
+          combinaisonNumberPlayer = Plugin.formatNumber( seizure ) ;
            return true;
        }else
            return false;
@@ -299,18 +299,18 @@ abstract class Game {
      * @param playerType typical proposition is "pc" or "player"
      */
     private void resultPlayer( String playerType ){
-        postResultPlayer();
+        Title.postResultPlayer();
         if (!isCombinaisonTrouve( playerResult ))
-            if(!(trialPlayer == getNumberTrialPossible()) ) {
+            if(!(trialPlayer == Parameter.getNumberTrialPossible()) ) {
                 trialPlayer++;
                 choiceProposal( playerType );
 
             } else {
-                postLostResultPlayer();
+                Title.postLostResultPlayer();
                 endOfPartyMenu();
             }
         else {
-            postWinResultPlayer(trialPlayer);
+            Title.postWinResultPlayer(trialPlayer);
             endOfPartyMenu();
         }
 
@@ -324,18 +324,18 @@ abstract class Game {
         trial = trialPC ;
         pcResult = combinaisonResult( secretNumberPlayer ) ;
 
-        postResultPC();
+        Title.postResultPC();
 
         if( !isCombinaisonTrouve( pcResult ) )
-            if(!(trialPC == getNumberTrialPossible()) ) {
+            if(!(trialPC == Parameter.getNumberTrialPossible()) ) {
                 trialPC++;
                 choiceProposal( choice );
             }else {
-                postLostResultPC( );
+                Title.postLostResultPC( );
                 endOfPartyMenu();
             }
         else {
-            postWinResultPC(trialPC);
+            Title.postWinResultPC(trialPC);
             endOfPartyMenu();
         }
     }
@@ -356,7 +356,7 @@ abstract class Game {
         try{
             return isGoodSecretNumber();
         }catch (InputMismatchException e){
-            postTitleControllerFormat();
+            Title.postTitleControllerFormat();
             sc.nextLine();
             return false;
         }
@@ -367,13 +367,13 @@ abstract class Game {
      * @return true if compliant otherwise false
      */
     private boolean isGoodSecretNumber(){
-        postQuestionNumberSecret();
+        Title.postQuestionNumberSecret();
         int seizure = sc.nextInt();
         if( !isSeizureGoodLength( seizure ) ) {
-            postTitleControllerSeizureLength();
+            Title.postTitleControllerSeizureLength();
             return false;
         }else {
-           secretNumberPlayer = formatNumber(seizure);
+           secretNumberPlayer = Plugin.formatNumber(seizure);
             return true;
         }
     }

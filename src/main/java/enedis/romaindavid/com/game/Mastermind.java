@@ -1,10 +1,12 @@
 package enedis.romaindavid.com.game;
 
+import enedis.romaindavid.com.algorithme.Plugin;
+import enedis.romaindavid.com.param.Parameter;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import static enedis.romaindavid.com.algorithme.Plugin.*;
-import static enedis.romaindavid.com.param.Parameter.*;
+
 
 /**
  *  Classes of the "Mastermind" game :
@@ -68,9 +70,9 @@ public class Mastermind extends Game {
         String generate = "";
         int randNumber = 0;
 
-        for (int i = 0; i < getNumberCasePossible(); i++ ){
-            randNumber = generateRandom( getBaseNumberPossible() );
-            generate += toStr( randNumber );
+        for (int i = 0; i < Parameter.getNumberCasePossible(); i++ ){
+            randNumber = Plugin.generateRandom( Parameter.getBaseNumberPossible() );
+            generate += Plugin.toStr( randNumber );
         }
         return generate;
     }
@@ -90,11 +92,11 @@ public class Mastermind extends Game {
     @Override
     protected void generateCombinaisonPC() {
 
-        if( totalPresent != getNumberCasePossible() )
+        if( totalPresent != Parameter.getNumberCasePossible() )
             generateCombinaisonFullEqual( orderArray[ trialPC - 1 ]  );
         else {
             if (!isTrieOk) {
-                mapPresent = sortWithValue(mapPresent);
+                mapPresent = Plugin.sortWithValue(mapPresent);
                 isTrieOk = true;
                 for ( Map.Entry<String,Integer > entry : mapPresent.entrySet() )
                     mapValueMP.put( entry.getKey(), "" );
@@ -132,15 +134,15 @@ public class Mastermind extends Game {
      */
     @Override
     protected boolean isCombinaisonTrouve(String result) {
-        return ( wellPut == getNumberCasePossible() );
+        return ( wellPut == Parameter.getNumberCasePossible() );
     }
 
     /**
      * we initialize "mapValuePresent" with all possible values for each digit of the combination that will have to enter the computer
      */
     private void initMapPresent(){
-        for (int i = 0 ; i < getNumberCasePossible(); i++ )
-            mapValuePresent.put( i , getValueNoPresent() );
+        for (int i = 0 ; i < Parameter.getNumberCasePossible(); i++ )
+            mapValuePresent.put( i , Parameter.getValueNoPresent() );
     }
 
     /**
@@ -165,12 +167,12 @@ public class Mastermind extends Game {
             key = entry.getKey();
             value = entry.getValue();
 
-            String order = generateOrder( getNumberCasePossible() );
+            String order = generateOrder( Parameter.getNumberCasePossible() );
             String[] orderP = order.split("");
 
             for (String o :orderP )
                 if (!mapValueMP.get(key).contains(o))
-                    if ( mapValuePresent.get( toInt( o ) ).equals( getValueNoPresent() ) ) {
+                    if ( mapValuePresent.get( Plugin.toInt( o ) ).equals( Parameter.getValueNoPresent() ) ) {
                         pcSearchResult( o );
                         controlerPresent( o );
                         break;
@@ -185,7 +187,7 @@ public class Mastermind extends Game {
      * @param o value that will serve to generate the combination
      */
     private void pcSearchResult( String o ){
-        mapValuePresent.replace( toInt( o ), key);
+        mapValuePresent.replace( Plugin.toInt( o ), key);
         combinaisonNumberPC = concatMap( mapValuePresent );
         pcResult = searchResult(secretNumberPlayer, combinaisonNumberPC);
     }
@@ -197,7 +199,7 @@ public class Mastermind extends Game {
     private void controlerPresent( String o ){
         if ( misPlaced == 1) {
             mapValueMP.replace(key, mapValueMP.get( key ) + o);
-            mapValuePresent.replace( toInt( o ), getValueNoPresent());
+            mapValuePresent.replace( Plugin.toInt( o ), Parameter.getValueNoPresent());
         } else {
             value--;
             mapPresent.replace( key, value );
@@ -216,7 +218,7 @@ public class Mastermind extends Game {
      * we generate a random order to find the digits present in the combination and for the position of the digits to look for in the combination
      */
     private void generateOrderArray(){
-        String order = generateOrder( getBaseNumberPossible() );
+        String order = generateOrder( Parameter.getBaseNumberPossible() );
         orderArray = order.split("");
     }
 
@@ -257,7 +259,7 @@ public class Mastermind extends Game {
      *  - occurrenceP occurrence of each digit present in the secret combination
      */
     private void initMapOccurence(){
-        for(int i = 0 ; i < getBaseNumberPossible(); i++){
+        for(int i = 0 ; i < Parameter.getBaseNumberPossible(); i++){
             occurenceC.put( i  , 0 );
             occurenceS.put( i  , 0 );
             occurenceB.put( i  , 0 );
@@ -271,8 +273,8 @@ public class Mastermind extends Game {
      */
     private void accountOccurenceC( String[] strArray ){
         for (String  c  : strArray ) {
-            if( occurenceC.containsKey( toInt(c) ) )
-                occurenceC.replace(toInt(c), occurenceC.get(toInt(c)) + 1);
+            if( occurenceC.containsKey( Plugin.toInt(c) ) )
+                occurenceC.replace( Plugin.toInt(c), occurenceC.get( Plugin.toInt( c ) ) + 1);
         }
     }
 
@@ -285,7 +287,7 @@ public class Mastermind extends Game {
         int n = 0;
         for (String s : strArray2 )
             if ( s.equals( strArray1[ n++ ] ) )
-                occurenceB.replace( toInt(s), occurenceB.get( toInt( s ) ) + 1 );
+                occurenceB.replace( Plugin.toInt(s), occurenceB.get( Plugin.toInt( s ) ) + 1 );
     }
 
     /**
@@ -294,14 +296,14 @@ public class Mastermind extends Game {
      */
     private void accountOccurenceS(String[] strArray ){
         for (String s : strArray )
-            occurenceS.replace( toInt(s), occurenceS.get( toInt( s ) ) + 1 );
+            occurenceS.replace( Plugin.toInt(s), occurenceS.get( Plugin.toInt( s ) ) + 1 );
     }
 
     /**
      * update occurrence of each digit present in the secret combination
      */
     private void accountOccurenceP(){
-        for(int i = 0; i < getBaseNumberPossible(); i++ ){
+        for(int i = 0; i < Parameter.getBaseNumberPossible(); i++ ){
             if( occurenceS.get( i )  < occurenceC.get( i ) ) {
                 occurenceP.replace(i, occurenceS.get( i ) );
                 present += occurenceS.get( i );
@@ -316,7 +318,7 @@ public class Mastermind extends Game {
      * update occurence wellPut
      */
     private void accountWellPut(){
-        for(int i = 0; i <  getBaseNumberPossible(); i++ )
+        for(int i = 0; i <  Parameter.getBaseNumberPossible(); i++ )
             if( occurenceB.get( i ) >=  occurenceP.get( i ) )
                 wellPut += occurenceP.get( i );
             else
@@ -395,7 +397,7 @@ public class Mastermind extends Game {
      */
     private static String generateCombinaisonEqual(String figure){
         String combinaison="";
-        for (int i = 0 ; i < getNumberCasePossible() ; i++ )
+        for (int i = 0 ; i < Parameter.getNumberCasePossible() ; i++ )
             combinaison += figure;
 
         return combinaison;
@@ -410,9 +412,9 @@ public class Mastermind extends Game {
         String order = "";
         for( int i = 1 ; i <= limit ; i++ )
             do{
-                int rand = generateRandom( limit );
-                if( !order.contains( toStr( rand ) ) )
-                    order += toStr( rand );
+                int rand = Plugin.generateRandom( limit );
+                if( !order.contains( Plugin.toStr( rand ) ) )
+                    order += Plugin.toStr( rand );
 
             }while( order.length() < i  );
 

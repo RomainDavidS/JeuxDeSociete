@@ -11,8 +11,8 @@ public class Main {
 
     public static void main(String[] args)  {
         Plugin.clearScreen();
-        Parameter.getCounter();
-        Title.getCounter();
+        Parameter.getInstance();
+        Title.getInstance();
 
         Menu menu = new Menu();
         try{

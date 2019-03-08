@@ -1,8 +1,8 @@
 package enedis.romaindavid.com.game;
 
 
-import static enedis.romaindavid.com.algorithme.Plugin.*;
-import static enedis.romaindavid.com.param.Parameter.*;
+import enedis.romaindavid.com.algorithme.Plugin;
+import enedis.romaindavid.com.param.Parameter;
 
 /**
  *  Classes of the "Recherche +/-" game :
@@ -28,8 +28,8 @@ public class RecherchePlusMoins  extends Game {
      */
     @Override
     protected String generateSecretRandomString(){
-        int randNumber = generateRandom( puissanceDe10( getNumberCasePossible() )) ;
-        return formatNumber( randNumber );
+        int randNumber = Plugin.generateRandom( Plugin.puissanceDe10(Parameter.getNumberCasePossible() )) ;
+        return Plugin.formatNumber( randNumber );
     }
 
     /**
@@ -52,7 +52,7 @@ public class RecherchePlusMoins  extends Game {
 
         String[] resultArray = pcResult.split("");
 
-        for(int i = 0; i < getNumberCasePossible(); i++)
+        for(int i = 0; i < Parameter.getNumberCasePossible(); i++)
             newCombinaisonPC += newPcCombinaison( i, combinaisonNumberPcArray[ i ], resultArray[ i ]  );
 
         combinaisonNumberPC = newCombinaisonPC ;
@@ -90,7 +90,7 @@ public class RecherchePlusMoins  extends Game {
         String resultCombinaison = "" ;
 
         for(int i = 0 ; i<= lenArray;i++)
-            resultCombinaison += resultOne( toInt( combinaisonSeizureArray[ i ] ),toInt( combinaisonSecretArray[ i ] ) );
+            resultCombinaison += resultOne( Plugin.toInt( combinaisonSeizureArray[ i ] ), Plugin.toInt( combinaisonSecretArray[ i ] ) );
 
         return resultCombinaison;
     }
@@ -115,7 +115,7 @@ public class RecherchePlusMoins  extends Game {
      * we initialize "mapPossible" with all possible values for each digit of the combination that will have to enter the computer
      */
     private void initMapPossible(){
-        for ( int i = 0; i < getNumberCasePossible() ; i++ )
+        for ( int i = 0; i < Parameter.getNumberCasePossible() ; i++ )
             mapPossible.put( i, "0123456789");
     }
 
@@ -148,7 +148,7 @@ public class RecherchePlusMoins  extends Game {
         if (possible.length() == 1)
             return mapPossible.get( index );
 
-        String newCombinaison  = generateCombinaison( result,  possibleArray,toInt( combinaisonNumber ) );
+        String newCombinaison  = generateCombinaison( result,  possibleArray, Plugin.toInt( combinaisonNumber ) );
         String[] newCombinaisonArray = newCombinaison.split("");
 
         mapPossible.replace( index, newCombinaison );
@@ -157,8 +157,8 @@ public class RecherchePlusMoins  extends Game {
         if( len == 1)
             return newCombinaison;
         else{
-            int newR = generateRandomInRange(toInt( newCombinaisonArray[0] ),toInt( newCombinaisonArray[ len -1 ] ));
-            return toStr( newR );
+            int newR = Plugin.generateRandomInRange( Plugin.toInt( newCombinaisonArray[0] ), Plugin.toInt( newCombinaisonArray[ len -1 ] ));
+            return Plugin.toStr( newR );
         }
     }
 
@@ -174,7 +174,7 @@ public class RecherchePlusMoins  extends Game {
         String combinaison = "";
 
         for (String str: possibleArray ) {
-            int intStr = toInt( str );
+            int intStr = Plugin.toInt( str );
             if( result.equals( "+" ) )
                 if( intStr < intCombinaisonNumber )
                     combinaison += str;

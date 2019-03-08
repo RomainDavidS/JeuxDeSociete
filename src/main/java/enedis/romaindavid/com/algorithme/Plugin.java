@@ -1,9 +1,10 @@
 package enedis.romaindavid.com.algorithme;
 
+import enedis.romaindavid.com.param.Parameter;
+
 import java.io.IOException;
 import java.util.*;
 
-import static enedis.romaindavid.com.param.Parameter.getNumberCasePossible;
 
 /**
  * set of plugin
@@ -55,7 +56,7 @@ public class Plugin {
      * @return Integer @param number formatted
      */
     public static String formatNumber(int number ){
-        return formatNumber( getNumberCasePossible(), number );
+        return formatNumber( Parameter.getNumberCasePossible(), number );
     }
 
     /**
@@ -65,6 +66,7 @@ public class Plugin {
      * @return Integer @param number formatted according to the defined length @param len
      */
     public static String formatNumber(int len, int number ){
+
         return String.format("%0" + len + "d",  number );
     }
 

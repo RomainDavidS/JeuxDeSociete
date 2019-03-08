@@ -19,23 +19,31 @@ public final class Parameter {
     private static String valueNoPresent;
 
     private Properties prop;
-    private InputStream input;
+    private InputStream input = null;
 
 
-    private static AtomicInteger parameter = new AtomicInteger();
+    private static Parameter singleton = new Parameter();
+
+    public static Parameter getInstance()
+    {
+        return singleton;
+    }
+
+    private static class Holder {
+        private static final AtomicInteger parameter = new AtomicInteger();
+    }
 
     private Parameter() {
         prop = new Properties();
-        input = null;
         readingConfigFile();
     }
 
     public static int getCounter(){
-        return parameter.get();
+        return Holder.parameter.get();
     }
 
     public static int increment(){
-        return parameter.incrementAndGet();
+        return Holder.parameter.incrementAndGet();
     }
 
     /**

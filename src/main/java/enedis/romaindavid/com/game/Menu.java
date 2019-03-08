@@ -1,10 +1,12 @@
 package enedis.romaindavid.com.game;
 
+import enedis.romaindavid.com.algorithme.Plugin;
+import enedis.romaindavid.com.param.Title;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static enedis.romaindavid.com.algorithme.Plugin.clearScreen;
-import static enedis.romaindavid.com.param.Title.*;
+
 
 /**
  * management of the different menus
@@ -23,17 +25,17 @@ public class Menu {
      */
     public void menuGame(){
         try {
-            postTitleMainMenu();
+            Title.postTitleMainMenu();
             choiceGame = sc.nextInt();
 
             if( !(choiceGame == 1 || choiceGame == 2) ){
-                postTitleControllerGameMenu();
+                Title.postTitleControllerGameMenu();
                 menuGame();
             }else
                 menuMode();
 
         }catch ( InputMismatchException e ){
-            postTitleControllerFormat();
+            Title.postTitleControllerFormat();
             sc.nextLine();
             menuGame();
         }
@@ -46,20 +48,20 @@ public class Menu {
 
         try {
             if( choiceGame == 1)
-                postTitleModeMenuRechercherPlusMoins();
+                Title.postTitleModeMenuRechercherPlusMoins();
             else
-                postTitleModeMenuMastermind();
+                Title.postTitleModeMenuMastermind();
 
             choiceMode = sc.nextInt();
 
             if ( choiceMode < 1 || choiceMode > 3 ){
-                postTitleControllerModeMenu();
+                Title.postTitleControllerModeMenu();
                 menuMode();
             }else
                 runGame();
 
         }catch ( InputMismatchException e){
-            postTitleControllerFormat();
+            Title.postTitleControllerFormat();
             sc.nextLine();
             menuMode();
         }
@@ -99,9 +101,9 @@ public class Menu {
      * end-of-the-game menu to find out if we are starting a game or another game or we are leaving the application
      */
     public void endOfPartyMenu(){
-        postEndOfPartyMenu();
+        Title.postEndOfPartyMenu();
         String choice = sc.nextLine().toUpperCase();
-        clearScreen();
+        Plugin.clearScreen();
         if ( choice.equals("O") || choice.equals("N" ))
             if (choice.equals("O") )
                 menuMode();
@@ -111,7 +113,7 @@ public class Menu {
              System.exit(1);
         }
          else {
-            postErrorChoice();
+            Title.postErrorChoice();
             endOfPartyMenu();
         }
 
