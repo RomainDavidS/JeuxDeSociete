@@ -18,6 +18,8 @@ public class Menu {
     private int choiceGame;
     private int choiceMode;
 
+    protected Title title = Title.getInstance();
+
     ModeGame modeGame = new ModeGame();
 
     /**
@@ -25,17 +27,17 @@ public class Menu {
      */
     public void menuGame(){
         try {
-            Title.postTitleMainMenu();
+            title.postTitleMainMenu();
             choiceGame = sc.nextInt();
 
             if( !(choiceGame == 1 || choiceGame == 2) ){
-                Title.postTitleControllerGameMenu();
+                title.postTitleControllerGameMenu();
                 menuGame();
             }else
                 menuMode();
 
         }catch ( InputMismatchException e ){
-            Title.postTitleControllerFormat();
+            title.postTitleControllerFormat();
             sc.nextLine();
             menuGame();
         }
@@ -48,20 +50,20 @@ public class Menu {
 
         try {
             if( choiceGame == 1)
-                Title.postTitleModeMenuRechercherPlusMoins();
+                title.postTitleModeMenuRechercherPlusMoins();
             else
-                Title.postTitleModeMenuMastermind();
+                title.postTitleModeMenuMastermind();
 
             choiceMode = sc.nextInt();
 
             if ( choiceMode < 1 || choiceMode > 3 ){
-                Title.postTitleControllerModeMenu();
+                title.postTitleControllerModeMenu();
                 menuMode();
             }else
                 runGame();
 
         }catch ( InputMismatchException e){
-            Title.postTitleControllerFormat();
+            title.postTitleControllerFormat();
             sc.nextLine();
             menuMode();
         }
@@ -101,7 +103,7 @@ public class Menu {
      * end-of-the-game menu to find out if we are starting a game or another game or we are leaving the application
      */
     public void endOfPartyMenu(){
-        Title.postEndOfPartyMenu();
+        title.postEndOfPartyMenu();
         String choice = sc.nextLine().toUpperCase();
         Plugin.clearScreen();
         if ( choice.equals("O") || choice.equals("N" ))
@@ -113,7 +115,7 @@ public class Menu {
              System.exit(1);
         }
          else {
-            Title.postErrorChoice();
+            title.postErrorChoice();
             endOfPartyMenu();
         }
 

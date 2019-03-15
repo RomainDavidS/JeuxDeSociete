@@ -22,6 +22,9 @@ import java.util.Scanner;
  */
 public abstract class Game {
 
+    protected Title title = Title.getInstance();
+    protected Parameter params = Parameter.getInstance();
+
     protected static String secretNumberPC;
 
     protected static String combinaisonNumberPC;
@@ -88,7 +91,7 @@ public abstract class Game {
      */
     public void challenger(){
         gameMode = "Challenger";
-        Title.postTitleGameChallenger ();
+        title.postTitleGameChallenger ();
         secretNumberPC = generateSecretRandomString() ;
         isPostSecretNumberPc() ;
         choiceProposal();
@@ -99,7 +102,7 @@ public abstract class Game {
      */
     public void defender(){
         gameMode = "Défenseur";
-        Title.postTitleGameDefender();
+        title.postTitleGameDefender();
         initSecretNumberPlayer();
         choiceProposal();
     }
@@ -109,7 +112,7 @@ public abstract class Game {
      */
     public void dual(){
         gameMode = "Duel";
-        Title.postTitleGameDual();
+        title.postTitleGameDual();
         initSecretNumberPlayer();
         secretNumberPC = generateSecretRandomString();
         isPostSecretNumberPc() ;
@@ -134,10 +137,10 @@ public abstract class Game {
      */
     private void choiceFirstPlayer(){
         if(Plugin.generateRandomInRange(0, 1) == 0 ) {
-            Title.postTitlePlayerFirst();
+            title.postTitlePlayerFirst();
             choiceProposal("pc");
         }else {
-            Title.postTitlePcFirst();
+            title.postTitlePcFirst();
             choiceProposal( "player" );
         }
     }
@@ -180,16 +183,16 @@ public abstract class Game {
      * the secret number of the computer is displayed if the developer mode has been activated
      */
     private void isPostSecretNumberPc(){
-        if( Parameter.isModeDebug() )
-            Title.postSecretNumberPc();
+        if( params.isModeDebug() )
+            title.postSecretNumberPc();
     }
 
     /**
      * the secret number of the player is displayed if the developer mode has been activated
      */
     private void isPostSecretNumberPlayer(){
-        if( Parameter.isModeDebug() )
-            Title.postSecretNumberPlayer();
+        if( params.isModeDebug() )
+            title.postSecretNumberPlayer();
     }
 
     /**
@@ -264,7 +267,7 @@ public abstract class Game {
         try {
             return isGoodSeizure();
         } catch (InputMismatchException e){
-            Title.postTitleControllerFormat();
+            title.postTitleControllerFormat();
             sc.nextLine();
             return false;
         }
@@ -275,7 +278,7 @@ public abstract class Game {
      * @return true if the length matches otherwise false
      */
     private boolean isGoodSeizure(){
-            Title.postTitleTrial();
+            title.postTitleTrial();
             int seizure = sc.nextInt() ;
             return isSeizureGoodLength( seizure ) ;
     }
@@ -286,11 +289,11 @@ public abstract class Game {
      * @return true if the length matches otherwise false
      */
     private boolean isSeizureGoodLength(int seizure){
-       if ( Plugin.toStr( seizure ).length() <= Parameter.getNumberCasePossible() ){
+       if ( Plugin.toStr( seizure ).length() <= params.getNumberCasePossible() ){
           combinaisonNumberPlayer = Plugin.formatNumber( seizure ) ;
            return true;
        }else {
-           Title.postTitleControllerSeizureLength();
+           title.postTitleControllerSeizureLength();
            return false;
        }
     }
@@ -300,18 +303,18 @@ public abstract class Game {
      * @param playerType typical proposition is "pc" or "player"
      */
     private void resultPlayer( String playerType ){
-        Title.postResultPlayer();
+        title.postResultPlayer();
         if (!isCombinaisonTrouve( playerResult ))
-            if(!(trialPlayer == Parameter.getNumberTrialPossible()) ) {
+            if(!(trialPlayer == params.getNumberTrialPossible()) ) {
                 trialPlayer++;
                 choiceProposal( playerType );
 
             } else {
-                Title.postLostResultPlayer();
+                title.postLostResultPlayer();
                 endOfPartyMenu();
             }
         else {
-            Title.postWinResultPlayer(trialPlayer);
+            title.postWinResultPlayer(trialPlayer);
             endOfPartyMenu();
         }
 
@@ -325,18 +328,18 @@ public abstract class Game {
         trial = trialPC ;
         pcResult = combinaisonResult( secretNumberPlayer ) ;
 
-        Title.postResultPC();
+        title.postResultPC();
 
         if( !isCombinaisonTrouve( pcResult ) )
-            if(!(trialPC == Parameter.getNumberTrialPossible()) ) {
+            if(!(trialPC == params.getNumberTrialPossible()) ) {
                 trialPC++;
                 choiceProposal( choice );
             }else {
-                Title.postLostResultPC( );
+                title.postLostResultPC( );
                 endOfPartyMenu();
             }
         else {
-            Title.postWinResultPC(trialPC);
+            title.postWinResultPC( trialPC );
             endOfPartyMenu();
         }
     }
@@ -357,7 +360,7 @@ public abstract class Game {
         try{
             return isGoodSecretNumber();
         }catch (InputMismatchException e){
-            Title.postTitleControllerFormat();
+            title.postTitleControllerFormat();
             sc.nextLine();
             return false;
         }
@@ -368,10 +371,10 @@ public abstract class Game {
      * @return true if compliant otherwise false
      */
     private boolean isGoodSecretNumber(){
-        Title.postQuestionNumberSecret();
+        title.postQuestionNumberSecret();
         int seizure = sc.nextInt();
         if( !isSeizureGoodLength( seizure ) ) {
-            Title.postTitleControllerSeizureLength();
+            title.postTitleControllerSeizureLength();
             return false;
         }else {
            secretNumberPlayer = Plugin.formatNumber(seizure);

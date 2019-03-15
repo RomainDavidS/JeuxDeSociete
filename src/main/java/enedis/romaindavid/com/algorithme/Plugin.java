@@ -10,6 +10,7 @@ import java.util.*;
  * set of plugin
  */
 public class Plugin {
+    private static Parameter params = Parameter.getInstance();
 
     /**
      * generates a random number
@@ -56,7 +57,7 @@ public class Plugin {
      * @return Integer @param number formatted
      */
     public static String formatNumber(int number ){
-        return formatNumber( Parameter.getNumberCasePossible(), number );
+        return formatNumber( params.getNumberCasePossible(), number );
     }
 
     /**

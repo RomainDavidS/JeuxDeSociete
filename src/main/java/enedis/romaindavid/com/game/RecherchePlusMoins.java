@@ -28,7 +28,7 @@ public class RecherchePlusMoins  extends Game {
      */
     @Override
     protected String generateSecretRandomString(){
-        int randNumber = Plugin.generateRandom( Plugin.puissanceDe10(Parameter.getNumberCasePossible() )) ;
+        int randNumber = Plugin.generateRandom( Plugin.puissanceDe10(params.getNumberCasePossible() )) ;
         return Plugin.formatNumber( randNumber );
     }
 
@@ -52,7 +52,7 @@ public class RecherchePlusMoins  extends Game {
 
         String[] resultArray = pcResult.split("");
 
-        for(int i = 0; i < Parameter.getNumberCasePossible(); i++)
+        for(int i = 0; i < params.getNumberCasePossible(); i++)
             newCombinaisonPC += newPcCombinaison( i, combinaisonNumberPcArray[ i ], resultArray[ i ]  );
 
         combinaisonNumberPC = newCombinaisonPC ;
@@ -115,7 +115,7 @@ public class RecherchePlusMoins  extends Game {
      * we initialize "mapPossible" with all possible values for each digit of the combination that will have to enter the computer
      */
     private void initMapPossible(){
-        for ( int i = 0; i < Parameter.getNumberCasePossible() ; i++ )
+        for ( int i = 0; i < params.getNumberCasePossible() ; i++ )
             mapPossible.put( i, "0123456789");
     }
 

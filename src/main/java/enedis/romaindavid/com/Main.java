@@ -11,22 +11,22 @@ public class Main {
 
     public static void main(String[] args)  {
         Plugin.clearScreen();
-        Parameter.getInstance();
-        Title.getInstance();
+        Parameter params = Parameter.getInstance();
+        Title title = Title.getInstance();
 
         Menu menu = new Menu();
         try{
             if( args[0].equals("dev") )
-                Parameter.setModeDebug( true );
+                params.setModeDebug( true );
         }
         catch (ArrayIndexOutOfBoundsException e ){}
 
-        if ( Parameter.isModeDebug() )
-            Title.postTitleDebug();
+        if ( params.isModeDebug() )
+            title.postTitleDebug();
         else
-            Title.postTitlePlayer();
+            title.postTitlePlayer();
 
-        Title.mainTitle();
+        title.mainTitle();
 
         menu.menuGame();
     }

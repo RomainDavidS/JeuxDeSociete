@@ -12,11 +12,11 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public final class Parameter {
 
-    private static boolean modeDebug;
-    private static int numberCasePossible;
-    private static int baseNumberPossible;
-    private static int numberTrialPossible ;
-    private static String valueNoPresent;
+    private boolean modeDebug;
+    private int numberCasePossible;
+    private int baseNumberPossible;
+    private int numberTrialPossible ;
+    private String valueNoPresent;
 
     private Properties prop;
     private InputStream input = null;
@@ -78,27 +78,27 @@ public final class Parameter {
         valueNoPresent = prop.getProperty("valueNoPresent");
     }
 
-    public static void setModeDebug(boolean modeDebug) {
-        Parameter.modeDebug = modeDebug;
+    public void setModeDebug(boolean modeDebug) {
+        this.modeDebug = modeDebug;
     }
 
-    public static boolean isModeDebug() {
+    public boolean isModeDebug() {
         return modeDebug;
     }
 
-    public static int getNumberCasePossible() {
+    public int getNumberCasePossible() {
         return numberCasePossible;
     }
 
-    public static int getBaseNumberPossible() {
+    public int getBaseNumberPossible() {
         return baseNumberPossible;
     }
 
-    public static int getNumberTrialPossible() {
+    public int getNumberTrialPossible() {
         return numberTrialPossible;
     }
 
-    public static String getValueNoPresent() {
+    public String getValueNoPresent() {
         return valueNoPresent;
     }
 }
