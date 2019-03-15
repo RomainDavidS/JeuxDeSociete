@@ -1,4 +1,4 @@
-DA Java EE Project 3
+DA Java EE Project 3 - JDK 11
 
 How to compile the application ?
 Compiling the application will make from the Maven runtime window by running the command -> clean install
