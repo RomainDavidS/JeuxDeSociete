@@ -26,4 +26,5 @@ Compiling the application will make from the Maven runtime window by running the
 
 ## How Generate Javadoc ?
 The generate javadoc  will make from the Maven runtime window by running the command -> javadoc:javadoc
+
 javadoc was created in the directory in ./target/site/apidocs
