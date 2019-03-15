@@ -10,7 +10,17 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <javadocExecutable>C:/Program Files/Java/jdk1.8.0_201/bin/javadoc</javadocExecutable>
     </properties>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+        </plugins>
+    </reporting>
     <build>
         <plugins>
             <plugin>
@@ -58,7 +68,7 @@
                     </archive>
                 </configuration>
             </plugin>
-    <!-- create exe -->
+    <!-- jar executable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -89,54 +99,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>com.akathist.maven.plugins.launch4j</groupId>
-                <artifactId>launch4j-maven-plugin</artifactId>
-                <version>1.7.25</version>
-                <executions>
-                    <execution>
-                        <id>l4j-gui</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>launch4j</goal>
-                        </goals>
-                        <configuration>
-                            <headerType>gui</headerType>
-                            <outfile>target/${project.artifactId}.exe</outfile>
-                            <jar>target/${project.artifactId}-${project.version}.jar</jar>
-
-                            <!-- if <dontWrapJar>true</dontWrapJar> change to this conf <jar>${project.artifactId}-${project.version}.jar</jar> -->
-
-                            <dontWrapJar>false</dontWrapJar>
-                            <errTitle>Error in launch4j plugin</errTitle>
-                            <classPath>
-                                <mainClass>enedis.romaindavid.com.Main</mainClass>
-                            </classPath>
-                            <icon>src/main/image/archive-icon.ico</icon>
-                            <jre>
-                                <minVersion>1.5.0</minVersion>
-                                <maxVersion>1.8.0</maxVersion>
-                                <initialHeapSize>512</initialHeapSize>
-                                <maxHeapSize>1024</maxHeapSize>
-                            </jre>
-                            <versionInfo>
-                                <fileVersion>1.0.0.0</fileVersion>
-                                <txtFileVersion>1.0.0.0</txtFileVersion>
-                                <fileDescription>des</fileDescription>
-                                <copyright>Copyright (c) 2019 </copyright>
-                                <companyName>DSI - ENEDIS</companyName>
-                                <productVersion>3.0.0.0</productVersion>
-                                <txtProductVersion>${project.version}</txtProductVersion>
-                                <productName>${project.artifactId}</productName>
-                                <internalName>${project.artifactId}</internalName>
-                                <originalFilename>${project.artifactId}.exe</originalFilename>
-                            </versionInfo>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-
 
         </plugins>
     </build>
@@ -158,12 +120,6 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.1.0</version>
-            <type>maven-plugin</type>
         </dependency>
 
     </dependencies>

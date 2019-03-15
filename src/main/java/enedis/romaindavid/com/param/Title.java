@@ -145,6 +145,7 @@ public final class Title {
 
     public void postTitleMainMenu(){
         logger.info("A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.");
+
     }
 
     public void postTitleControllerGameMenu(){
