@@ -202,3 +202,438 @@
 [INFO ] 2019-03-15 12:55:46.723 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
 [ERROR] 2019-03-15 12:55:52.164 [main] Title - Je n'ai pas compris votre choix.
 [INFO ] 2019-03-15 12:55:52.164 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+[INFO ] 2019-03-15 19:52:54.902 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 19:52:54.949 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 19:52:54.949 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 19:52:58.855 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-15 19:57:05.047 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 19:57:05.047 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 19:57:05.047 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 19:57:09.312 [main] Title - Mastermind choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-15 19:57:35.155 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 19:57:35.171 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 19:57:35.171 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 19:57:38.639 [main] Title - Mastermind choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-15 19:59:40.631 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 19:59:40.631 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 19:59:40.631 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 19:59:44.303 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-15 20:00:27.483 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 20:00:27.483 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 20:00:27.483 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 20:00:30.280 [main] Title - 2
+[INFO ] 2019-03-15 20:00:30.280 [main] Title - Mastermind choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-15 20:01:50.742 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 20:01:50.742 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 20:01:50.742 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 20:01:54.242 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-15 20:25:44.341 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 20:25:44.341 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 20:25:44.341 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 20:26:02.238 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 20:26:02.253 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 20:26:02.253 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:12:40.342 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:12:40.358 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:12:40.358 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:13:08.320 [main] Title - 1
+2019-03-15 21:13:08.320 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 21:14:02.194 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:14:02.210 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:14:02.210 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:15:26.566 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:15:26.566 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:15:26.566 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:19:48.724 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:19:48.724 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:19:48.724 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:21:09.821 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:21:09.821 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:21:09.821 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:22:12.779 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:22:12.779 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:22:12.779 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:22:43.811 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:22:43.811 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:22:43.811 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:23:06.017 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:23:06.017 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:23:06.017 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:23:54.049 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:23:54.049 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:23:54.049 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:24:38.036 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:24:38.051 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:24:38.051 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:24:49.364 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:24:49.364 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:24:49.364 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:24:58.440 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:24:58.440 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:24:58.440 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:25:13.454 [main] Title - 1
+2019-03-15 21:25:13.454 [main] Title - 1
+2019-03-15 21:25:13.454 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 21:53:54.249 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:53:54.249 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:53:54.249 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:54:05.699 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:54:05.699 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:54:05.699 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:54:38.292 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:54:38.292 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:54:38.292 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:54:46.368 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:54:46.368 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:54:46.368 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:59:10.247 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:59:10.247 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:59:10.247 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 21:59:43.710 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 21:59:43.710 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 21:59:43.710 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 22:10:08.784 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 22:10:08.784 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 22:10:08.784 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 22:10:23.858 [main] Title - 1
+2019-03-15 22:10:23.858 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 22:11:40.481 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 22:11:40.481 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 22:11:40.481 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 22:53:29.376 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 22:53:29.376 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 22:53:29.376 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 22:53:49.950 [main] Title - 1
+2019-03-15 22:53:49.950 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 22:54:52.159 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 22:54:52.159 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 22:54:52.159 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 22:56:30.507 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 22:56:30.507 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 22:56:30.507 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 22:57:19.373 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 22:57:19.373 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 22:57:19.373 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 22:57:24.921 [main] Title - 1
+2019-03-15 22:57:24.921 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 22:58:24.253 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 22:58:24.253 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 22:58:24.253 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 22:58:27.534 [main] Title - 1
+2019-03-15 22:58:27.534 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 22:59:08.927 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 22:59:08.943 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 22:59:08.943 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:10:19.030 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:10:19.030 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:10:19.030 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:10:33.319 [main] Title - 1
+2019-03-15 23:10:33.319 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:11:02.943 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:11:02.958 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:11:02.958 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:11:16.408 [main] Title - 1
+2019-03-15 23:11:16.408 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:11:56.604 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:11:56.619 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:11:56.619 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:12:11.457 [main] Title - 1
+2019-03-15 23:12:11.457 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:12:52.441 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:12:52.441 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:12:52.441 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:12:54.925 [main] Title - 1
+2019-03-15 23:12:54.925 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:13:53.259 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:13:53.259 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:13:53.259 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:13:57.008 [main] Title - 1
+2019-03-15 23:13:57.008 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:15:32.290 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:15:32.290 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:15:32.290 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:15:35.461 [main] Title - 1
+2019-03-15 23:15:35.461 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:16:30.701 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:16:30.716 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:16:30.716 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:16:43.704 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:16:43.720 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:16:43.720 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:17:14.907 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:17:14.923 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:17:14.923 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:17:17.797 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:18:20.097 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:18:20.097 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:18:20.097 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:19:06.515 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:19:06.515 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:19:06.515 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:19:10.639 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:19:37.310 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:19:37.326 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:19:37.326 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:19:40.934 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:20:20.394 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:20:20.394 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:20:20.394 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:20:22.550 [main] Title - 1
+2019-03-15 23:20:22.550 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:22:52.475 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:22:52.475 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:22:52.475 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:22:55.115 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:23:40.887 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:23:40.887 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:23:40.887 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:23:45.292 [main] Title - 1
+2019-03-15 23:23:45.292 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:24:30.581 [main] Title - 2
+2019-03-15 23:24:30.581 [main] Title - *** Jeu du Recherche +/- en mode Défenseur. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+2019-03-15 23:24:30.581 [main] Title - Joueur : Veuillez saisir votre combinaison secrète
+2019-03-15 23:24:35.377 [main] Title - PC : Proposition n° 1 sur 20 : 8019 -> Réponse : +--+
+2019-03-15 23:24:35.377 [main] Title - PC : Proposition n° 2 sur 20 : 4820 -> Réponse : ++--
+2019-03-15 23:24:35.377 [main] Title - PC : Proposition n° 3 sur 20 : 2397 -> Réponse : ++++
+2019-03-15 23:24:35.377 [main] Title - PC : Proposition n° 4 sur 20 : 0163 -> Réponse : --+-
+2019-03-15 23:24:35.377 [main] Title - PC : Proposition n° 5 sur 20 : 1256 -> Réponse : ==++
+2019-03-15 23:24:35.377 [main] Title - PC : Proposition n° 6 sur 20 : 1235 -> Réponse : ===+
+2019-03-15 23:24:35.377 [main] Title - PC : Proposition n° 7 sur 20 : 1234 -> Réponse : ====
+2019-03-15 23:24:35.377 [main] Title - PC : Félicitation la combinaison secrète a été trouvée en 7 essais.
+2019-03-15 23:24:35.377 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+2019-03-15 23:26:00.775 [main] Title - Q
+2019-03-15 23:26:16.725 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:26:16.740 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:26:16.740 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:26:23.458 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:26:23.458 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:26:23.458 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:26:48.515 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:26:48.515 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:26:48.515 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:27:12.803 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:27:12.803 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:27:12.803 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:27:28.346 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:27:28.346 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:27:28.346 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:27:31.189 [main] Title - 1
+2019-03-15 23:27:31.189 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:27:54.723 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:27:54.723 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:27:54.723 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:27:56.925 [main] Title - 1
+2019-03-15 23:27:56.925 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:28:13.156 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:28:13.172 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:28:13.172 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:28:28.016 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:28:28.016 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:28:28.016 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:28:47.136 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:28:47.136 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:28:47.136 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:28:50.135 [main] Title - 1
+2019-03-15 23:28:50.135 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:28:59.524 [main] Title - 2
+2019-03-15 23:28:59.524 [main] Title - *** Jeu du Recherche +/- en mode Défenseur. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+2019-03-15 23:28:59.524 [main] Title - Joueur : Veuillez saisir votre combinaison secrète
+2019-03-15 23:29:01.039 [main] Title - PC : Proposition n° 1 sur 20 : 6152 -> Réponse : +-+-
+2019-03-15 23:29:01.039 [main] Title - PC : Proposition n° 2 sur 20 : 5319 -> Réponse : ++-+
+2019-03-15 23:29:01.039 [main] Title - PC : Proposition n° 3 sur 20 : 0225 -> Réponse : -=-+
+2019-03-15 23:29:01.039 [main] Title - PC : Proposition n° 4 sur 20 : 3233 -> Réponse : +==-
+2019-03-15 23:29:01.039 [main] Title - PC : Proposition n° 5 sur 20 : 2234 -> Réponse : +===
+2019-03-15 23:29:01.039 [main] Title - PC : Proposition n° 6 sur 20 : 1234 -> Réponse : ====
+2019-03-15 23:29:01.039 [main] Title - PC : Félicitation la combinaison secrète a été trouvée en 6 essais.
+2019-03-15 23:29:01.039 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+2019-03-15 23:29:03.288 [main] Title - Q
+2019-03-15 23:32:57.769 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:32:57.769 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:32:57.769 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:33:00.284 [main] Title - 1
+2019-03-15 23:33:00.284 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:35:21.573 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:35:21.573 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:35:21.573 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:35:24.182 [main] Title - 1
+2019-03-15 23:35:24.182 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:35:25.056 [main] Title - 2
+2019-03-15 23:35:25.056 [main] Title - *** Jeu du Recherche +/- en mode Défenseur. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+2019-03-15 23:35:25.056 [main] Title - Joueur : Veuillez saisir votre combinaison secrète
+2019-03-15 23:35:27.353 [main] Title - PC : Proposition n° 1 sur 20 : 0462 -> Réponse : -++-
+2019-03-15 23:35:27.353 [main] Title - PC : Proposition n° 2 sur 20 : 7244 -> Réponse : +=+=
+2019-03-15 23:35:27.353 [main] Title - PC : Proposition n° 3 sur 20 : 3214 -> Réponse : +=-=
+2019-03-15 23:35:27.353 [main] Title - PC : Proposition n° 4 sur 20 : 2234 -> Réponse : +===
+2019-03-15 23:35:27.353 [main] Title - PC : Proposition n° 5 sur 20 : 1234 -> Réponse : ====
+2019-03-15 23:35:27.353 [main] Title - PC : Félicitation la combinaison secrète a été trouvée en 5 essais.
+2019-03-15 23:35:27.353 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+2019-03-15 23:35:29.930 [main] Title - Q
+2019-03-15 23:37:26.499 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+2019-03-15 23:37:26.499 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+2019-03-15 23:37:26.499 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+2019-03-15 23:37:28.999 [main] Title - 1
+2019-03-15 23:37:28.999 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+2019-03-15 23:37:29.811 [main] Title - 2
+2019-03-15 23:37:29.811 [main] Title - *** Jeu du Recherche +/- en mode Défenseur. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+2019-03-15 23:37:29.811 [main] Title - Joueur : Veuillez saisir votre combinaison secrète
+2019-03-15 23:37:31.576 [main] Title - PC : Proposition n° 1 sur 20 : 3109 -> Réponse : +--+
+2019-03-15 23:37:31.576 [main] Title - PC : Proposition n° 2 sur 20 : 1498 -> Réponse : =+++
+2019-03-15 23:37:31.576 [main] Title - PC : Proposition n° 3 sur 20 : 1222 -> Réponse : ==--
+2019-03-15 23:37:31.576 [main] Title - PC : Proposition n° 4 sur 20 : 1275 -> Réponse : ==++
+2019-03-15 23:37:31.576 [main] Title - PC : Proposition n° 5 sur 20 : 1253 -> Réponse : ==+-
+2019-03-15 23:37:31.576 [main] Title - PC : Proposition n° 6 sur 20 : 1234 -> Réponse : ====
+2019-03-15 23:37:31.576 [main] Title - PC : Félicitation la combinaison secrète a été trouvée en 6 essais.
+2019-03-15 23:37:31.576 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+2019-03-15 23:37:36.653 [main] Title - Q
+[INFO ] 2019-03-15 23:40:11.037 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 23:40:11.037 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 23:40:11.037 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 23:40:59.297 [main] Title - 1
+[INFO ] 2019-03-15 23:40:59.297 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-15 23:41:01.984 [main] Title - 2
+[INFO ] 2019-03-15 23:41:01.984 [main] Title - *** Jeu du Recherche +/- en mode Défenseur. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+[INFO ] 2019-03-15 23:41:01.984 [main] Title - Joueur : Veuillez saisir votre combinaison secrète
+[INFO ] 2019-03-15 23:41:03.452 [main] Title - PC : Proposition n° 1 sur 20 : 8142 -> Réponse : +-+-
+[INFO ] 2019-03-15 23:41:03.452 [main] Title - PC : Proposition n° 2 sur 20 : 0827 -> Réponse : -+-+
+[INFO ] 2019-03-15 23:41:03.452 [main] Title - PC : Proposition n° 3 sur 20 : 3334 -> Réponse : ++==
+[INFO ] 2019-03-15 23:41:03.452 [main] Title - PC : Proposition n° 4 sur 20 : 2234 -> Réponse : +===
+[INFO ] 2019-03-15 23:41:03.452 [main] Title - PC : Proposition n° 5 sur 20 : 1234 -> Réponse : ====
+[INFO ] 2019-03-15 23:41:03.452 [main] Title - PC : Félicitation la combinaison secrète a été trouvée en 5 essais.
+[INFO ] 2019-03-15 23:41:03.452 [main] Title - Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?
+[INFO ] 2019-03-15 23:44:31.485 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-15 23:44:31.485 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-15 23:44:31.485 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-15 23:44:34.609 [main] Title - 1
+[INFO ] 2019-03-15 23:44:34.609 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-15 23:44:36.203 [main] Title - 1
+[INFO ] 2019-03-15 23:44:36.203 [main] Title - *** Jeu du Recherche +/- en mode Challenger. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+[INFO ] 2019-03-15 23:44:36.203 [main] Title - Joueur : Essai n°1 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-03-15 23:44:38.452 [main] Title - 1234
+[INFO ] 2019-03-15 23:44:38.452 [main] Title - Joueur : Proposition n° 1 sur 20 : 1234 -> Réponse : ----
+[INFO ] 2019-03-15 23:44:38.452 [main] Title - Joueur : Essai n°2 sur 20. Veuillez saisir une combinaison.

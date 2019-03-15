@@ -22,7 +22,7 @@ public class Main {
         catch (ArrayIndexOutOfBoundsException e ){}
 
         if ( params.isModeDebug() )
-            title.postTitleDebug();
+            title.postTitleDev();
         else
             title.postTitlePlayer();
 

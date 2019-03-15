@@ -3,11 +3,9 @@ package enedis.romaindavid.com.param;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 import java.util.concurrent.atomic.AtomicInteger;
 
 import enedis.romaindavid.com.game.*;
-
 
 
 /**
@@ -16,7 +14,11 @@ import enedis.romaindavid.com.game.*;
 public final class Title {
 
     private static Title singleton = new Title();
+
     private Parameter params = Parameter.getInstance();
+
+    private static Logger logger = LogManager.getLogger( Title.class );
+
 
     public static Title getInstance(){
         return singleton;
@@ -34,14 +36,13 @@ public final class Title {
         return Holder.parameter.incrementAndGet();
     }
 
-    private static Logger logger = LogManager.getLogger();
 
     public void postTitlePlayerFirst(){
-       logger.info("C'est l'ordinateur qui joue en premier");
+        postTitleInfo("C'est l'ordinateur qui joue en premier");
     }
 
     public void postTitlePcFirst(){
-        logger.info("C'est le joueur qui joue en premier");
+        postTitleInfo("C'est le joueur qui joue en premier");
     }
 
     public void postSecretNumberPc(){
@@ -53,7 +54,7 @@ public final class Title {
     }
 
     private void postSecretNumber(String player,String secretNumber){
-        logger.debug("(Combinaison secrète "+ player + " : "+  secretNumber + ")" );
+        postTitleDebug("(Combinaison secrète "+ player + " : "+  secretNumber + ")" );
     }
 
     public void postTitleGameChallenger(){
@@ -81,12 +82,11 @@ public final class Title {
     }
 
     private void postTitleGame(String name, String mode ){
-        Parameter.getCounter();
-        logger.info("*** Jeu du "+ Game.getGameName() + " en mode "+  mode + ". Combinaison de "+ params.getNumberCasePossible() +" chiffres maximun et " + params.getNumberTrialPossible() + " essais possibles ***");
+        postTitleInfo("*** Jeu du "+ Game.getGameName() + " en mode "+  mode + ". Combinaison de "+ params.getNumberCasePossible() +" chiffres maximun et " + params.getNumberTrialPossible() + " essais possibles ***");
     }
 
     public void postTitleTrial(){
-        logger.info("Joueur : Essai n°" + Game.getTrial() + " sur "+ params.getNumberTrialPossible() +". Veuillez saisir une combinaison.");
+        postTitleInfo("Joueur : Essai n°" + Game.getTrial() + " sur "+ params.getNumberTrialPossible() +". Veuillez saisir une combinaison.");
     }
 
     public void postResultPlayer(){
@@ -98,7 +98,7 @@ public final class Title {
     }
 
     private void postResult(String player,int numberTrial, String combinaison,String postResult ){
-        logger.info(player + " : Proposition n° " + numberTrial + " sur "+ params.getNumberTrialPossible() + " : " + combinaison + " -> Réponse : " + postResult );
+        postTitleInfo(player + " : Proposition n° " + numberTrial + " sur "+ params.getNumberTrialPossible() + " : " + combinaison + " -> Réponse : " + postResult );
     }
 
     public void postTitleControllerSeizureLength(){
@@ -106,15 +106,15 @@ public final class Title {
     }
 
     private void postTitleControllerSeizureLength(int len){
-        logger.error("La longueur de la combinaison doit avoir une longueur max de "+ len + " chiffres maximum.");
+        postTitleError("La longueur de la combinaison doit avoir une longueur max de "+ len + " chiffres maximum.");
     }
 
     public void postTitleControllerFormat(){
-        logger.error( "Erreur de format. Veuillez saisir une valeur numérique" );
+        postTitleError( "Erreur de format. Veuillez saisir une valeur numérique" );
     }
 
     public void postQuestionNumberSecret(){
-        logger.info("Joueur : Veuillez saisir votre combinaison secrète");
+        postTitleInfo("Joueur : Veuillez saisir votre combinaison secrète");
     }
 
     public void postLostResultPC(){
@@ -126,7 +126,7 @@ public final class Title {
     }
 
     public void postLostResult(String player, String secretNumber){
-        logger.error( player + " : Désolé la combinaison secrète " + secretNumber + " n'a pas été trouvée." );
+        postTitleError( player + " : Désolé la combinaison secrète " + secretNumber + " n'a pas été trouvée." );
     }
 
     public void postWinResultPC(int postTrial){
@@ -139,21 +139,20 @@ public final class Title {
 
     public void postWinResult(String player, int postTrial){
         String value = player + " : Félicitation la combinaison secrète a été trouvée en "+ postTrial +" essais.";
-        logger.info( value );
-
+        postTitleInfo( value );
     }
 
     public void postTitleMainMenu(){
-        logger.info("A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.");
+        postTitleInfo("A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.");
 
     }
 
     public void postTitleControllerGameMenu(){
-        logger.error("Votre choix doit égal à 1 ou 2.");
+        postTitleError("Votre choix doit égal à 1 ou 2.");
     }
 
     public void postTitleControllerModeMenu(){
-        logger.error("Votre choix doit être égal à 1, 2 ou 3.");
+        postTitleError("Votre choix doit être égal à 1, 2 ou 3.");
     }
 
     public void postTitleModeMenuRechercherPlusMoins(){
@@ -165,34 +164,68 @@ public final class Title {
     }
 
     private void postTitleModeMenu(String game){
-        logger.info(game + " choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel");
+        postTitleInfo(game + " choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel");
     }
 
     public void mainTitle(){
-        logger.info("Bonjour et bienvenue dans vos jeux de société.");
+        postTitleInfo("Bonjour et bienvenue dans vos jeux de société.");
     }
 
     public void postEndOfPartyMenu(){
-        logger.info("Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?");
+        postTitleInfo("Voulez-vous recommencer une partie O/N ou quitter le jeu Q ?");
     }
 
     public void postErrorChoice(){
-        logger.error("Je n'ai pas compris votre choix.");
+        postTitleError("Je n'ai pas compris votre choix.");
     }
 
-    public void postTitleDebug()  {
+    public void postTitleDev()  {
         String title = "*******************************\n";
         title +="**  Mode Développeur activé  **\n";
         title +="*******************************";
-        logger.info( title );
+        postTitleInfo( title );
     }
 
     public void postTitlePlayer(){
         String title = "*******************************\n";
         title +="**     Mode Joueur activé    **\n";
         title +="*******************************";
-        logger.info( title );
+        postTitleInfo( title );
     }
 
+    public void postChoiceInfo(int value){
+        logger.info( value );
+    }
+
+    public void postChoiceInfo( String value ){
+        logger.info( value );
+    }
+
+    public void postTitleInfo(int value){
+       System.out.println( value );
+        postChoiceInfo( value );
+    }
+
+    public void postTitleInfo(String value){
+        System.out.println( value );
+        postChoiceInfo( value );
+    }
+
+    public void postTitleDebug(int value){
+        logger.debug( value );
+
+    }
+
+    public void postTitleDebug(String value){
+        logger.debug( value );
+    }
+
+    public void postTitleError(int value){
+        logger.error( value );
+    }
+
+    public void postTitleError(String value){
+        logger.error( value );
+    }
 
 }

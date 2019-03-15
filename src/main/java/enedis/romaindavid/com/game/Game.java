@@ -280,6 +280,7 @@ public abstract class Game {
     private boolean isGoodSeizure(){
             title.postTitleTrial();
             int seizure = sc.nextInt() ;
+            title.postChoiceInfo( seizure );
             return isSeizureGoodLength( seizure ) ;
     }
 
@@ -373,6 +374,10 @@ public abstract class Game {
     private boolean isGoodSecretNumber(){
         title.postQuestionNumberSecret();
         int seizure = sc.nextInt();
+
+        if ( params.isModeDebug() )
+            title.postChoiceInfo( seizure );
+
         if( !isSeizureGoodLength( seizure ) ) {
             title.postTitleControllerSeizureLength();
             return false;

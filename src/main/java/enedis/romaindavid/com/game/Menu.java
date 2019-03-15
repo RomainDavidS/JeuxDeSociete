@@ -26,9 +26,11 @@ public class Menu {
      * choice of the game
      */
     public void menuGame(){
+
         try {
             title.postTitleMainMenu();
-            choiceGame = sc.nextInt();
+
+            title.postChoiceInfo( choiceGame = sc.nextInt() );
 
             if( !(choiceGame == 1 || choiceGame == 2) ){
                 title.postTitleControllerGameMenu();
@@ -54,7 +56,7 @@ public class Menu {
             else
                 title.postTitleModeMenuMastermind();
 
-            choiceMode = sc.nextInt();
+            title.postChoiceInfo( choiceMode = sc.nextInt() );
 
             if ( choiceMode < 1 || choiceMode > 3 ){
                 title.postTitleControllerModeMenu();
@@ -105,6 +107,7 @@ public class Menu {
     public void endOfPartyMenu(){
         title.postEndOfPartyMenu();
         String choice = sc.nextLine().toUpperCase();
+        title.postChoiceInfo( choice );
         Plugin.clearScreen();
         if ( choice.equals("O") || choice.equals("N" ))
             if (choice.equals("O") )
