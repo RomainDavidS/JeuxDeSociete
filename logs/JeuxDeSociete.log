@@ -637,3 +637,34 @@
 [INFO ] 2019-03-15 23:44:38.452 [main] Title - 1234
 [INFO ] 2019-03-15 23:44:38.452 [main] Title - Joueur : Proposition n° 1 sur 20 : 1234 -> Réponse : ----
 [INFO ] 2019-03-15 23:44:38.452 [main] Title - Joueur : Essai n°2 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-03-16 16:28:34.301 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-16 16:28:34.309 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-16 16:28:34.309 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-16 16:28:45.538 [main] Title - 1
+[INFO ] 2019-03-16 16:28:45.538 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-16 16:31:08.176 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-16 16:31:08.179 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-16 16:31:08.179 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-16 16:31:26.947 [main] Title - *******************************
+**     Mode Joueur activé    **
+*******************************
+[INFO ] 2019-03-16 16:31:26.950 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-16 16:31:26.951 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-16 16:32:08.816 [main] Title - *******************************
+**  Mode Développeur activé  **
+*******************************
+[INFO ] 2019-03-16 16:32:08.819 [main] Title - Bonjour et bienvenue dans vos jeux de société.
+[INFO ] 2019-03-16 16:32:08.819 [main] Title - A quel jeu souhaitez-vous jouer ? 1 -> Recherche + - : 2 -> Mastermind.
+[INFO ] 2019-03-16 16:32:12.941 [main] Title - 1
+[INFO ] 2019-03-16 16:32:12.943 [main] Title - Recherche + - choisissez votre mode : 1 - Challenger : 2 - Défenseur : 3 - Duel
+[INFO ] 2019-03-16 16:32:16.988 [main] Title - 1
+[INFO ] 2019-03-16 16:32:16.989 [main] Title - *** Jeu du Recherche +/- en mode Challenger. Combinaison de 4 chiffres maximun et 20 essais possibles ***
+[DEBUG] 2019-03-16 16:32:16.990 [main] Title - (Combinaison secrète PC : 2962)
+[INFO ] 2019-03-16 16:32:16.990 [main] Title - Joueur : Essai n°1 sur 20. Veuillez saisir une combinaison.
+[INFO ] 2019-03-16 16:32:22.230 [main] Title - 2134
+[INFO ] 2019-03-16 16:32:22.230 [main] Title - Joueur : Proposition n° 1 sur 20 : 2134 -> Réponse : =--+
+[INFO ] 2019-03-16 16:32:22.231 [main] Title - Joueur : Essai n°2 sur 20. Veuillez saisir une combinaison.

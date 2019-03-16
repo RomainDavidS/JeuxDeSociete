@@ -83,6 +83,7 @@ public final class Title {
 
     private void postTitleGame(String name, String mode ){
         postTitleInfo("*** Jeu du "+ Game.getGameName() + " en mode "+  mode + ". Combinaison de "+ params.getNumberCasePossible() +" chiffres maximun et " + params.getNumberTrialPossible() + " essais possibles ***");
+
     }
 
     public void postTitleTrial(){
@@ -183,6 +184,7 @@ public final class Title {
         String title = "*******************************\n";
         title +="**  Mode Développeur activé  **\n";
         title +="*******************************";
+
         postTitleInfo( title );
     }
 
@@ -212,11 +214,13 @@ public final class Title {
     }
 
     public void postTitleDebug(int value){
+        System.out.println( value );
         logger.debug( value );
 
     }
 
     public void postTitleDebug(String value){
+        System.out.println( value );
         logger.debug( value );
     }
 
