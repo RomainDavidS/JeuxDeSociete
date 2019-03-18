@@ -229,6 +229,7 @@ public final class Title {
     }
 
     public void postTitleError(String value){
+        System.out.println( value );
         logger.error( value );
     }
 
